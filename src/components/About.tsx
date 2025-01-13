@@ -1,8 +1,26 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Linkedin, Newspaper } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export const About = () => {
+  const [text, setText] = useState("");
+  const fullText = "meet your systems strategist";
+  
+  useEffect(() => {
+    let currentIndex = 0;
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setText(fullText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 100);
+
+    return () => clearInterval(typingInterval);
+  }, []);
+
   return (
     <section id="about" className="py-20 bg-muted">
       <div className="container mx-auto px-4">
@@ -16,7 +34,7 @@ export const About = () => {
               />
             </Card>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary mb-8">
-              meet your systems strategist
+              {text}
             </h2>
             <div className="space-y-4 text-lg text-gray-600 mb-8">
               <p>
