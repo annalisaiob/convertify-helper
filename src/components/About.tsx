@@ -38,12 +38,12 @@ export const About = () => {
             </div>
           </div>
           <div className="relative">
-            <div className="absolute -top-4 -left-4 w-full h-full bg-accent/10 rounded-lg"></div>
-            <Card className="relative overflow-hidden max-w-[300px] mx-auto">
+            <div className="absolute -top-4 -left-4 w-full h-full bg-accent/10 rounded-full"></div>
+            <Card className="relative overflow-hidden max-w-[200px] mx-auto rounded-full">
               <img 
                 src="/lovable-uploads/96ef54b7-06c2-405c-95e3-28e5a739baaa.png"
                 alt="Professional headshot of Annalisa Iob"
-                className="w-full h-auto rounded-lg"
+                className="w-full h-full object-cover rounded-full"
               />
             </Card>
           </div>
