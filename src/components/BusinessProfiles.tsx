@@ -1,24 +1,9 @@
 import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { CheckCircle, Building2, User, Rocket, ArrowRight } from "lucide-react";
-
-type BusinessProfile = {
-  id: string;
-  title: string;
-  description: string;
-  icon: React.ElementType;
-  struggles: string[];
-  solutions: {
-    title: string;
-    items: string[];
-  };
-  pricing: {
-    diy: string;
-    guided: string;
-    managed: string;
-  };
-};
+import { Building2, User, Rocket } from "lucide-react";
+import { BusinessProfileCard } from "./business/BusinessProfileCard";
+import { SolutionsPricing } from "./business/SolutionsPricing";
+import { MotivationalBanner } from "./MotivationalBanner";
+import type { BusinessProfile } from "./business/types";
 
 const businessProfiles: BusinessProfile[] = [
   {
@@ -104,7 +89,6 @@ const businessProfiles: BusinessProfile[] = [
 export const BusinessProfiles = () => {
   const [selectedProfile, setSelectedProfile] = useState<BusinessProfile>(businessProfiles[0]);
 
-  // Helper function to correctly pluralize the title
   const getPluralTitle = (title: string) => {
     const baseTitle = title.replace("I Am a ", "").replace("I Am an ", "");
     if (baseTitle === "Freelancer or Solopreneur") {
@@ -115,6 +99,7 @@ export const BusinessProfiles = () => {
 
   return (
     <section id="business-profiles" className="py-20 bg-gray-50">
+      <MotivationalBanner />
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-4">
           Select the option that best describes you
@@ -125,88 +110,19 @@ export const BusinessProfiles = () => {
 
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           {businessProfiles.map((profile) => (
-            <Card 
+            <BusinessProfileCard
               key={profile.id}
-              className={`cursor-pointer transition-all hover:shadow-lg ${
-                selectedProfile.id === profile.id ? 'ring-2 ring-secondary' : ''
-              }`}
-              onClick={() => setSelectedProfile(profile)}
-            >
-              <CardHeader className="text-center">
-                <profile.icon className="w-12 h-12 mx-auto mb-4 text-secondary" />
-                <CardTitle>{profile.title}</CardTitle>
-                <CardDescription>{profile.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <h4 className="font-semibold mb-2">Common Struggles:</h4>
-                <ul className="space-y-2">
-                  {profile.struggles.map((struggle, index) => (
-                    <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
-                      <CheckCircle className="w-4 h-4 mt-1 text-secondary flex-shrink-0" />
-                      <span>{struggle}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+              profile={profile}
+              isSelected={selectedProfile.id === profile.id}
+              onSelect={setSelectedProfile}
+            />
           ))}
         </div>
 
-        <div className="bg-white rounded-lg p-8 shadow-lg animate-fadeIn">
-          <h3 className="text-2xl font-bold text-primary mb-6">
-            How We Help {getPluralTitle(selectedProfile.title)}
-          </h3>
-          <p className="text-lg text-gray-600 mb-6">{selectedProfile.solutions.title}</p>
-          
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div>
-              <h4 className="font-semibold mb-4">Solutions We Provide:</h4>
-              <ul className="space-y-3">
-                {selectedProfile.solutions.items.map((item, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <ArrowRight className="w-5 h-5 mt-1 text-secondary flex-shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Pricing Options:</h4>
-              <div className="space-y-4">
-                <div className="p-4 border rounded-lg">
-                  <div className="font-semibold">Do It Yourself</div>
-                  <div className="text-2xl font-bold text-secondary">{selectedProfile.pricing.diy}</div>
-                  <div className="text-sm text-gray-600">Self-paced implementation with our guidance</div>
-                </div>
-                <div className="p-4 border rounded-lg bg-secondary/5">
-                  <div className="font-semibold">Guided Implementation</div>
-                  <div className="text-2xl font-bold text-secondary">{selectedProfile.pricing.guided}</div>
-                  <div className="text-sm text-gray-600">We work together to implement your solutions</div>
-                </div>
-                <div className="p-4 border rounded-lg">
-                  <div className="font-semibold">Done For You</div>
-                  <div className="text-2xl font-bold text-secondary">{selectedProfile.pricing.managed}</div>
-                  <div className="text-sm text-gray-600">We handle everything from start to finish</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-8">
-            <Button 
-              asChild 
-              className="bg-secondary hover:bg-secondary/90 text-lg px-8 py-6 rounded-full"
-            >
-              <a 
-                href="https://calendly.com/anna-creailab/30min" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                Schedule Your Free Strategy Call
-              </a>
-            </Button>
-          </div>
-        </div>
+        <SolutionsPricing
+          profile={selectedProfile}
+          pluralTitle={getPluralTitle(selectedProfile.title)}
+        />
       </div>
     </section>
   );
