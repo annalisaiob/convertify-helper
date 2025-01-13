@@ -53,7 +53,7 @@ export const SolutionsPricing = ({ profile, pluralTitle }: SolutionsPricingProps
       <div className="text-center mt-8">
         <Button 
           asChild 
-          className="bg-secondary hover:bg-secondary/90 text-lg px-8 py-6 rounded-full"
+          className="bg-secondary hover:bg-secondary/90 hover:italic hover:underline text-lg px-8 py-6 rounded-full transition-all"
         >
           <a 
             href="https://calendly.com/anna-creailab/30min" 
