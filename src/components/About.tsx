@@ -41,13 +41,13 @@ export const About = () => {
             </div>
             <div className="space-y-4 text-lg text-gray-600 mb-8">
               <p>
-                hi! i help businesses create simple, efficient systems that save time and reduce stress. with my background in emergency response teams, i know how to keep things running smoothly even under pressure.
+                with over a decade of experience in information management for humanitarian emergency response teams, i've mastered the art of organizing complex data flows and creating systems that perform under pressure.
               </p>
               <p>
-                whether you're a solo entrepreneur or running an agency, i'll help transform your complex workflows into streamlined processes that just work. let's bring some order to the chaos!
+                i specialize in transforming chaotic information streams into clear, actionable processes. from coordinating multi-agency response systems to optimizing field communication workflows, i bring order to complexity.
               </p>
               <p>
-                from government agencies to tech startups, i've helped teams work better and achieve more. ready to make your business run like clockwork?
+                my expertise spans from designing crisis information dashboards to streamlining operational processes for international organizations. ready to bring that same level of clarity and efficiency to your business?
               </p>
             </div>
             <div className="flex gap-4">
