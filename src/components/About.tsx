@@ -41,13 +41,13 @@ export const About = () => {
             </div>
             <div className="space-y-4 text-lg text-gray-600 mb-8">
               <p>
-                as a systems optimization specialist, i bring a unique perspective from my background in high-stakes information management for emergency response teams. this experience has honed my ability to create clear, efficient systems that perform under pressure.
+                hi! i help businesses create simple, efficient systems that save time and reduce stress. with my background in emergency response teams, i know how to keep things running smoothly even under pressure.
               </p>
               <p>
-                my expertise lies in transforming complex workflows into streamlined processes that save time and reduce stress. whether you're a solopreneur feeling overwhelmed or an agency looking to scale, i specialize in creating custom solutions that bring order to chaos.
+                whether you're a solo entrepreneur or running an agency, i'll help transform your complex workflows into streamlined processes that just work. let's bring some order to the chaos!
               </p>
               <p>
-                from developing mission-critical dashboards for government agencies to redesigning information flows for tech startups, i've consistently delivered systems that make a real difference in how organizations operate.
+                from government agencies to tech startups, i've helped teams work better and achieve more. ready to make your business run like clockwork?
               </p>
             </div>
             <div className="flex gap-4">
