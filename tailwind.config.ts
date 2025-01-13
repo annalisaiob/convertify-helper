@@ -20,24 +20,24 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Helvetica', 'Arial', 'sans-serif'],
+        display: ['Tan Ashford', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "#ffffff",
-        foreground: "#a78bfa",
+        foreground: "#E2725B",
         primary: {
-          DEFAULT: "#a78bfa",
+          DEFAULT: "#E2725B",
           foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#d58d8d",
+          DEFAULT: "#E2725B",
           foreground: "#ffffff",
         },
         accent: {
-          DEFAULT: "#a78bfa",
+          DEFAULT: "#E2725B",
           foreground: "#ffffff",
         },
         destructive: {
@@ -46,7 +46,7 @@ export default {
         },
         muted: {
           DEFAULT: "#ffffff",
-          foreground: "#a78bfa",
+          foreground: "#E2725B",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -58,8 +58,8 @@ export default {
         },
       },
       backgroundImage: {
-        'gradient-custom': 'linear-gradient(135deg, #ffffff 0%, #a78bfa 50%, #d58d8d 100%)',
-        'gradient-hero': 'linear-gradient(135deg, #a78bfa 0%, #d58d8d 100%)',
+        'gradient-custom': 'linear-gradient(135deg, #ffffff 0%, #E2725B 100%)',
+        'gradient-hero': 'linear-gradient(135deg, #E2725B 0%, #E2725B 100%)',
       },
       borderRadius: {
         lg: "1rem",
