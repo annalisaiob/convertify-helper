@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Building2, User, Rocket } from "lucide-react";
+import { Building2, User, Rocket, ArrowRight, ChevronRight } from "lucide-react";
 import { BusinessProfileCard } from "./business/BusinessProfileCard";
 import { SolutionsPricing } from "./business/SolutionsPricing";
-import { MotivationalBanner } from "./MotivationalBanner";
 import type { BusinessProfile } from "./business/types";
 
 const businessProfiles: BusinessProfile[] = [
@@ -99,13 +98,16 @@ export const BusinessProfiles = () => {
 
   return (
     <section id="business-profiles" className="py-20 bg-gray-50">
-      <MotivationalBanner />
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-4">
-          Select the option that best describes you
-        </h2>
-        <p className="text-lg text-gray-600 text-center mb-12">
+        <div className="flex items-center justify-center gap-2 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-primary">
+            Select the option that best describes you
+          </h2>
+          <ArrowRight className="w-6 h-6 text-secondary animate-bounce" />
+        </div>
+        <p className="text-lg text-gray-600 text-center mb-12 flex items-center justify-center gap-2">
           Discover how we can help streamline your specific business needs
+          <ChevronRight className="w-5 h-5 text-secondary" />
         </p>
 
         <div className="grid md:grid-cols-3 gap-6 mb-16">
