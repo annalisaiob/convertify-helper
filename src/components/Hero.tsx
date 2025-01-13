@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export const Hero = () => {
   const [text, setText] = useState("");
-  const fullText = "automate your business scale your success";
+  const fullText = "automate your business, scale your success";
   
   useEffect(() => {
     let currentIndex = 0;
