@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export const Hero = () => {
   return (
@@ -7,9 +8,9 @@ export const Hero = () => {
         <div className="max-w-5xl mx-auto text-left animate-fadeIn">
           <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white mb-8 leading-tight">
             Automate your<br />
-            Business,<br />
+            Business<br />
             Scale your<br />
-            Success
+            Success <ArrowRight className="inline-block ml-4" size={64} />
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl animate-fadeIn" style={{ animationDelay: "0.2s" }}>
             We help entrepreneurs and agencies streamline their processes, 
