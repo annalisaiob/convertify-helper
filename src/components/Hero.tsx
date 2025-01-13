@@ -13,18 +13,18 @@ export const Hero = () => {
             success
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl animate-fadeIn" style={{ animationDelay: "0.2s" }}>
-            We help entrepreneurs and agencies streamline their processes, 
+            we help entrepreneurs and agencies streamline their processes, 
             eliminate bottlenecks, and grow their business with powerful automation solutions.
           </p>
           <div className="flex flex-col md:flex-row gap-4 items-start animate-fadeIn" style={{ animationDelay: "0.4s" }}>
             <Button asChild className="bg-secondary hover:bg-secondary/90 text-lg px-8 py-6 rounded-full">
               <a href="https://calendly.com/anna-creailab/30min" target="_blank" rel="noopener noreferrer">
-                Schedule a Free Strategy Call
+                schedule a free strategy call
               </a>
             </Button>
             <Button asChild className="bg-secondary hover:bg-secondary/90 text-lg px-8 py-6 rounded-full">
               <a href="#business-profiles">
-                View Our Services
+                view our services
               </a>
             </Button>
           </div>
