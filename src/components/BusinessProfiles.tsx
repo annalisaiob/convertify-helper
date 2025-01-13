@@ -105,7 +105,7 @@ export const BusinessProfiles = () => {
   const [selectedProfile, setSelectedProfile] = useState<BusinessProfile>(businessProfiles[0]);
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="business-profiles" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-4">
           Select the option that best describes you

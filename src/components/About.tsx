@@ -26,20 +26,20 @@ export const About = () => {
               <Button asChild variant="outline" className="rounded-full">
                 <a href="https://www.linkedin.com/in/annalisa-iob-a94484a6/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="mr-2" />
-                  Connect on LinkedIn
+                  Hi on LinkedIn
                 </a>
               </Button>
               <Button asChild variant="outline" className="rounded-full">
                 <a href="https://annalisaiob.substack.com/" target="_blank" rel="noopener noreferrer">
                   <Newspaper className="mr-2" />
-                  Read My Substack
+                  Follow my story on Substack
                 </a>
               </Button>
             </div>
           </div>
           <div className="relative">
             <div className="absolute -top-4 -left-4 w-full h-full bg-accent/10 rounded-lg"></div>
-            <Card className="relative overflow-hidden">
+            <Card className="relative overflow-hidden max-w-[300px] mx-auto">
               <img 
                 src="/lovable-uploads/96ef54b7-06c2-405c-95e3-28e5a739baaa.png"
                 alt="Professional headshot of Annalisa Iob"

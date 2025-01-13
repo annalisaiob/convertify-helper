@@ -6,7 +6,7 @@ export const Header = () => {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="text-2xl font-bold text-primary">CreAI Lab</div>
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#services" className="text-gray-600 hover:text-primary transition-colors">Services</a>
+          <a href="#business-profiles" className="text-gray-600 hover:text-primary transition-colors">Select Your Option</a>
           <a href="#how-it-works" className="text-gray-600 hover:text-primary transition-colors">How It Works</a>
           <a href="#about" className="text-gray-600 hover:text-primary transition-colors">About</a>
         </nav>
