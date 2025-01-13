@@ -41,13 +41,13 @@ export const About = () => {
             </div>
             <div className="space-y-4 text-lg text-gray-600 mb-8">
               <p>
-                with nearly a decade of experience in information management for humanitarian emergency response teams, i've mastered the art of organizing complex data flows and creating systems that perform under pressure.
+                with nearly a decade of experience spanning humanitarian response teams, tech startups, and the space sector, i've mastered the art of turning chaos into clarity. from designing crisis dashboards under pressure to streamlining operations for international organizations, i bring order to the unmanageable—and i might even enjoy it.
               </p>
               <p>
-                i specialize in transforming chaotic information streams into clear, actionable processes (and yes, AI happens to be my initials - quite fitting for what i do!). from coordinating multi-agency response systems to optimizing field communication workflows, i bring order to complexity.
+                yes, ai is my initials—and it fits. like artificial intelligence, i specialize in optimizing systems and solving complex problems. unlike ai, i come with a human touch, a sense of humor, and, occasionally, the wish for an off switch.
               </p>
               <p>
-                my expertise spans from designing crisis information dashboards to streamlining operational processes for international organizations. ready to bring that same level of clarity and efficiency to your business?
+                let's make ai (me) work smarter for you—and maybe throw in a little artificial intelligence for good measure!
               </p>
             </div>
             <div className="flex gap-4">
