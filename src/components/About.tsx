@@ -8,10 +8,10 @@ export const About = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-primary">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary">
               Meet Your Systems Strategist
             </h2>
-            <div className="space-y-4 text-lg">
+            <div className="space-y-4 text-lg text-gray-600">
               <p>
                 As a systems optimization specialist, I bring a unique perspective from my background in high-stakes information management for emergency response teams. This experience has honed my ability to create clear, efficient systems that perform under pressure.
               </p>
@@ -23,13 +23,13 @@ export const About = () => {
               </p>
             </div>
             <div className="flex gap-4">
-              <Button asChild variant="outline" className="rounded-full">
+              <Button asChild variant="outline" className="rounded-full bg-secondary text-white hover:bg-secondary/90">
                 <a href="https://www.linkedin.com/in/annalisa-iob-a94484a6/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="mr-2" />
                   Hi on LinkedIn
                 </a>
               </Button>
-              <Button asChild variant="outline" className="rounded-full">
+              <Button asChild variant="outline" className="rounded-full bg-secondary text-white hover:bg-secondary/90">
                 <a href="https://annalisaiob.substack.com/" target="_blank" rel="noopener noreferrer">
                   <Newspaper className="mr-2" />
                   Follow my story on Substack
@@ -38,7 +38,7 @@ export const About = () => {
             </div>
           </div>
           <div className="relative">
-            <div className="absolute -top-4 -left-4 w-full h-full bg-accent/10 rounded-full"></div>
+            <div className="absolute -top-4 -left-4 w-full h-full bg-secondary/10 rounded-full"></div>
             <Card className="relative overflow-hidden max-w-[200px] mx-auto rounded-full">
               <img 
                 src="/lovable-uploads/96ef54b7-06c2-405c-95e3-28e5a739baaa.png"
