@@ -8,7 +8,7 @@ export const Header = () => {
           <img 
             src="/lovable-uploads/f450c520-5b7c-4783-acd7-c50620bc4077.png" 
             alt="CreAI Lab Logo" 
-            className="h-8"
+            className="h-12"
           />
         </div>
         <nav className="hidden md:flex items-center gap-8">

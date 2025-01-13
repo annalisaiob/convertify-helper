@@ -108,7 +108,7 @@ export const BusinessProfiles = () => {
     <section id="business-profiles" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-4">
-          Select the option that best describes you
+          How We Help {selectedProfile.title.replace("I Am ", "")}s
         </h2>
         <p className="text-lg text-gray-600 text-center mb-12">
           Discover how we can help streamline your specific business needs
@@ -145,9 +145,10 @@ export const BusinessProfiles = () => {
 
         <div className="bg-white rounded-lg p-8 shadow-lg animate-fadeIn">
           <h3 className="text-2xl font-bold text-primary mb-6">
-            How We Can Help {selectedProfile.title.replace("I Am ", "")}s
+            Solutions for {selectedProfile.title.replace("I Am ", "")}s
           </h3>
           <p className="text-lg text-gray-600 mb-6">{selectedProfile.solutions.title}</p>
+          
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div>
               <h4 className="font-semibold mb-4">Solutions We Provide:</h4>
@@ -181,9 +182,12 @@ export const BusinessProfiles = () => {
               </div>
             </div>
           </div>
-          <div className="text-center">
-            <Button className="bg-accent hover:bg-accent/90 text-lg px-8 py-6">
-              Schedule Your Free Strategy Call
+
+          <div className="text-center mt-8">
+            <Button asChild className="bg-accent hover:bg-accent/90 text-lg px-8 py-6">
+              <a href="https://calendly.com/anna-creailab/30min" target="_blank" rel="noopener noreferrer">
+                Schedule Your Free Strategy Call
+              </a>
             </Button>
           </div>
         </div>
