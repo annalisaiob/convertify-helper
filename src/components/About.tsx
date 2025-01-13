@@ -41,7 +41,7 @@ export const About = () => {
             </div>
             <div className="space-y-4 text-lg text-gray-600 mb-8">
               <p>
-                with over a decade of experience in information management for humanitarian emergency response teams, i've mastered the art of organizing complex data flows and creating systems that perform under pressure.
+                with nearly a decade of experience in information management for humanitarian emergency response teams (and yes, AI happens to be my initials!), i've mastered the art of organizing complex data flows and creating systems that perform under pressure.
               </p>
               <p>
                 i specialize in transforming chaotic information streams into clear, actionable processes. from coordinating multi-agency response systems to optimizing field communication workflows, i bring order to complexity.
