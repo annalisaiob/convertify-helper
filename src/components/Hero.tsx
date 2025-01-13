@@ -8,7 +8,7 @@ export const Hero = () => {
           <img 
             src="/lovable-uploads/ceae4438-26d0-4902-99b6-c2d4417a0716.png" 
             alt="Automate your Business, Scale your Success" 
-            className="max-w-3xl mx-auto w-full"
+            className="max-w-5xl mx-auto w-full"
           />
         </div>
         <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto animate-fadeIn" style={{ animationDelay: "0.2s" }}>
