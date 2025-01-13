@@ -4,9 +4,13 @@ export const Hero = () => {
   return (
     <section className="pt-32 pb-20 px-4 bg-gradient-hero">
       <div className="container mx-auto text-center">
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fadeIn">
-          Automate Your Business.<br />Scale Your Impact.
-        </h1>
+        <div className="mb-6 animate-fadeIn">
+          <img 
+            src="/lovable-uploads/ceae4438-26d0-4902-99b6-c2d4417a0716.png" 
+            alt="Automate your Business, Scale your Success" 
+            className="max-w-3xl mx-auto w-full"
+          />
+        </div>
         <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto animate-fadeIn" style={{ animationDelay: "0.2s" }}>
           We help entrepreneurs and agencies streamline their processes, 
           eliminate bottlenecks, and grow their business with powerful automation solutions.
