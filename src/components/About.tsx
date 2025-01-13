@@ -28,9 +28,9 @@ export const About = () => {
           <div className="flex flex-col items-center text-center mb-12">
             <Card className="relative overflow-hidden w-32 h-32 rounded-full mb-8">
               <img 
-                src="/lovable-uploads/96ef54b7-06c2-405c-95e3-28e5a739baaa.png"
+                src="/lovable-uploads/e2a4dccb-f548-47c8-9cb1-54a48e10b5d9.png"
                 alt="professional headshot"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-[center_25%]"
               />
             </Card>
             <div className="flex items-center justify-center gap-2 mb-8">
