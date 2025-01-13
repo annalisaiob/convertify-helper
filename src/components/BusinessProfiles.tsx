@@ -104,6 +104,12 @@ const businessProfiles: BusinessProfile[] = [
 export const BusinessProfiles = () => {
   const [selectedProfile, setSelectedProfile] = useState<BusinessProfile>(businessProfiles[0]);
 
+  // Helper function to correctly pluralize the title
+  const getPluralTitle = (title: string) => {
+    const baseTitle = title.replace("I Am a ", "").replace("I Am an ", "");
+    return baseTitle === "Agency" ? "Agencies" : `${baseTitle}s`;
+  };
+
   return (
     <section id="business-profiles" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -145,7 +151,7 @@ export const BusinessProfiles = () => {
 
         <div className="bg-white rounded-lg p-8 shadow-lg animate-fadeIn">
           <h3 className="text-2xl font-bold text-primary mb-6">
-            How We Help {selectedProfile.title.replace("I Am a ", "").replace("I Am an ", "")}s
+            How We Help {getPluralTitle(selectedProfile.title)}
           </h3>
           <p className="text-lg text-gray-600 mb-6">{selectedProfile.solutions.title}</p>
           
