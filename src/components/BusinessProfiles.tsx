@@ -145,7 +145,7 @@ export const BusinessProfiles = () => {
 
         <div className="bg-white rounded-lg p-8 shadow-lg animate-fadeIn">
           <h3 className="text-2xl font-bold text-primary mb-6">
-            Solutions for {selectedProfile.title.replace("I Am ", "")}s
+            How We Help {selectedProfile.title.replace("I Am ", "")}s
           </h3>
           <p className="text-lg text-gray-600 mb-6">{selectedProfile.solutions.title}</p>
           
