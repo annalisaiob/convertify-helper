@@ -16,7 +16,7 @@ export const Header = () => {
           <a href="#how-it-works" className="text-navy hover:italic hover:underline transition-all">how it works</a>
           <a href="#about" className="text-navy hover:italic hover:underline transition-all">about</a>
         </nav>
-        <Button asChild className="bg-secondary hover:bg-secondary/90 text-white rounded-full">
+        <Button asChild className="bg-secondary hover:bg-secondary/90 hover:italic hover:underline text-white rounded-full transition-all">
           <a href="#business-profiles">
             get started
           </a>
