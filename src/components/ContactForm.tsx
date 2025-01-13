@@ -43,7 +43,7 @@ export const ContactForm = () => {
           </div>
           <Button 
             type="submit" 
-            className="w-full bg-accent hover:bg-accent/90"
+            className="w-full bg-accent hover:bg-accent/90 hover:italic hover:underline transition-all"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Sending..." : "Get Started"}

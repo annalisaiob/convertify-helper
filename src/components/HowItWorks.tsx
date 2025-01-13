@@ -55,7 +55,7 @@ export const HowItWorks = () => {
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
             not satisfied with the implementation plan? no problem. there's absolutely no obligation to proceed. we believe in delivering real value - either we make a measurable impact on your business, or you pay nothing.
           </p>
-          <Button asChild className="mt-8 bg-secondary text-white rounded-full hover:bg-secondary/90">
+          <Button asChild className="mt-8 bg-secondary hover:bg-secondary/90 hover:italic hover:underline text-white rounded-full transition-all">
             <a href="https://calendly.com/anna-creailab/30min" target="_blank" rel="noopener noreferrer">
               schedule your free strategy call
             </a>

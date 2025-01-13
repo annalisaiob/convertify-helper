@@ -30,13 +30,13 @@ export const About = () => {
               </p>
             </div>
             <div className="flex gap-4">
-              <Button asChild variant="outline" className="rounded-full bg-secondary text-white hover:bg-secondary/90">
+              <Button asChild variant="outline" className="rounded-full bg-secondary text-white hover:bg-secondary/90 hover:italic hover:underline transition-all">
                 <a href="https://www.linkedin.com/in/annalisa-iob-a94484a6/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="mr-2" />
                   say hi on linkedin
                 </a>
               </Button>
-              <Button asChild variant="outline" className="rounded-full bg-secondary text-white hover:bg-secondary/90">
+              <Button asChild variant="outline" className="rounded-full bg-secondary text-white hover:bg-secondary/90 hover:italic hover:underline transition-all">
                 <a href="https://annalisaiob.substack.com/" target="_blank" rel="noopener noreferrer">
                   <Newspaper className="mr-2" />
                   follow my story on substack

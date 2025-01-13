@@ -33,12 +33,12 @@ export const Hero = () => {
             eliminate bottlenecks, and grow their business with powerful automation solutions.
           </p>
           <div className="flex flex-col md:flex-row gap-4 items-start animate-fadeIn" style={{ animationDelay: "0.4s" }}>
-            <Button asChild className="bg-secondary hover:bg-secondary/90 text-lg px-8 py-6 rounded-full">
+            <Button asChild className="bg-secondary hover:bg-secondary/90 hover:italic hover:underline text-lg px-8 py-6 rounded-full transition-all">
               <a href="https://calendly.com/anna-creailab/30min" target="_blank" rel="noopener noreferrer">
                 schedule a free strategy call
               </a>
             </Button>
-            <Button asChild className="bg-secondary hover:bg-secondary/90 text-lg px-8 py-6 rounded-full">
+            <Button asChild className="bg-secondary hover:bg-secondary/90 hover:italic hover:underline text-lg px-8 py-6 rounded-full transition-all">
               <a href="#business-profiles">
                 view our services
               </a>
