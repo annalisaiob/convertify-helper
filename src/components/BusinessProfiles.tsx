@@ -42,9 +42,9 @@ const businessProfiles: BusinessProfile[] = [
       ]
     },
     pricing: {
-      diy: "$497",
-      guided: "$997",
-      managed: "$1,997"
+      diy: "€299",
+      guided: "€499",
+      managed: "€999"
     }
   },
   {
@@ -68,9 +68,9 @@ const businessProfiles: BusinessProfile[] = [
       ]
     },
     pricing: {
-      diy: "$997",
-      guided: "$1,997",
-      managed: "$3,997"
+      diy: "€499",
+      guided: "€999",
+      managed: "€1,499"
     }
   },
   {
@@ -94,9 +94,9 @@ const businessProfiles: BusinessProfile[] = [
       ]
     },
     pricing: {
-      diy: "$1,497",
-      guided: "$2,997",
-      managed: "$5,997"
+      diy: "€999",
+      guided: "€1,499",
+      managed: "€2,999"
     }
   }
 ];
