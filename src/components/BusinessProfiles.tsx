@@ -100,8 +100,8 @@ export const BusinessProfiles = () => {
     <section id="business-profiles" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center gap-2 mb-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-primary">
-            Select the option that best describes you
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-primary lowercase">
+            select the option that best describes you
           </h2>
           <ArrowRight className="w-6 h-6 text-secondary animate-bounce" />
         </div>
