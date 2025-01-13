@@ -11,7 +11,7 @@ export const SolutionsPricing = ({ profile, pluralTitle }: SolutionsPricingProps
   return (
     <div className="bg-white rounded-lg p-8 shadow-lg animate-fadeIn">
       <h3 className="text-2xl font-bold text-primary mb-6">
-        how we can help {pluralTitle}
+        how we help {pluralTitle}
       </h3>
       
       <p className="text-lg text-gray-600 mb-6">{profile.solutions.title}</p>
