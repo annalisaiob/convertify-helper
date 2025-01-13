@@ -12,9 +12,9 @@ export const Header = () => {
           />
         </div>
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#business-profiles" className="text-gray-600 hover:text-primary transition-colors">services</a>
-          <a href="#how-it-works" className="text-gray-600 hover:text-primary transition-colors">how it works</a>
-          <a href="#about" className="text-gray-600 hover:text-primary transition-colors">about</a>
+          <a href="#business-profiles" className="text-navy hover:italic hover:underline transition-all">services</a>
+          <a href="#how-it-works" className="text-navy hover:italic hover:underline transition-all">how it works</a>
+          <a href="#about" className="text-navy hover:italic hover:underline transition-all">about</a>
         </nav>
         <Button asChild className="bg-secondary hover:bg-secondary/90 text-white rounded-full">
           <a href="#business-profiles">
