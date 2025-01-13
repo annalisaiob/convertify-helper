@@ -20,7 +20,6 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Tan Ashford', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -34,7 +33,7 @@ export default {
           foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#E2725B",
+          DEFAULT: "#101585",
           foreground: "#ffffff",
         },
         accent: {
