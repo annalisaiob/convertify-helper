@@ -1,16 +1,32 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export const Hero = () => {
+  const [text, setText] = useState("");
+  const fullText = "automate your business scale your success";
+  
+  useEffect(() => {
+    let currentIndex = 0;
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setText(fullText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 100);
+
+    return () => clearInterval(typingInterval);
+  }, []);
+
   return (
     <section className="pt-32 pb-20 px-4 bg-gradient-hero">
       <div className="container mx-auto">
         <div className="max-w-5xl mx-auto text-left animate-fadeIn">
           <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-8 leading-tight">
-            automate your<br />
-            business <ArrowRight className="inline-block ml-4" size={64} /><br />
-            scale your<br />
-            success
+            {text}
+            <ArrowRight className="inline-block ml-4 text-navy" size={64} />
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl animate-fadeIn" style={{ animationDelay: "0.2s" }}>
             we help entrepreneurs and agencies streamline their processes, 
