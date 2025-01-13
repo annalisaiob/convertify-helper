@@ -12,11 +12,15 @@ export const Hero = () => {
           eliminate bottlenecks, and grow their business with powerful automation solutions.
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center items-center animate-fadeIn" style={{ animationDelay: "0.4s" }}>
-          <Button className="bg-secondary hover:bg-secondary/90 text-lg px-8 py-6 rounded-full">
-            Schedule a Free Strategy Call
+          <Button asChild className="bg-secondary hover:bg-secondary/90 text-lg px-8 py-6 rounded-full">
+            <a href="https://calendly.com/anna-creailab/30min" target="_blank" rel="noopener noreferrer">
+              Schedule a Free Strategy Call
+            </a>
           </Button>
-          <Button className="bg-secondary hover:bg-secondary/90 text-lg px-8 py-6 rounded-full">
-            View Our Services
+          <Button asChild className="bg-secondary hover:bg-secondary/90 text-lg px-8 py-6 rounded-full">
+            <a href="#business-profiles">
+              View Our Services
+            </a>
           </Button>
         </div>
       </div>

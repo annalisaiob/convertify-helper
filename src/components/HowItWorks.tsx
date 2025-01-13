@@ -1,12 +1,13 @@
 import { Check, Phone, FileText, CreditCard } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export const HowItWorks = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary mb-12 text-center">
-          How It Works
+          How We Help
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           <Card className="bg-white border-secondary/20 p-8 shadow-lg">
@@ -54,6 +55,11 @@ export const HowItWorks = () => {
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
             Not satisfied with the implementation plan? No problem. There's absolutely no obligation to proceed. We believe in delivering real value - either we make a measurable impact on your business, or you pay nothing.
           </p>
+          <Button asChild className="mt-8 bg-secondary text-white rounded-full hover:bg-secondary/90">
+            <a href="https://calendly.com/anna-creailab/30min" target="_blank" rel="noopener noreferrer">
+              Schedule Your Free Strategy Call
+            </a>
+          </Button>
         </div>
       </div>
     </section>

@@ -6,12 +6,19 @@ export const About = () => {
   return (
     <section id="about" className="py-20 bg-muted">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col items-center text-center mb-12">
+            <Card className="relative overflow-hidden w-32 h-32 rounded-full mb-8">
+              <img 
+                src="/lovable-uploads/96ef54b7-06c2-405c-95e3-28e5a739baaa.png"
+                alt="Professional headshot"
+                className="w-full h-full object-cover"
+              />
+            </Card>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary mb-8">
               Meet Your Systems Strategist
             </h2>
-            <div className="space-y-4 text-lg text-gray-600">
+            <div className="space-y-4 text-lg text-gray-600 mb-8">
               <p>
                 As a systems optimization specialist, I bring a unique perspective from my background in high-stakes information management for emergency response teams. This experience has honed my ability to create clear, efficient systems that perform under pressure.
               </p>
@@ -26,7 +33,7 @@ export const About = () => {
               <Button asChild variant="outline" className="rounded-full bg-secondary text-white hover:bg-secondary/90">
                 <a href="https://www.linkedin.com/in/annalisa-iob-a94484a6/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="mr-2" />
-                  Hi on LinkedIn
+                  Say Hi on LinkedIn
                 </a>
               </Button>
               <Button asChild variant="outline" className="rounded-full bg-secondary text-white hover:bg-secondary/90">
@@ -36,16 +43,6 @@ export const About = () => {
                 </a>
               </Button>
             </div>
-          </div>
-          <div className="relative">
-            <div className="absolute -top-4 -left-4 w-full h-full bg-secondary/10 rounded-full"></div>
-            <Card className="relative overflow-hidden max-w-[200px] mx-auto rounded-full">
-              <img 
-                src="/lovable-uploads/96ef54b7-06c2-405c-95e3-28e5a739baaa.png"
-                alt="Professional headshot of Annalisa Iob"
-                className="w-full h-full object-cover rounded-full"
-              />
-            </Card>
           </div>
         </div>
       </div>
