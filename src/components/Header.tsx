@@ -5,11 +5,9 @@ export const Header = () => {
     <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <img 
-            src="/lovable-uploads/f450c520-5b7c-4783-acd7-c50620bc4077.png" 
-            alt="creai lab logo" 
-            className="h-12"
-          />
+          <span className="text-navy text-2xl font-medium hover:italic hover:underline transition-all">
+            creai lab
+          </span>
         </div>
         <nav className="hidden md:flex items-center gap-8">
           <a href="#business-profiles" className="text-navy hover:italic hover:underline transition-all">services</a>
