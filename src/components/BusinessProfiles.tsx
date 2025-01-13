@@ -190,8 +190,15 @@ export const BusinessProfiles = () => {
           </div>
 
           <div className="text-center mt-8">
-            <Button asChild className="bg-accent hover:bg-accent/90 text-lg px-8 py-6">
-              <a href="https://calendly.com/anna-creailab/30min" target="_blank" rel="noopener noreferrer">
+            <Button 
+              asChild 
+              className="bg-secondary hover:bg-secondary/90 text-lg px-8 py-6 rounded-full"
+            >
+              <a 
+                href="https://calendly.com/anna-creailab/30min" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
                 Schedule Your Free Strategy Call
               </a>
             </Button>
