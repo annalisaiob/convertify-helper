@@ -5,11 +5,9 @@ export const Hero = () => {
     <section className="pt-32 pb-20 px-4 bg-gradient-hero">
       <div className="container mx-auto text-center">
         <div className="mb-6 animate-fadeIn">
-          <img 
-            src="/lovable-uploads/ceae4438-26d0-4902-99b6-c2d4417a0716.png" 
-            alt="Automate your Business, Scale your Success" 
-            className="max-w-5xl mx-auto w-full"
-          />
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+            Automate your Business,<br />Scale your Success
+          </h1>
         </div>
         <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto animate-fadeIn" style={{ animationDelay: "0.2s" }}>
           We help entrepreneurs and agencies streamline their processes, 
