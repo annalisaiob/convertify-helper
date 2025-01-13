@@ -29,11 +29,11 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#9b87f5",
-          foreground: "#FFFFFF",
+          DEFAULT: "#FFE135", // Yellow from logo
+          foreground: "#1A1A1A",
         },
         secondary: {
-          DEFAULT: "#1EAEDB",
+          DEFAULT: "#1A1A1A", // Dark background from logo
           foreground: "#FFFFFF",
         },
         accent: {
@@ -58,9 +58,9 @@ export default {
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "1rem",
+        md: "0.75rem",
+        sm: "0.5rem",
       },
       keyframes: {
         "accordion-down": {

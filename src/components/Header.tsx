@@ -7,10 +7,12 @@ export const Header = () => {
         <div className="text-2xl font-bold text-primary">CreAI Lab</div>
         <nav className="hidden md:flex items-center gap-8">
           <a href="#services" className="text-gray-600 hover:text-primary transition-colors">Services</a>
-          <a href="#benefits" className="text-gray-600 hover:text-primary transition-colors">Benefits</a>
-          <a href="#testimonials" className="text-gray-600 hover:text-primary transition-colors">Testimonials</a>
+          <a href="#how-it-works" className="text-gray-600 hover:text-primary transition-colors">How It Works</a>
+          <a href="#about" className="text-gray-600 hover:text-primary transition-colors">About</a>
         </nav>
-        <Button className="bg-accent hover:bg-accent/90">Get Started</Button>
+        <Button className="bg-secondary hover:bg-secondary/90 text-white rounded-full">
+          Get Started
+        </Button>
       </div>
     </header>
   );
