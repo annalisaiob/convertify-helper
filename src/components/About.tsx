@@ -44,10 +44,10 @@ export const About = () => {
                 with nearly a decade of experience spanning humanitarian response teams, tech startups, and the space sector, i've mastered the art of turning chaos into clarity. from designing crisis dashboards under pressure to streamlining operations for international organizations, i bring order to the unmanageable—and i might even enjoy it.
               </p>
               <p>
-                yes, ai is my initials—and it fits. like artificial intelligence, i specialize in optimizing systems and solving complex problems. unlike ai, i come with a human touch, a sense of humor, and, occasionally, the wish for an off switch.
+                yes, AI is my initials—and it fits. like artificial intelligence, i specialize in optimizing systems and solving complex problems. unlike AI, i come with a human touch, a sense of humor, and, occasionally, the wish for an off switch.
               </p>
               <p>
-                let's make ai (me) work smarter for you—and maybe throw in a little artificial intelligence for good measure!
+                let's make AI (me) work smarter for you—and maybe throw in a little artificial intelligence for good measure!
               </p>
             </div>
             <div className="flex gap-4">
