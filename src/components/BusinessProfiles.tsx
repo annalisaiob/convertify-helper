@@ -107,6 +107,9 @@ export const BusinessProfiles = () => {
   // Helper function to correctly pluralize the title
   const getPluralTitle = (title: string) => {
     const baseTitle = title.replace("I Am a ", "").replace("I Am an ", "");
+    if (baseTitle === "Freelancer or Solopreneur") {
+      return "Freelancers & Solopreneurs";
+    }
     return baseTitle === "Agency" ? "Agencies" : `${baseTitle}s`;
   };
 
