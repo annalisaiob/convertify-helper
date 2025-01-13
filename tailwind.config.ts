@@ -20,7 +20,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Tan Ashford', 'serif'],
+        display: ['"Tan Ashford"', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -28,6 +28,7 @@ export default {
         ring: "hsl(var(--ring))",
         background: "#ffffff",
         foreground: "#E2725B",
+        navy: "#101585",
         primary: {
           DEFAULT: "#E2725B",
           foreground: "#ffffff",
