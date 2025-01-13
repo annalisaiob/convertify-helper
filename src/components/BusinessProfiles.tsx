@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Building2, User, Rocket, ArrowRight, ChevronRight } from "lucide-react";
+import { Building2, User, Rocket, ArrowRight } from "lucide-react";
 import { BusinessProfileCard } from "./business/BusinessProfileCard";
 import { SolutionsPricing } from "./business/SolutionsPricing";
 import type { BusinessProfile } from "./business/types";
@@ -105,9 +105,8 @@ export const BusinessProfiles = () => {
           </h2>
           <ArrowRight className="w-6 h-6 text-secondary animate-bounce" />
         </div>
-        <p className="text-lg text-gray-600 text-center mb-12 flex items-center justify-center gap-2">
+        <p className="text-lg text-gray-600 text-center mb-12">
           Discover how we can help streamline your specific business needs
-          <ChevronRight className="w-5 h-5 text-secondary" />
         </p>
 
         <div className="grid md:grid-cols-3 gap-6 mb-16">
