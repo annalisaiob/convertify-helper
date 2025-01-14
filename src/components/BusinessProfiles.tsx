@@ -19,15 +19,15 @@ const businessProfiles: BusinessProfile[] = [
     solutions: {
       title: "you need simple, intuitive systems to reduce admin overwhelm and free up time for what you do best—serving your clients.",
       items: [
-        "setting up automated tools for invoicing, scheduling, and follow-ups",
-        "organizing client details in one easy-to-access place",
-        "streamlining workflows so nothing slips through the cracks",
-        "freeing up time to focus on your craft or scaling your business"
+        "automated client scheduling and confirmation system",
+        "centralized client hub for easy information access",
+        "streamlined client management system",
+        "automated payment and membership management"
       ]
     },
     pricing: {
-      diy: "€299",
-      guided: "€499",
+      diy: "€399",
+      guided: "€599",
       managed: "€999"
     }
   },
@@ -45,14 +45,14 @@ const businessProfiles: BusinessProfile[] = [
     solutions: {
       title: "you manage multiple clients, projects, and a team—and keeping everyone aligned can feel overwhelming.",
       items: [
-        "building systems to track projects, deadlines, and deliverables",
-        "creating workflows to organize client communication and updates",
-        "automating billing and invoicing to save time on repetitive tasks",
-        "improving resource allocation to prevent team burnout"
+        "automated project timeline and milestone tracking system",
+        "centralized client communication and update portal",
+        "automated billing and resource allocation system",
+        "team workload management and reporting dashboard"
       ]
     },
     pricing: {
-      diy: "€499",
+      diy: "€599",
       guided: "€999",
       managed: "€1,499"
     }
@@ -71,10 +71,10 @@ const businessProfiles: BusinessProfile[] = [
     solutions: {
       title: "you're growing fast, and your current processes aren't keeping up. you need scalable systems and data to make informed decisions.",
       items: [
-        "designing processes to streamline operations across teams",
-        "automating lead tracking, onboarding, and follow-ups",
-        "implementing tools to measure key metrics like sales, churn, or revenue growth",
-        "setting up scalable workflows that grow with your business"
+        "automated lead tracking and nurturing system",
+        "scalable customer onboarding workflow",
+        "integrated analytics and reporting dashboard",
+        "automated revenue and churn tracking system"
       ]
     },
     pricing: {
