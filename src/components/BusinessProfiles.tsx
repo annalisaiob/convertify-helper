@@ -25,11 +25,7 @@ const businessProfiles: BusinessProfile[] = [
         "automated payment and membership management"
       ]
     },
-    pricing: {
-      diy: "€399",
-      guided: "€599",
-      managed: "€999"
-    }
+    pricing: "starting at €399"
   },
   {
     id: "agency",
@@ -51,11 +47,7 @@ const businessProfiles: BusinessProfile[] = [
         "team workload management and reporting dashboard"
       ]
     },
-    pricing: {
-      diy: "€599",
-      guided: "€999",
-      managed: "€1,499"
-    }
+    pricing: "starting at €599"
   },
   {
     id: "startup",
@@ -77,11 +69,7 @@ const businessProfiles: BusinessProfile[] = [
         "automated revenue and churn tracking system"
       ]
     },
-    pricing: {
-      diy: "€999",
-      guided: "€1,499",
-      managed: "€2,999"
-    }
+    pricing: "starting at €999"
   }
 ];
 

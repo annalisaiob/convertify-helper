@@ -29,23 +29,10 @@ export const SolutionsPricing = ({ profile, pluralTitle }: SolutionsPricingProps
           </ul>
         </div>
         <div>
-          <h4 className="font-semibold mb-4">pricing options:</h4>
-          <div className="space-y-4">
-            <div className="p-4 border rounded-lg">
-              <div className="font-semibold">do it yourself</div>
-              <div className="text-2xl font-bold text-secondary">{profile.pricing.diy}</div>
-              <div className="text-sm text-gray-600">self-paced implementation with our guidance</div>
-            </div>
-            <div className="p-4 border rounded-lg bg-secondary/5">
-              <div className="font-semibold">guided implementation</div>
-              <div className="text-2xl font-bold text-secondary">{profile.pricing.guided}</div>
-              <div className="text-sm text-gray-600">we work together to implement your solutions</div>
-            </div>
-            <div className="p-4 border rounded-lg">
-              <div className="font-semibold">done for you</div>
-              <div className="text-2xl font-bold text-secondary">{profile.pricing.managed}</div>
-              <div className="text-sm text-gray-600">we handle everything from start to finish</div>
-            </div>
+          <h4 className="font-semibold mb-4">pricing:</h4>
+          <div className="p-6 border rounded-lg bg-secondary/5">
+            <div className="text-2xl font-bold text-secondary mb-2">{profile.pricing}</div>
+            <div className="text-sm text-gray-600">for one complete system implementation</div>
           </div>
         </div>
       </div>

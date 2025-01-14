@@ -10,9 +10,5 @@ export interface BusinessProfile {
     title: string;
     items: string[];
   };
-  pricing: {
-    diy: string;
-    guided: string;
-    managed: string;
-  };
+  pricing: string;
 }
