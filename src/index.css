@@ -38,7 +38,11 @@
     @apply bg-gradient-electric text-foreground font-sans min-h-screen;
   }
 
-  h1, h2, h3, h4, h5, h6, button, .card-title {
-    @apply font-heading;
+  h1, h2, h3, h4, h5, h6, .card-title {
+    @apply font-heading text-foreground !important;
+  }
+
+  button {
+    @apply font-button;
   }
 }
