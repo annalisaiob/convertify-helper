@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export const Hero = () => {
   const [text, setText] = useState("");
-  const fullText = "Save 10+ Hours a Week, Close More Deals, and Finally Take That Weekend Off";
+  const fullText = "Save 10+ Hours a Week,\nClose More Deals,\nFinally Take That Weekend Off";
   
   useEffect(() => {
     let currentIndex = 0;
@@ -23,21 +23,37 @@ export const Hero = () => {
   return (
     <section className="pt-32 pb-20 px-4 bg-gradient-hero">
       <div className="container mx-auto">
-        <div className="max-w-5xl mx-auto text-left animate-fadeIn">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#221F26] mb-8 leading-tight">
-            {text}
-            <ArrowRight className="inline-block ml-4 text-navy" size={64} />
-          </h1>
-          <p className="text-xl md:text-2xl text-[#221F26] mb-10 max-w-2xl animate-fadeIn" style={{ animationDelay: "0.2s" }}>
-            By building clear processes where there are none, streamlining workflows, and automating the repetitive, 
-            I give you back your time and peace of mind—all while helping you grow your bottom line.
-          </p>
-          <div className="flex flex-col md:flex-row gap-4 items-start animate-fadeIn" style={{ animationDelay: "0.4s" }}>
-            <Button asChild className="bg-secondary hover:bg-secondary/90 hover:italic hover:underline text-lg px-8 py-6 rounded-full transition-all">
-              <a href="https://calendly.com/anna-creailab/30min" target="_blank" rel="noopener noreferrer">
-                schedule a free strategy call with me
-              </a>
-            </Button>
+        <div className="flex items-start justify-between gap-8">
+          <div className="max-w-3xl text-left animate-fadeIn">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#221F26] mb-8 leading-tight whitespace-pre-line">
+              {text}
+              <ArrowRight className="inline-block ml-4 text-navy" size={64} />
+            </h1>
+            <p className="text-xl md:text-2xl text-[#221F26] mb-10 max-w-2xl animate-fadeIn" style={{ animationDelay: "0.2s" }}>
+              By building clear processes, streamlining workflows, and automating the repetitive, 
+              I give you back your time and peace of mind—all while helping you grow your bottom line.
+            </p>
+            <div className="flex flex-col md:flex-row gap-4 items-start animate-fadeIn" style={{ animationDelay: "0.4s" }}>
+              <Button 
+                asChild 
+                className="bg-[#E5DEFF] text-[#221F26] hover:bg-[#FF6700] hover:text-white hover:shadow-[0_0_15px_rgba(255,103,0,0.5)] text-lg px-8 py-6 rounded-full transition-all hover:italic hover:underline"
+              >
+                <a 
+                  href="https://calendly.com/anna-creailab/30min" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  schedule a free strategy call with me
+                </a>
+              </Button>
+            </div>
+          </div>
+          <div className="hidden lg:block flex-shrink-0 w-1/3">
+            <img 
+              src="/lovable-uploads/00e4501b-1662-41c0-a496-dd53b1e86f0b.png" 
+              alt="Illustration of person working" 
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </div>
