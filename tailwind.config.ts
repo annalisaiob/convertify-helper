@@ -28,7 +28,7 @@ export default {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "#ffffff",
-        foreground: "#2B2B2B",
+        foreground: "#221F26",
         navy: "#101585",
         primary: {
           DEFAULT: "#007BFF",
@@ -48,7 +48,7 @@ export default {
         },
         muted: {
           DEFAULT: "#ffffff",
-          foreground: "#2B2B2B",
+          foreground: "#221F26",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -60,7 +60,7 @@ export default {
         },
       },
       backgroundImage: {
-        'gradient-electric': 'linear-gradient(135deg, #FFE4E1 0%, #F5C7A9 100%)',
+        'gradient-electric': 'linear-gradient(135deg, #FFE4E1 0%, #E5DEFF 100%)',
       },
       borderRadius: {
         lg: "1rem",
