@@ -24,13 +24,17 @@ export const Hero = () => {
     <section className="pt-32 pb-20 px-4 bg-gradient-hero">
       <div className="container mx-auto">
         <div className="flex items-center justify-between gap-8">
-          <div className="max-w-3xl text-left animate-fadeIn">
+          <div className="max-w-3xl text-left animate-fadeIn relative z-10">
             <div className="mb-8">
               <div className="whitespace-pre-line">
                 {text.split('\n').map((line, index) => (
                   <h1 
                     key={index} 
-                    className={`${index === 2 ? 'text-lg md:text-xl lg:text-2xl mt-4 italic lowercase' : 'text-3xl md:text-5xl lg:text-7xl mt-2 lowercase'} font-bold text-[#221F26] leading-tight`}
+                    className={`
+                      ${index === 2 ? 'text-lg md:text-xl lg:text-2xl mt-4 italic lowercase' : 'text-3xl md:text-5xl lg:text-7xl mt-2 lowercase'} 
+                      font-bold text-[#221F26] leading-tight
+                      ${index === 0 ? 'whitespace-nowrap overflow-hidden text-ellipsis' : ''}
+                    `}
                   >
                     {line}
                   </h1>
@@ -59,7 +63,7 @@ export const Hero = () => {
               </Button>
             </div>
           </div>
-          <div className="hidden lg:flex flex-shrink-0 w-1/3 items-center">
+          <div className="hidden lg:flex flex-shrink-0 w-1/3 items-center relative z-0 -ml-20">
             <img 
               src="/lovable-uploads/00e4501b-1662-41c0-a496-dd53b1e86f0b.png" 
               alt="Illustration of person working" 
