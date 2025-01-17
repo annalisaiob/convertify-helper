@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export const Hero = () => {
   const [text, setText] = useState("");
-  const fullText = "Save 10+ Hours a Week,\nClose More Deals,\nFinally Take That Weekend Off";
+  const fullText = "Save 10+ Hours a Week\nClose More Deals\n* Finally Take That Weekend Off";
   
   useEffect(() => {
     let currentIndex = 0;
@@ -25,10 +25,16 @@ export const Hero = () => {
       <div className="container mx-auto">
         <div className="flex items-start justify-between gap-8">
           <div className="max-w-3xl text-left animate-fadeIn">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#221F26] mb-8 leading-tight whitespace-pre-line">
-              {text}
+            <div className="mb-8">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#221F26] leading-tight whitespace-pre-line">
+                Save 10+ Hours a Week
+                Close More Deals
+              </h1>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#221F26] mt-4 leading-tight">
+                * Finally Take That Weekend Off
+              </h2>
               <ArrowRight className="inline-block ml-4 text-[#E5DEFF]" size={64} />
-            </h1>
+            </div>
             <p className="text-xl md:text-2xl text-[#221F26] mb-10 max-w-2xl animate-fadeIn" style={{ animationDelay: "0.2s" }}>
               By building clear processes, streamlining workflows, and automating the repetitive, 
               I give you back your time and peace of mind—all while helping you grow your bottom line.
