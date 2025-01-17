@@ -1,4 +1,4 @@
-import { Yoga, Phone, FileText } from "lucide-react";
+import { Check, Phone, FileText, Lotus } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -37,7 +37,7 @@ export const HowItWorks = () => {
           <Card className="bg-white border-secondary/20 p-8 shadow-lg">
             <div className="flex flex-col items-center text-center space-y-4">
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
-                <Yoga className="w-8 h-8 text-secondary" />
+                <Lotus className="w-8 h-8 text-secondary" />
               </div>
               <h3 className="text-xl font-bold text-secondary">3. experience operational zen</h3>
               <p className="text-gray-600">
