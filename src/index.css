@@ -6,7 +6,6 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
 
@@ -38,7 +37,6 @@
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
 
@@ -73,8 +71,6 @@
 
   body {
     @apply bg-background text-foreground font-sans;
-    background: linear-gradient(135deg, #007BFF 0%, #2B2B2B 100%);
-    min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6, button, .card-title {
