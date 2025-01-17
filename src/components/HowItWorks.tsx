@@ -13,11 +13,11 @@ export const HowItWorks = () => {
           <Card className="bg-white border-secondary/20 p-8 shadow-lg">
             <div className="flex flex-col items-center text-center space-y-4">
               <div className="relative">
-                <div className="w-20 h-20 rounded-full bg-[#FF6700] flex items-center justify-center">
+                <div className="w-20 h-20 rounded-full bg-[#221F26] flex items-center justify-center">
                   <span className="text-4xl font-heading font-bold text-white">1</span>
                 </div>
                 <div className="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-white/80 backdrop-blur-sm shadow-md flex items-center justify-center">
-                  <Phone className="w-6 h-6 text-[#FF6700]" />
+                  <Phone className="w-6 h-6 text-[#221F26]" />
                 </div>
               </div>
               <h3 className="text-xl font-heading font-bold text-secondary mt-6">Free Strategy Call</h3>
@@ -30,11 +30,11 @@ export const HowItWorks = () => {
           <Card className="bg-white border-secondary/20 p-8 shadow-lg">
             <div className="flex flex-col items-center text-center space-y-4">
               <div className="relative">
-                <div className="w-20 h-20 rounded-full bg-[#FF6700] flex items-center justify-center">
+                <div className="w-20 h-20 rounded-full bg-[#221F26] flex items-center justify-center">
                   <span className="text-4xl font-heading font-bold text-white">2</span>
                 </div>
                 <div className="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-white/80 backdrop-blur-sm shadow-md flex items-center justify-center">
-                  <FileText className="w-6 h-6 text-[#FF6700]" />
+                  <FileText className="w-6 h-6 text-[#221F26]" />
                 </div>
               </div>
               <h3 className="text-xl font-heading font-bold text-secondary mt-6">Receive Your Business Roadmap</h3>
@@ -47,11 +47,11 @@ export const HowItWorks = () => {
           <Card className="bg-white border-secondary/20 p-8 shadow-lg">
             <div className="flex flex-col items-center text-center space-y-4">
               <div className="relative">
-                <div className="w-20 h-20 rounded-full bg-[#FF6700] flex items-center justify-center">
+                <div className="w-20 h-20 rounded-full bg-[#221F26] flex items-center justify-center">
                   <span className="text-4xl font-heading font-bold text-white">3</span>
                 </div>
                 <div className="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-white/80 backdrop-blur-sm shadow-md flex items-center justify-center">
-                  <Sparkles className="w-6 h-6 text-[#FF6700]" />
+                  <Sparkles className="w-6 h-6 text-[#221F26]" />
                 </div>
               </div>
               <h3 className="text-xl font-heading font-bold text-secondary mt-6">Experience Operational Zen</h3>
@@ -63,16 +63,16 @@ export const HowItWorks = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#FF6700]/10 text-[#FF6700] px-6 py-3 rounded-full">
-            <Check className="w-5 h-5" color="#FF6700" />
-            <span className="font-heading font-medium">Our Guarantee: Measurable Impact or Nothing</span>
+          <div className="inline-flex items-center gap-2 bg-[#221F26]/10 text-[#221F26] px-6 py-3 rounded-full">
+            <Check className="w-5 h-5" color="#221F26" />
+            <span className="font-heading font-medium">My Guarantee: Measurable Impact or Nothing</span>
           </div>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto font-heading">
             Not satisfied with the implementation plan? No problem. There's absolutely no obligation to proceed. We believe in delivering real value - either we make a measurable impact on your business, or you pay nothing.
           </p>
           <Button 
             asChild 
-            className="mt-8 bg-[#E5DEFF] hover:bg-[#FF6700] hover:text-white text-[#221F26] rounded-full transition-all duration-300 font-heading"
+            className="mt-8 bg-[#221F26] hover:bg-[#221F26]/80 text-white rounded-full transition-all duration-300 font-heading"
           >
             <a href="https://calendly.com/anna-creailab/30min" target="_blank" rel="noopener noreferrer">
               Schedule Your Free Strategy Call
