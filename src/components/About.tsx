@@ -55,19 +55,19 @@ export const About = () => {
               </div>
 
               <div className="flex flex-wrap gap-4 mt-8">
-                <Button asChild variant="outline" className="rounded-full bg-[#E5DEFF] hover:bg-[#FF6700] hover:text-white text-[#221F26] hover:italic hover:underline transition-all">
+                <Button asChild variant="outline" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground hover:italic hover:underline transition-all">
                   <a href="mailto:anna@creailab.com">
                     <ArrowRight className="mr-2" color="#FF6700" />
                     anna@creailab.com
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full bg-[#E5DEFF] hover:bg-[#FF6700] hover:text-white text-[#221F26] hover:italic hover:underline transition-all">
+                <Button asChild variant="outline" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground hover:italic hover:underline transition-all">
                   <a href="https://www.linkedin.com/in/annalisa-iob-a94484a6/" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="mr-2" color="#FF6700" />
                     say hi on linkedin
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full bg-[#E5DEFF] hover:bg-[#FF6700] hover:text-white text-[#221F26] hover:italic hover:underline transition-all">
+                <Button asChild variant="outline" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground hover:italic hover:underline transition-all">
                   <a href="https://annalisaiob.substack.com/" target="_blank" rel="noopener noreferrer">
                     <Newspaper className="mr-2" color="#FF6700" />
                     follow my story on substack

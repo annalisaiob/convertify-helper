@@ -16,7 +16,7 @@ export const Header = () => {
             <a href="#how-it-works" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all lowercase">how it works</a>
             <a href="#about" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all lowercase">about</a>
           </nav>
-          <Button asChild className="bg-[#E5DEFF] text-[#221F26] font-bold hover:bg-[#FF6700] hover:text-white rounded-full transition-all hover:italic hover:underline lowercase">
+          <Button asChild className="bg-primary text-primary-foreground font-bold hover:bg-primary/90 rounded-full transition-all hover:italic hover:underline lowercase">
             <a href="#business-profiles">
               get started
             </a>

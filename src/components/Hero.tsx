@@ -52,7 +52,7 @@ export const Hero = () => {
             <div className="flex flex-col md:flex-row gap-4 items-start animate-fadeIn" style={{ animationDelay: "0.4s" }}>
               <Button 
                 asChild 
-                className="bg-[#E5DEFF] text-[#221F26] font-bold hover:bg-[#FF6700] hover:text-white hover:shadow-[0_0_15px_rgba(255,103,0,0.5)] text-lg px-8 py-6 rounded-full transition-all hover:italic hover:underline lowercase"
+                className="bg-primary text-primary-foreground font-bold hover:bg-primary/90 text-lg px-8 py-6 rounded-full transition-all hover:italic hover:underline lowercase"
               >
                 <a 
                   href="https://calendly.com/anna-creailab/30min" 
