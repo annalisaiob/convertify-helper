@@ -7,7 +7,7 @@ import type { BusinessProfile } from "./business/types";
 const businessProfiles: BusinessProfile[] = [
   {
     id: "freelancer",
-    title: "i am a freelancer or solopreneur",
+    title: "a freelancer or solopreneur",
     description: "you work alone as a creative or non-creative professional (like a photographer, writer, coach, or consultant) and are managing every aspect of your business yourself.",
     icon: User,
     struggles: [
@@ -29,7 +29,7 @@ const businessProfiles: BusinessProfile[] = [
   },
   {
     id: "agency",
-    title: "i am an agency",
+    title: "an agency",
     description: "you run a team (big or small) delivering services to multiple clients, such as a marketing agency, design studio, or pr firm.",
     icon: Building2,
     struggles: [
@@ -51,7 +51,7 @@ const businessProfiles: BusinessProfile[] = [
   },
   {
     id: "startup",
-    title: "i am a startup",
+    title: "a startup",
     description: "you're part of a growing team, building a product or service, and trying to scale your operations quickly and efficiently.",
     icon: Rocket,
     struggles: [
@@ -77,7 +77,7 @@ export const BusinessProfiles = () => {
   const [selectedProfile, setSelectedProfile] = useState<BusinessProfile>(businessProfiles[0]);
 
   const getPluralTitle = (title: string) => {
-    const baseTitle = title.replace("i am a ", "").replace("i am an ", "");
+    const baseTitle = title.replace("a ", "").replace("an ", "");
     if (baseTitle === "freelancer or solopreneur") {
       return "freelancers & solopreneurs";
     }
@@ -88,8 +88,8 @@ export const BusinessProfiles = () => {
     <section id="business-profiles" className="py-20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center gap-2 mb-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-primary lowercase">
-            i am a...
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-primary">
+            I am
           </h2>
           <ArrowRight className="w-6 h-6 text-secondary animate-bounce" />
         </div>
