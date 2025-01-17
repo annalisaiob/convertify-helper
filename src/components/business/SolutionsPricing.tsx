@@ -16,23 +16,23 @@ export const SolutionsPricing = ({ profile, pluralTitle }: SolutionsPricingProps
       
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         <div>
-          <h4 className="font-semibold mb-4 font-heading text-left">solutions:</h4>
-          <ul className="space-y-3 text-left">
-            {profile.solutions.items.map((item, index) => (
+          <h4 className="font-semibold mb-4 lowercase font-heading">you may be...</h4>
+          <ul className="space-y-3">
+            {profile.struggles.map((item, index) => (
               <li key={index} className="flex items-start gap-2 font-heading">
                 <ArrowRight className="w-5 h-5 mt-1 text-secondary flex-shrink-0" />
-                <span>{item}</span>
+                <span className="lowercase">{item}</span>
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <h4 className="font-semibold mb-4 lowercase">you may be...</h4>
-          <ul className="space-y-3">
-            {profile.struggles.map((item, index) => (
-              <li key={index} className="flex items-start gap-2">
+          <h4 className="font-semibold mb-4 font-heading text-left lowercase">some of our solutions:</h4>
+          <ul className="space-y-3 text-left">
+            {profile.solutions.items.map((item, index) => (
+              <li key={index} className="flex items-start gap-2 font-heading">
                 <ArrowRight className="w-5 h-5 mt-1 text-secondary flex-shrink-0" />
-                <span>{item}</span>
+                <span className="lowercase">{item}</span>
               </li>
             ))}
           </ul>
