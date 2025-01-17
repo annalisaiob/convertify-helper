@@ -30,9 +30,7 @@ export const Hero = () => {
                 {text.split('\n').map((line, index) => (
                   <h1 
                     key={index} 
-                    className={`text-xl md:text-2xl lg:text-3xl font-bold text-[#221F26] leading-tight ${
-                      index === 2 ? 'mt-4 italic' : 'mt-2'
-                    }`}
+                    className={`${index === 2 ? 'text-lg md:text-xl lg:text-2xl mt-4 italic' : 'text-xl md:text-2xl lg:text-3xl mt-2'} font-bold text-[#221F26] leading-tight`}
                   >
                     {line}
                   </h1>
