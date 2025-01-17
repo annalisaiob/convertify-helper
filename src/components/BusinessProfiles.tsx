@@ -91,9 +91,8 @@ export const BusinessProfiles = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center text-primary">
             I Am
           </h2>
-          <ArrowRight className="w-6 h-6 text-secondary animate-bounce" />
+          <ArrowRight className="w-6 h-6" color="#FF6700" />
         </div>
-
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           {businessProfiles.map((profile) => (
             <BusinessProfileCard
