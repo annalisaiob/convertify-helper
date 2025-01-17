@@ -52,26 +52,6 @@ export const About = () => {
                 <p className="text-left">
                   Think of me as Marie Kondo meets MacGyver for your business systems. I'm Anna, an ex-techie with a love for quirky humor, good design, and helping creative businesses shine. I've mapped refugee camps, built apps, and got way too happy over a much too complex spreadsheet formula or two—but now I'm here to save you from drowning in spreadsheets and sticky notes.
                 </p>
-                <div>
-                  <h3 className="text-xl font-semibold mb-6 text-left">🎯 What I do (aka how to stop your business from eating your life):</h3>
-                  <div className="space-y-6">
-                    <div className="group p-6 rounded-xl bg-gradient-to-r from-white/80 to-white/40 backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300">
-                      <p className="text-left group-hover:translate-x-2 transition-transform duration-300">
-                        Help you automate your workflows (so you can finally have a guilt-free Netflix binge or an uninterrupted coffee break—your call).
-                      </p>
-                    </div>
-                    <div className="group p-6 rounded-xl bg-gradient-to-r from-white/80 to-white/40 backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300">
-                      <p className="text-left group-hover:translate-x-2 transition-transform duration-300">
-                        Build custom systems that actually grow with your biz (because patchwork solutions held together with hope and duct tape aren't cutting it).
-                      </p>
-                    </div>
-                    <div className="group p-6 rounded-xl bg-gradient-to-r from-white/80 to-white/40 backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300">
-                      <p className="text-left group-hover:translate-x-2 transition-transform duration-300">
-                        Free up your time so you can focus on the stuff that lights you up—whether that's growing your business, finding clients, or just not answering emails at midnight.
-                      </p>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               <div className="flex flex-wrap gap-4 mt-8">
