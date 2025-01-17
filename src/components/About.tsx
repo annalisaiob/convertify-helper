@@ -44,7 +44,7 @@ export const About = () => {
 
             <div className="md:w-2/3">
               <div className="space-y-8 text-lg text-[#221F26]">
-                <p className="text-2xl font-heading italic tracking-wide mb-4 bg-gradient-to-r from-white/90 to-white/50 backdrop-blur-sm border-l-4 border-[#FF6700] px-8 py-6 rounded-r-xl shadow-md">
+                <p className="text-2xl font-heading italic tracking-wide mb-4 bg-gradient-to-r from-white/90 to-white/50 backdrop-blur-sm border-l-4 border-[#221F26] px-8 py-6 rounded-r-xl shadow-md">
                   Not just another "AI-powered whatever" agency. (also, AI are literally my initials)
                 </p>
                 <p className="text-left">
@@ -55,19 +55,19 @@ export const About = () => {
               <div className="flex flex-wrap gap-4 mt-8">
                 <Button asChild variant="outline" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground hover:italic hover:underline transition-all">
                   <a href="mailto:anna@creailab.com">
-                    <ArrowRight className="mr-2 text-[#221F26]" />
+                    <ArrowRight className="mr-2 text-white" />
                     anna@creailab.com
                   </a>
                 </Button>
                 <Button asChild variant="outline" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground hover:italic hover:underline transition-all">
                   <a href="https://www.linkedin.com/in/annalisa-iob-a94484a6/" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="mr-2 text-[#221F26]" />
+                    <Linkedin className="mr-2 text-white" />
                     say hi on linkedin
                   </a>
                 </Button>
                 <Button asChild variant="outline" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground hover:italic hover:underline transition-all">
                   <a href="https://annalisaiob.substack.com/" target="_blank" rel="noopener noreferrer">
-                    <Newspaper className="mr-2 text-[#221F26]" />
+                    <Newspaper className="mr-2 text-white" />
                     follow my story on substack
                   </a>
                 </Button>
