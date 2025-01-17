@@ -17,7 +17,7 @@ export const BusinessProfileCard = ({ profile, isSelected, onSelect }: BusinessP
       onClick={() => onSelect(profile)}
     >
       <CardHeader className="text-center">
-        <profile.icon className="w-12 h-12 mx-auto mb-4" color="#FF6700" />
+        <profile.icon className="w-12 h-12 mx-auto mb-4 text-[#221F26]" />
         <CardTitle className="lowercase">{profile.title}</CardTitle>
         <CardDescription>{profile.description}</CardDescription>
       </CardHeader>
