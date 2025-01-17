@@ -11,8 +11,8 @@ export const Header = () => {
         </div>
         <div className="flex items-center gap-4">
           <nav className="hidden md:flex items-center gap-4">
-            <a href="#business-profiles" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all lowercase">services</a>
-            <a href="#benefits" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all lowercase">benefits</a>
+            <a href="#business-profiles" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all lowercase">what</a>
+            <a href="#benefits" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all lowercase">why</a>
             <a href="#how-it-works" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all lowercase">how it works</a>
             <a href="#about" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all lowercase">about</a>
           </nav>
