@@ -88,8 +88,8 @@ export const BusinessProfiles = () => {
     <section id="business-profiles" className="py-20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center gap-2 mb-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-primary">
-            I Am
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-primary lowercase">
+            i am
           </h2>
           <ArrowRight className="w-6 h-6" color="#FF6700" />
         </div>
