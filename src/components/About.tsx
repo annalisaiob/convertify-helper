@@ -46,7 +46,7 @@ export const About = () => {
             {/* Right column with content */}
             <div className="md:w-2/3">
               <div className="space-y-8 text-lg text-[#221F26]">
-                <p className="text-xl font-semibold mb-4 bg-gradient-to-r from-white/80 to-white/40 backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300 p-6 rounded-xl">
+                <p className="text-2xl font-heading italic tracking-wide mb-4 bg-gradient-to-r from-white/90 to-white/50 backdrop-blur-sm border-l-4 border-[#FF6700] px-8 py-6 rounded-r-xl shadow-md">
                   Not just another "AI-powered whatever" agency. (also, AI are literally my initials)
                 </p>
                 <p className="text-left">
