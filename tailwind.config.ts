@@ -19,7 +19,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Cardio', 'system-ui', 'sans-serif'],
+        sans: ['Cardo', 'system-ui', 'serif'],
         heading: ['Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
