@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export const Hero = () => {
   const [text, setText] = useState("");
-  const fullText = "Save 10+ Hours a Week\nClose More Deals\n* Finally Take That Weekend Off";
+  const fullText = "Save 10+ Hours a Week\nClose More Deals\n* and finally, take that weekend off";
   
   useEffect(() => {
     let currentIndex = 0;
@@ -28,10 +28,12 @@ export const Hero = () => {
             <div className="mb-8">
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#221F26] leading-tight whitespace-pre-line">
                 Save 10+ Hours a Week
+              </h1>
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#221F26] leading-tight whitespace-pre-line mt-2">
                 Close More Deals
               </h1>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#221F26] mt-4 leading-tight">
-                * Finally Take That Weekend Off
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#221F26] mt-4 leading-tight italic">
+                * and finally, take that weekend off
               </h2>
               <ArrowRight className="inline-block ml-4 text-[#E5DEFF]" size={64} />
             </div>
