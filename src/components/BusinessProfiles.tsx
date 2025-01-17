@@ -33,18 +33,18 @@ const businessProfiles: BusinessProfile[] = [
     description: "You run a team (big or small) delivering services to multiple clients or customers—maybe you're a marketing agency, a design studio, a PR firm, or even a local business like a yoga studio or café.",
     icon: Building2,
     struggles: [
-      "Managing multiple client projects and timelines without overwhelming your team",
-      "Communicating effectively with clients while keeping them updated",
-      "Struggling to track team workload, timelines, or resource allocation",
-      "Wasting time creating custom invoices, tracking billable hours, or generating reports"
+      "Juggling multiple tools that don't talk to each other, leaving you to manually piece together payments, memberships, or client data.",
+      "Losing time chasing late payments or dealing with complex membership plans that constantly need updating.",
+      "Struggling to manage team schedules, client appointments, or inventory, resulting in last-minute scrambles and unhappy customers.",
+      "Feeling overwhelmed by the chaos of running the back end while still trying to deliver a top-notch experience for your clients or members."
     ],
     solutions: {
-      title: "You manage multiple clients, projects, and a team—and keeping everyone aligned can feel overwhelming.",
+      title: "",
       items: [
-        "Automated project timeline and milestone tracking system",
-        "Centralized client communication and update portal",
-        "Automated billing and resource allocation system",
-        "Team workload management and reporting dashboard"
+        "All your tools worked together, syncing payments, memberships, and client data automatically.",
+        "Payment plans and membership renewals were handled seamlessly, without you having to intervene or follow up.",
+        "Your schedules, inventory, and client appointments were organized in one place, making daily operations effortless.",
+        "You could focus on delivering exceptional service, knowing your systems have your back—and your clients' too."
       ]
     },
     pricing: "Starting at €599"
