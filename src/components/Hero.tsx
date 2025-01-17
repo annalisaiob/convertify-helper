@@ -33,7 +33,7 @@ export const Hero = () => {
                     className={`
                       ${index === 2 ? 'text-lg md:text-xl lg:text-2xl mt-4 italic lowercase' : 'text-3xl md:text-5xl lg:text-7xl mt-2 lowercase'} 
                       font-bold text-[#221F26] leading-tight
-                      ${index === 0 ? 'whitespace-nowrap overflow-hidden text-ellipsis' : ''}
+                      ${index === 0 ? 'whitespace-nowrap' : ''}
                     `}
                   >
                     {line}
