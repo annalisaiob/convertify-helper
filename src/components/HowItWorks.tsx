@@ -16,7 +16,7 @@ export const HowItWorks = () => {
                 <div className="w-20 h-20 rounded-full bg-[#FF6700] flex items-center justify-center">
                   <span className="text-4xl font-heading font-bold text-white">1</span>
                 </div>
-                <div className="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+                <div className="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center">
                   <Phone className="w-6 h-6 text-[#FF6700]" />
                 </div>
               </div>
@@ -33,7 +33,7 @@ export const HowItWorks = () => {
                 <div className="w-20 h-20 rounded-full bg-[#FF6700] flex items-center justify-center">
                   <span className="text-4xl font-heading font-bold text-white">2</span>
                 </div>
-                <div className="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+                <div className="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center">
                   <FileText className="w-6 h-6 text-[#FF6700]" />
                 </div>
               </div>
@@ -50,7 +50,7 @@ export const HowItWorks = () => {
                 <div className="w-20 h-20 rounded-full bg-[#FF6700] flex items-center justify-center">
                   <span className="text-4xl font-heading font-bold text-white">3</span>
                 </div>
-                <div className="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+                <div className="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center">
                   <Sparkles className="w-6 h-6 text-[#FF6700]" />
                 </div>
               </div>
