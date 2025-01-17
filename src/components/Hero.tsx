@@ -42,7 +42,8 @@ export const Hero = () => {
             </div>
             <p className="text-xl md:text-2xl text-[#221F26] mb-10 max-w-2xl animate-fadeIn" style={{ animationDelay: "0.2s" }}>
               By building clear processes, streamlining workflows, and automating the repetitive, 
-              I give you back your time and peace of mind—all while helping you grow your bottom line. 
+              I give you back your time and peace of mind—all while helping you grow your bottom line.
+              <br /><br />
               Let's get your business running smoother than a fresh jar of Nutella 🥐
             </p>
             <div className="flex flex-col md:flex-row gap-4 items-start animate-fadeIn" style={{ animationDelay: "0.4s" }}>
