@@ -21,17 +21,6 @@ export const BusinessProfileCard = ({ profile, isSelected, onSelect }: BusinessP
         <CardTitle>{profile.title}</CardTitle>
         <CardDescription>{profile.description}</CardDescription>
       </CardHeader>
-      <CardContent>
-        <h4 className="font-semibold mb-2">Common Struggles:</h4>
-        <ul className="space-y-2">
-          {profile.struggles.map((struggle, index) => (
-            <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
-              <CheckCircle className="w-4 h-4 mt-1 text-secondary flex-shrink-0" />
-              <span>{struggle}</span>
-            </li>
-          ))}
-        </ul>
-      </CardContent>
     </Card>
   );
 };

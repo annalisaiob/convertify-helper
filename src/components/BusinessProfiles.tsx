@@ -89,13 +89,10 @@ export const BusinessProfiles = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center gap-2 mb-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-primary lowercase">
-            select the option that best describes you
+            i am a...
           </h2>
           <ArrowRight className="w-6 h-6 text-secondary animate-bounce" />
         </div>
-        <p className="text-lg text-gray-600 text-center mb-12 lowercase">
-          discover how we can help streamline your specific business needs
-        </p>
 
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           {businessProfiles.map((profile) => (
