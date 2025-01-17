@@ -11,12 +11,12 @@ export const SolutionsPricing = ({ profile, pluralTitle }: SolutionsPricingProps
   return (
     <div className="bg-white rounded-lg p-8 shadow-lg animate-fadeIn">
       <h3 className="text-2xl font-bold text-primary mb-6">
-        solutions for {pluralTitle}
+        Solutions for {pluralTitle}
       </h3>
       
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         <div>
-          <h4 className="font-semibold mb-4 font-heading text-left">you may be...</h4>
+          <h4 className="font-semibold mb-4 font-heading text-left">You May Be...</h4>
           <ul className="space-y-3 text-left">
             {profile.struggles.map((item, index) => (
               <li key={index} className="flex items-start gap-2 font-heading">
@@ -27,7 +27,7 @@ export const SolutionsPricing = ({ profile, pluralTitle }: SolutionsPricingProps
           </ul>
         </div>
         <div>
-          <h4 className="font-semibold mb-4 font-heading text-left">some of our solutions:</h4>
+          <h4 className="font-semibold mb-4 font-heading text-left">Some of Our Solutions:</h4>
           <ul className="space-y-3 text-left">
             {profile.solutions.items.map((item, index) => (
               <li key={index} className="flex items-start gap-2 font-heading">
@@ -49,7 +49,7 @@ export const SolutionsPricing = ({ profile, pluralTitle }: SolutionsPricingProps
             target="_blank" 
             rel="noopener noreferrer"
           >
-            schedule your free strategy call with me
+            Schedule Your Free Strategy Call With Me
           </a>
         </Button>
       </div>
