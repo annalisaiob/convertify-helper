@@ -9,11 +9,7 @@ interface SolutionsPricingProps {
 
 export const SolutionsPricing = ({ profile, pluralTitle }: SolutionsPricingProps) => {
   return (
-    <div className="bg-white rounded-lg p-8 shadow-lg animate-fadeIn">
-      <h3 className="text-2xl font-bold text-primary mb-6">
-        Solutions for {pluralTitle}
-      </h3>
-      
+    <div className="bg-white rounded-lg p-8 shadow-lg animate-fadeIn">      
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         <div>
           <h4 className="font-semibold mb-4 font-heading text-left">You May Be...</h4>
