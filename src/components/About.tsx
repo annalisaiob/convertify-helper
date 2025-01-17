@@ -49,9 +49,6 @@ export const About = () => {
                 <p className="text-xl font-semibold mb-4 bg-gradient-to-r from-white/80 to-white/40 backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300 p-6 rounded-xl">
                   Not just another "AI-powered whatever" agency. (also, AI are literally my initials)
                 </p>
-                <p className="text-xl font-semibold mb-4">
-                  <a href="mailto:anna@creailab.com" className="text-[#FF6700] hover:underline">anna@creailab.com</a>
-                </p>
                 <p className="text-left">
                   Think of me as Marie Kondo meets MacGyver for your business systems. I'm Anna, an ex-techie with a love for quirky humor, good design, and helping creative businesses shine. I've mapped refugee camps, built apps, and got way too happy over a much too complex spreadsheet formula or two—but now I'm here to save you from drowning in spreadsheets and sticky notes.
                 </p>
@@ -78,6 +75,12 @@ export const About = () => {
               </div>
 
               <div className="flex flex-wrap gap-4 mt-8">
+                <Button asChild variant="outline" className="rounded-full bg-[#E5DEFF] hover:bg-[#FF6700] hover:text-white text-[#221F26] hover:italic hover:underline transition-all">
+                  <a href="mailto:anna@creailab.com">
+                    <ArrowRight className="mr-2" color="#FF6700" />
+                    anna@creailab.com
+                  </a>
+                </Button>
                 <Button asChild variant="outline" className="rounded-full bg-[#E5DEFF] hover:bg-[#FF6700] hover:text-white text-[#221F26] hover:italic hover:underline transition-all">
                   <a href="https://www.linkedin.com/in/annalisa-iob-a94484a6/" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="mr-2" color="#FF6700" />
