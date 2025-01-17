@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export const Hero = () => {
   const [text, setText] = useState("");
-  const fullText = "Save 10+ Hours a Week\nClose More Deals\n* and finally, take that weekend off";
+  const fullText = "save 10+ hours a week\nclose more deals\n* and finally, take that weekend off";
   
   useEffect(() => {
     let currentIndex = 0;
@@ -23,14 +23,14 @@ export const Hero = () => {
   return (
     <section className="pt-32 pb-20 px-4 bg-gradient-hero">
       <div className="container mx-auto">
-        <div className="flex items-start justify-between gap-8">
+        <div className="flex items-center justify-between gap-8">
           <div className="max-w-3xl text-left animate-fadeIn">
             <div className="mb-8">
               <div className="whitespace-pre-line">
                 {text.split('\n').map((line, index) => (
                   <h1 
                     key={index} 
-                    className={`${index === 2 ? 'text-lg md:text-xl lg:text-2xl mt-4 italic' : 'text-2xl md:text-4xl lg:text-5xl mt-2'} font-bold text-[#221F26] leading-tight`}
+                    className={`${index === 2 ? 'text-lg md:text-xl lg:text-2xl mt-4 italic lowercase' : 'text-3xl md:text-5xl lg:text-7xl mt-2 lowercase'} font-bold text-[#221F26] leading-tight`}
                   >
                     {line}
                   </h1>
@@ -59,7 +59,7 @@ export const Hero = () => {
               </Button>
             </div>
           </div>
-          <div className="hidden lg:block flex-shrink-0 w-1/3">
+          <div className="hidden lg:flex flex-shrink-0 w-1/3 items-center">
             <img 
               src="/lovable-uploads/00e4501b-1662-41c0-a496-dd53b1e86f0b.png" 
               alt="Illustration of person working" 
