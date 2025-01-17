@@ -12,13 +12,15 @@ export const HowItWorks = () => {
         <div className="grid md:grid-cols-3 gap-8">
           <Card className="bg-white border-secondary/20 p-8 shadow-lg">
             <div className="flex flex-col items-center text-center space-y-4">
-              <div className="w-20 h-20 rounded-full bg-[#FF6700] flex items-center justify-center mb-4">
-                <span className="text-4xl font-heading font-bold text-white">1</span>
+              <div className="relative">
+                <div className="w-20 h-20 rounded-full bg-[#FF6700] flex items-center justify-center">
+                  <span className="text-4xl font-heading font-bold text-white">1</span>
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+                  <Phone className="w-6 h-6 text-[#FF6700]" />
+                </div>
               </div>
-              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
-                <Phone className="w-8 h-8 text-[#FF6700]" />
-              </div>
-              <h3 className="text-xl font-heading font-bold text-secondary">Free Strategy Call</h3>
+              <h3 className="text-xl font-heading font-bold text-secondary mt-6">Free Strategy Call</h3>
               <p className="text-gray-600 font-heading">
                 Schedule a no-obligation call where we map out exactly where you are now, and where you want to go.
               </p>
@@ -27,13 +29,15 @@ export const HowItWorks = () => {
 
           <Card className="bg-white border-secondary/20 p-8 shadow-lg">
             <div className="flex flex-col items-center text-center space-y-4">
-              <div className="w-20 h-20 rounded-full bg-[#FF6700] flex items-center justify-center mb-4">
-                <span className="text-4xl font-heading font-bold text-white">2</span>
+              <div className="relative">
+                <div className="w-20 h-20 rounded-full bg-[#FF6700] flex items-center justify-center">
+                  <span className="text-4xl font-heading font-bold text-white">2</span>
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+                  <FileText className="w-6 h-6 text-[#FF6700]" />
+                </div>
               </div>
-              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
-                <FileText className="w-8 h-8 text-[#FF6700]" />
-              </div>
-              <h3 className="text-xl font-heading font-bold text-secondary">Receive Your Business Roadmap</h3>
+              <h3 className="text-xl font-heading font-bold text-secondary mt-6">Receive Your Business Roadmap</h3>
               <p className="text-gray-600 font-heading">
                 Over our consultation call - completely free - we'll craft a detailed implementation plan tailored to your business.
               </p>
@@ -42,13 +46,15 @@ export const HowItWorks = () => {
 
           <Card className="bg-white border-secondary/20 p-8 shadow-lg">
             <div className="flex flex-col items-center text-center space-y-4">
-              <div className="w-20 h-20 rounded-full bg-[#FF6700] flex items-center justify-center mb-4">
-                <span className="text-4xl font-heading font-bold text-white">3</span>
+              <div className="relative">
+                <div className="w-20 h-20 rounded-full bg-[#FF6700] flex items-center justify-center">
+                  <span className="text-4xl font-heading font-bold text-white">3</span>
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+                  <Sparkles className="w-6 h-6 text-[#FF6700]" />
+                </div>
               </div>
-              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
-                <Sparkles className="w-8 h-8 text-[#FF6700]" />
-              </div>
-              <h3 className="text-xl font-heading font-bold text-secondary">Experience Operational Zen</h3>
+              <h3 className="text-xl font-heading font-bold text-secondary mt-6">Experience Operational Zen</h3>
               <p className="text-gray-600 font-heading">
                 Transform your business operations into a smooth, stress-free experience that lets you focus on what matters most.
               </p>
