@@ -54,16 +54,22 @@ export const About = () => {
                 </p>
                 <div>
                   <h3 className="text-xl font-semibold mb-6 text-left">🎯 What I do (aka how to stop your business from eating your life):</h3>
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <Card className="p-6 bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                      <p className="text-left">Help you automate your workflows (so you can finally have a guilt-free Netflix binge or an uninterrupted coffee break—your call).</p>
-                    </Card>
-                    <Card className="p-6 bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                      <p className="text-left">Build custom systems that actually grow with your biz (because patchwork solutions held together with hope and duct tape aren't cutting it).</p>
-                    </Card>
-                    <Card className="p-6 bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                      <p className="text-left">Free up your time so you can focus on the stuff that lights you up—whether that's growing your business, finding clients, or just not answering emails at midnight.</p>
-                    </Card>
+                  <div className="space-y-6">
+                    <div className="group p-6 rounded-xl bg-gradient-to-r from-white/80 to-white/40 backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300">
+                      <p className="text-left group-hover:translate-x-2 transition-transform duration-300">
+                        Help you automate your workflows (so you can finally have a guilt-free Netflix binge or an uninterrupted coffee break—your call).
+                      </p>
+                    </div>
+                    <div className="group p-6 rounded-xl bg-gradient-to-r from-white/80 to-white/40 backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300">
+                      <p className="text-left group-hover:translate-x-2 transition-transform duration-300">
+                        Build custom systems that actually grow with your biz (because patchwork solutions held together with hope and duct tape aren't cutting it).
+                      </p>
+                    </div>
+                    <div className="group p-6 rounded-xl bg-gradient-to-r from-white/80 to-white/40 backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300">
+                      <p className="text-left group-hover:translate-x-2 transition-transform duration-300">
+                        Free up your time so you can focus on the stuff that lights you up—whether that's growing your business, finding clients, or just not answering emails at midnight.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
