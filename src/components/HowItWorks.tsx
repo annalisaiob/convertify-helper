@@ -10,36 +10,39 @@ export const HowItWorks = () => {
           how it works
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
-          <Card className="bg-white border-secondary/20 p-8 shadow-lg">
+          <Card className="bg-white border-secondary/20 p-8 shadow-lg relative">
             <div className="flex flex-col items-center text-center space-y-4">
-              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
+              <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-6xl font-bold text-[#FF6700]">1</span>
+              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mt-6">
                 <Phone className="w-8 h-8 text-[#FF6700]" />
               </div>
-              <h3 className="text-xl font-bold text-secondary"><span className="text-3xl text-[#FF6700] mr-2">1</span>Free Strategy Call</h3>
+              <h3 className="text-xl font-bold text-secondary">Free Strategy Call</h3>
               <p className="text-gray-600">
                 Schedule a no-obligation call where we map out exactly where you are now, and where you want to go.
               </p>
             </div>
           </Card>
 
-          <Card className="bg-white border-secondary/20 p-8 shadow-lg">
+          <Card className="bg-white border-secondary/20 p-8 shadow-lg relative">
             <div className="flex flex-col items-center text-center space-y-4">
-              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
+              <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-6xl font-bold text-[#FF6700]">2</span>
+              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mt-6">
                 <FileText className="w-8 h-8 text-[#FF6700]" />
               </div>
-              <h3 className="text-xl font-bold text-secondary"><span className="text-3xl text-[#FF6700] mr-2">2</span>Receive Your Business Roadmap</h3>
+              <h3 className="text-xl font-bold text-secondary">Receive Your Business Roadmap</h3>
               <p className="text-gray-600">
                 Over our consultation call - completely free - we'll craft a detailed implementation plan tailored to your business.
               </p>
             </div>
           </Card>
 
-          <Card className="bg-white border-secondary/20 p-8 shadow-lg">
+          <Card className="bg-white border-secondary/20 p-8 shadow-lg relative">
             <div className="flex flex-col items-center text-center space-y-4">
-              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
+              <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-6xl font-bold text-[#FF6700]">3</span>
+              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mt-6">
                 <Sparkles className="w-8 h-8 text-[#FF6700]" />
               </div>
-              <h3 className="text-xl font-bold text-secondary"><span className="text-3xl text-[#FF6700] mr-2">3</span>Experience Operational Zen</h3>
+              <h3 className="text-xl font-bold text-secondary">Experience Operational Zen</h3>
               <p className="text-gray-600">
                 Transform your business operations into a smooth, stress-free experience that lets you focus on what matters most.
               </p>
