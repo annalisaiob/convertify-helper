@@ -53,19 +53,19 @@ export const About = () => {
               </div>
 
               <div className="flex flex-wrap gap-4 mt-8">
-                <Button asChild variant="outline" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground hover:italic hover:underline transition-all">
+                <Button asChild variant="outline" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(132,204,22,0.5)] font-normal">
                   <a href="mailto:anna@creailab.com">
                     <ArrowRight className="mr-2 text-white" />
                     anna@creailab.com
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground hover:italic hover:underline transition-all">
+                <Button asChild variant="outline" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(132,204,22,0.5)] font-normal">
                   <a href="https://www.linkedin.com/in/annalisa-iob-a94484a6/" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="mr-2 text-white" />
                     say hi on linkedin
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground hover:italic hover:underline transition-all">
+                <Button asChild variant="outline" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(132,204,22,0.5)] font-normal">
                   <a href="https://annalisaiob.substack.com/" target="_blank" rel="noopener noreferrer">
                     <Newspaper className="mr-2 text-white" />
                     follow my story on substack

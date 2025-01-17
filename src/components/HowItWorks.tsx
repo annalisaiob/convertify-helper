@@ -62,23 +62,22 @@ export const HowItWorks = () => {
           </Card>
         </div>
 
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#221F26]/10 text-[#221F26] px-6 py-3 rounded-full">
-            <Check className="w-5 h-5" color="#221F26" />
-            <span className="font-heading font-medium">My Guarantee: Measurable Impact or Nothing</span>
-          </div>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto font-heading">
-            Not satisfied with the implementation plan? No problem. There's absolutely no obligation to proceed. We believe in delivering real value - either we make a measurable impact on your business, or you pay nothing.
-          </p>
-          <Button 
-            asChild 
-            className="mt-8 bg-[#221F26] hover:bg-[#221F26]/80 text-white rounded-full transition-all duration-300 font-heading"
-          >
-            <a href="https://calendly.com/anna-creailab/30min" target="_blank" rel="noopener noreferrer">
-              Schedule Your Free Strategy Call
-            </a>
-          </Button>
+      <div className="mt-12 text-center">
+        <div className="inline-flex items-center gap-2 bg-[#221F26]/10 text-[#221F26] px-6 py-3 rounded-full">
+          <Check className="w-5 h-5" color="#221F26" />
+          <span className="font-heading font-medium">My Guarantee: Measurable Impact or Nothing</span>
         </div>
+        <p className="mt-4 text-gray-600 max-w-2xl mx-auto font-heading">
+          Not satisfied with the implementation plan? No problem. There's absolutely no obligation to proceed. We believe in delivering real value - either we make a measurable impact on your business, or you pay nothing.
+        </p>
+        <Button 
+          asChild 
+          className="mt-8 bg-[#221F26] hover:bg-[#221F26]/80 text-white rounded-full transition-all duration-300 font-normal hover:shadow-[0_0_15px_rgba(132,204,22,0.5)]"
+        >
+          <a href="https://calendly.com/anna-creailab/30min" target="_blank" rel="noopener noreferrer">
+            Schedule Your Free Strategy Call
+          </a>
+        </Button>
       </div>
     </section>
   );
