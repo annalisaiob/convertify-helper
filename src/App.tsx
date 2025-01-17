@@ -5,10 +5,12 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      <div className="min-h-screen w-full bg-gradient-electric">
-        <Routes>
-          <Route path="/" element={<Index />} />
-        </Routes>
+      <div className="min-h-screen w-full">
+        <div className="min-h-screen w-full bg-gradient-electric">
+          <Routes>
+            <Route path="/" element={<Index />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );
