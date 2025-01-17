@@ -53,23 +53,29 @@ export const About = () => {
                   Think of me as Marie Kondo meets MacGyver for your business systems. I'm Anna, an ex-techie with a love for quirky humor, good design, and helping creative businesses shine. I've mapped refugee camps, built apps, and got way too happy over a much too complex spreadsheet formula or two—but now I'm here to save you from drowning in spreadsheets and sticky notes.
                 </p>
                 <div>
-                  <h3 className="text-xl font-semibold mb-4 text-left">🎯 What I do (aka how to stop your business from eating your life):</h3>
-                  <ul className="space-y-4 text-left list-disc pl-6">
-                    <li>Help you automate your workflows (so you can finally have a guilt-free Netflix binge or an uninterrupted coffee break—your call).</li>
-                    <li>Build custom systems that actually grow with your biz (because patchwork solutions held together with hope and duct tape aren't cutting it).</li>
-                    <li>Free up your time so you can focus on the stuff that lights you up—whether that's growing your business, finding clients, or just not answering emails at midnight.</li>
-                  </ul>
+                  <h3 className="text-xl font-semibold mb-6 text-left">🎯 What I do (aka how to stop your business from eating your life):</h3>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <Card className="p-6 bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                      <p className="text-left">Help you automate your workflows (so you can finally have a guilt-free Netflix binge or an uninterrupted coffee break—your call).</p>
+                    </Card>
+                    <Card className="p-6 bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                      <p className="text-left">Build custom systems that actually grow with your biz (because patchwork solutions held together with hope and duct tape aren't cutting it).</p>
+                    </Card>
+                    <Card className="p-6 bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                      <p className="text-left">Free up your time so you can focus on the stuff that lights you up—whether that's growing your business, finding clients, or just not answering emails at midnight.</p>
+                    </Card>
+                  </div>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-4 mt-8">
-                <Button asChild variant="outline" className="rounded-full bg-[#E5DEFF] hover:bg-[#FF6700] hover:text-white text-[#221F26] hover:italic hover:underline transition-all">
+                <Button asChild variant="outline" className="rounded-full bg-[#E5DEFF] hover:bg-[#FF6700] hover:text-white text-[#221F26] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)]">
                   <a href="https://www.linkedin.com/in/annalisa-iob-a94484a6/" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="mr-2" />
                     say hi on linkedin
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full bg-[#E5DEFF] hover:bg-[#FF6700] hover:text-white text-[#221F26] hover:italic hover:underline transition-all">
+                <Button asChild variant="outline" className="rounded-full bg-[#E5DEFF] hover:bg-[#FF6700] hover:text-white text-[#221F26] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)]">
                   <a href="https://annalisaiob.substack.com/" target="_blank" rel="noopener noreferrer">
                     <Newspaper className="mr-2" />
                     follow my story on substack
