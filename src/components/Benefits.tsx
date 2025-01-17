@@ -23,7 +23,7 @@ export const Benefits = () => {
   return (
     <section id="benefits" className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#221F26] mb-12">
           transform your business operations
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -33,9 +33,9 @@ export const Benefits = () => {
               className="bg-white p-6 rounded-lg shadow-lg animate-fadeIn"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <CheckCircle2 className="w-12 h-12 text-secondary mb-4" />
-              <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
-              <p className="text-gray-600">{benefit.description}</p>
+              <CheckCircle2 className="w-12 h-12 text-[#221F26] mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-[#221F26]">{benefit.title}</h3>
+              <p className="text-[#221F26]">{benefit.description}</p>
             </div>
           ))}
         </div>

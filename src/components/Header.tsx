@@ -11,9 +11,10 @@ export const Header = () => {
         </div>
         <div className="flex items-center gap-4">
           <nav className="hidden md:flex items-center gap-4">
-            <a href="#business-profiles" className="text-[#221F26] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)]">Services</a>
-            <a href="#how-it-works" className="text-[#221F26] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)]">How It Works</a>
-            <a href="#about" className="text-[#221F26] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)]">About</a>
+            <a href="#business-profiles" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)]">Services</a>
+            <a href="#benefits" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)]">Benefits</a>
+            <a href="#how-it-works" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)]">How It Works</a>
+            <a href="#about" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)]">About</a>
           </nav>
           <Button asChild className="bg-[#E5DEFF] text-[#221F26] font-bold hover:bg-[#FF6700] hover:text-white hover:shadow-[0_0_15px_rgba(255,103,0,0.5)] rounded-full transition-all hover:italic hover:underline">
             <a href="#business-profiles">
