@@ -10,10 +10,12 @@ export const HowItWorks = () => {
           how it works
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
-          <Card className="bg-white border-secondary/20 p-8 shadow-lg relative">
+          <Card className="bg-white border-secondary/20 p-8 shadow-lg">
             <div className="flex flex-col items-center text-center space-y-4">
-              <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-6xl font-bold text-[#FF6700]">1</span>
-              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mt-6">
+              <div className="w-20 h-20 rounded-full bg-[#FF6700] flex items-center justify-center mb-4">
+                <span className="text-4xl font-bold text-white">1</span>
+              </div>
+              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
                 <Phone className="w-8 h-8 text-[#FF6700]" />
               </div>
               <h3 className="text-xl font-bold text-secondary">Free Strategy Call</h3>
@@ -23,10 +25,12 @@ export const HowItWorks = () => {
             </div>
           </Card>
 
-          <Card className="bg-white border-secondary/20 p-8 shadow-lg relative">
+          <Card className="bg-white border-secondary/20 p-8 shadow-lg">
             <div className="flex flex-col items-center text-center space-y-4">
-              <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-6xl font-bold text-[#FF6700]">2</span>
-              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mt-6">
+              <div className="w-20 h-20 rounded-full bg-[#FF6700] flex items-center justify-center mb-4">
+                <span className="text-4xl font-bold text-white">2</span>
+              </div>
+              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
                 <FileText className="w-8 h-8 text-[#FF6700]" />
               </div>
               <h3 className="text-xl font-bold text-secondary">Receive Your Business Roadmap</h3>
@@ -36,10 +40,12 @@ export const HowItWorks = () => {
             </div>
           </Card>
 
-          <Card className="bg-white border-secondary/20 p-8 shadow-lg relative">
+          <Card className="bg-white border-secondary/20 p-8 shadow-lg">
             <div className="flex flex-col items-center text-center space-y-4">
-              <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-6xl font-bold text-[#FF6700]">3</span>
-              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mt-6">
+              <div className="w-20 h-20 rounded-full bg-[#FF6700] flex items-center justify-center mb-4">
+                <span className="text-4xl font-bold text-white">3</span>
+              </div>
+              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
                 <Sparkles className="w-8 h-8 text-[#FF6700]" />
               </div>
               <h3 className="text-xl font-bold text-secondary">Experience Operational Zen</h3>
