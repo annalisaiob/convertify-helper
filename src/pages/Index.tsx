@@ -7,7 +7,7 @@ import { About } from "@/components/About";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-custom">
+    <div className="min-h-screen bg-gradient-electric">
       <Header />
       <main>
         <Hero />
