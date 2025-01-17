@@ -27,10 +27,10 @@ export default {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "#ffffff",
-        foreground: "#E2725B",
+        foreground: "#2B2B2B",
         navy: "#101585",
         primary: {
-          DEFAULT: "#E2725B",
+          DEFAULT: "#007BFF",
           foreground: "#ffffff",
         },
         secondary: {
@@ -38,7 +38,7 @@ export default {
           foreground: "#ffffff",
         },
         accent: {
-          DEFAULT: "#E2725B",
+          DEFAULT: "#007BFF",
           foreground: "#ffffff",
         },
         destructive: {
@@ -47,7 +47,7 @@ export default {
         },
         muted: {
           DEFAULT: "#ffffff",
-          foreground: "#E2725B",
+          foreground: "#2B2B2B",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -59,8 +59,8 @@ export default {
         },
       },
       backgroundImage: {
-        'gradient-custom': 'linear-gradient(135deg, #ffffff 0%, #E2725B 100%)',
-        'gradient-hero': 'linear-gradient(135deg, #E2725B 0%, #E2725B 100%)',
+        'gradient-custom': 'linear-gradient(135deg, #ffffff 0%, #007BFF 100%)',
+        'gradient-hero': 'linear-gradient(135deg, #007BFF 0%, #2B2B2B 100%)',
         'gradient-electric': 'linear-gradient(135deg, #007BFF 0%, #2B2B2B 100%)',
       },
       borderRadius: {
