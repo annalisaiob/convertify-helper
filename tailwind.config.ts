@@ -31,16 +31,16 @@ export default {
         foreground: "#221F26",
         navy: "#101585",
         primary: {
-          DEFAULT: "#E5DEFF",
-          foreground: "#221F26",
+          DEFAULT: "#221F26",
+          foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#E5DEFF",
-          foreground: "#221F26",
+          DEFAULT: "#221F26",
+          foreground: "#ffffff",
         },
         accent: {
-          DEFAULT: "#E5DEFF",
-          foreground: "#221F26",
+          DEFAULT: "#221F26",
+          foreground: "#ffffff",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
