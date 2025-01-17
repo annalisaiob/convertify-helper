@@ -33,10 +33,11 @@ export const Hero = () => {
                     className={`
                       ${index === 2 ? 'text-lg md:text-xl lg:text-2xl mt-4 italic lowercase' : 'text-3xl md:text-5xl lg:text-7xl mt-2 lowercase'} 
                       font-bold text-[#221F26] leading-tight
-                      ${index === 0 ? 'whitespace-pre-wrap' : ''}
                     `}
                   >
-                    {index === 0 ? line.replace('week', '\u00A0week') : line}
+                    {index === 0 ? (
+                      <span className="whitespace-nowrap">save 10+ hours a week</span>
+                    ) : line}
                   </h1>
                 ))}
               </div>
