@@ -12,9 +12,9 @@ const Index = () => {
       <main className="w-full">
         <Hero />
         <BusinessProfiles />
+        <About />
         <Benefits />
         <HowItWorks />
-        <About />
       </main>
     </div>
   );
