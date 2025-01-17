@@ -59,8 +59,6 @@ export default {
         },
       },
       backgroundImage: {
-        'gradient-custom': 'linear-gradient(135deg, #ffffff 0%, #007BFF 100%)',
-        'gradient-hero': 'linear-gradient(135deg, #007BFF 0%, #2B2B2B 100%)',
         'gradient-electric': 'linear-gradient(135deg, #007BFF 0%, #2B2B2B 100%)',
       },
       borderRadius: {
