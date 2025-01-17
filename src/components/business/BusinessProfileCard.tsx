@@ -18,7 +18,7 @@ export const BusinessProfileCard = ({ profile, isSelected, onSelect }: BusinessP
     >
       <CardHeader className="text-center">
         <profile.icon className="w-12 h-12 mx-auto mb-4 text-secondary" />
-        <CardTitle>{profile.title}</CardTitle>
+        <CardTitle className="lowercase">{profile.title}</CardTitle>
         <CardDescription>{profile.description}</CardDescription>
       </CardHeader>
     </Card>
