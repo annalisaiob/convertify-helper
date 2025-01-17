@@ -5,7 +5,7 @@ export const Header = () => {
     <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="text-navy text-2xl font-medium hover:italic hover:underline transition-all">
+          <span className="text-navy text-2xl font-button hover:italic hover:underline transition-all">
             creai lab
           </span>
         </div>
