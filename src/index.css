@@ -73,6 +73,8 @@
 
   body {
     @apply bg-background text-foreground font-sans;
+    background: linear-gradient(135deg, #007BFF 0%, #2B2B2B 100%);
+    min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6, button, .card-title {
