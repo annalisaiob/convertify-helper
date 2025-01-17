@@ -55,18 +55,18 @@ const businessProfiles: BusinessProfile[] = [
     description: "You're part of a growing team, building a product or service, and trying to scale your operations quickly and efficiently.",
     icon: Rocket,
     struggles: [
-      "Outgrowing basic systems like spreadsheets or DIY tools",
-      "Losing potential leads or clients due to inefficient sales pipelines",
-      "Struggling to create scalable workflows that can adapt as your team grows",
-      "Lacking visibility into key data like revenue, churn, or user growth"
+      "Spending more time fixing internal bottlenecks than actually building or selling your product.",
+      "Struggling to onboard new hires or partners because your processes live in someone's brain (or nowhere at all).",
+      "Burning through cash trying to \"just get it done\" without scalable systems to keep your team focused and productive.",
+      "Losing opportunities because your sales, marketing, and product teams aren't fully aligned or operating efficiently."
     ],
     solutions: {
-      title: "You're growing fast, and your current processes aren't keeping up. You need scalable systems and data to make informed decisions.",
+      title: "",
       items: [
-        "Automated lead tracking and nurturing system",
-        "Scalable customer onboarding workflow",
-        "Integrated analytics and reporting dashboard",
-        "Automated revenue and churn tracking system"
+        "Your operations ran like a well-oiled machine, so you could focus on growth, not chaos.",
+        "Every team member knew exactly what to do and had the tools to execute without constant hand-holding.",
+        "Your processes were scalable, so you weren't reinventing the wheel every time you launched or hired.",
+        "Sales, marketing, and product teams were fully aligned, driving growth without the drama or confusion."
       ]
     },
     pricing: "Starting at €999"
