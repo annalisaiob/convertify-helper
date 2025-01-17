@@ -41,7 +41,7 @@ export const Hero = () => {
                   </h1>
                 ))}
               </div>
-              <ArrowRight className="inline-block ml-4" size={64} color="#FF6700" />
+              <ArrowRight className="inline-block ml-4" size={64} color="#221F26" />
             </div>
             <p className="text-xl md:text-2xl text-[#221F26] mb-10 max-w-2xl animate-fadeIn" style={{ animationDelay: "0.2s" }}>
               By building clear processes, streamlining workflows, and automating the repetitive, 

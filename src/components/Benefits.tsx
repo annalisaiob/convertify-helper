@@ -33,7 +33,7 @@ export const Benefits = () => {
               className="bg-white p-6 rounded-lg shadow-lg animate-fadeIn"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <CheckCircle2 className="w-12 h-12 text-[#FF6700] mb-4" />
+              <CheckCircle2 className="w-12 h-12 text-[#221F26] mb-4" />
               <h3 className="text-xl font-semibold mb-2 text-[#221F26]">{benefit.title}</h3>
               <p className="text-[#221F26]">{benefit.description}</p>
             </div>

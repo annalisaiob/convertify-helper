@@ -26,7 +26,6 @@ export const About = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-12 items-start">
-            {/* Left column with image and title */}
             <div className="md:w-1/3 flex flex-col items-center md:items-start sticky top-20">
               <Card className="relative overflow-hidden w-48 h-48 rounded-2xl mb-8 shadow-lg">
                 <img 
@@ -39,11 +38,10 @@ export const About = () => {
                 <h2 className="text-3xl md:text-4xl font-display font-bold text-[#221F26]">
                   {text}
                 </h2>
-                <ArrowRight className="w-8 h-8 text-[#FF6700]" />
+                <ArrowRight className="w-8 h-8 text-[#221F26]" />
               </div>
             </div>
 
-            {/* Right column with content */}
             <div className="md:w-2/3">
               <div className="space-y-8 text-lg text-[#221F26]">
                 <p className="text-2xl font-heading italic tracking-wide mb-4 bg-gradient-to-r from-white/90 to-white/50 backdrop-blur-sm border-l-4 border-[#FF6700] px-8 py-6 rounded-r-xl shadow-md">
@@ -57,19 +55,19 @@ export const About = () => {
               <div className="flex flex-wrap gap-4 mt-8">
                 <Button asChild variant="outline" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground hover:italic hover:underline transition-all">
                   <a href="mailto:anna@creailab.com">
-                    <ArrowRight className="mr-2" color="#FF6700" />
+                    <ArrowRight className="mr-2 text-[#221F26]" />
                     anna@creailab.com
                   </a>
                 </Button>
                 <Button asChild variant="outline" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground hover:italic hover:underline transition-all">
                   <a href="https://www.linkedin.com/in/annalisa-iob-a94484a6/" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="mr-2" color="#FF6700" />
+                    <Linkedin className="mr-2 text-[#221F26]" />
                     say hi on linkedin
                   </a>
                 </Button>
                 <Button asChild variant="outline" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground hover:italic hover:underline transition-all">
                   <a href="https://annalisaiob.substack.com/" target="_blank" rel="noopener noreferrer">
-                    <Newspaper className="mr-2" color="#FF6700" />
+                    <Newspaper className="mr-2 text-[#221F26]" />
                     follow my story on substack
                   </a>
                 </Button>

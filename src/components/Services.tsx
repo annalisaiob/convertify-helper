@@ -33,11 +33,11 @@ export const Services = () => {
               className="bg-white p-8 rounded-lg border hover:shadow-lg transition-shadow animate-fadeIn"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <service.icon className="w-12 h-12 text-secondary mb-4" />
+              <service.icon className="w-12 h-12 text-[#221F26] mb-4" />
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
               <p className="text-gray-600 mb-4">{service.description}</p>
               <Button variant="link" className="p-0 text-secondary hover:text-secondary/80">
-                Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                Learn More <ArrowRight className="ml-2 w-4 h-4 text-[#221F26]" />
               </Button>
             </div>
           ))}
