@@ -11,18 +11,18 @@ const businessProfiles: BusinessProfile[] = [
     description: "You work alone as a creative or non-creative professional (like a photographer, writer, coach, or consultant) and are managing every aspect of your business yourself.",
     icon: User,
     struggles: [
-      "Feeling overwhelmed by juggling client work, admin tasks, and personal time",
-      "Spending too much time on repetitive tasks like invoicing, scheduling, and follow-ups",
-      "Losing track of important client details or deadlines",
-      "Wishing you had more time to focus on what you love doing"
+      "Spending hours on admin work that eats up your day, leaving you no time to focus on the work you actually love.",
+      "Constantly chasing clients for updates, payments, or approvals, feeling more like a babysitter than a professional.",
+      "Waking up at night panicking about missed deadlines, lost emails, or disorganized files that are quietly sabotaging you.",
+      "Wondering if you're the only one who feels like running a business is a never-ending uphill battle with zero backup."
     ],
     solutions: {
-      title: "You need simple, intuitive systems to reduce admin overwhelm and free up time for what you do best—serving your clients.",
+      title: "",
       items: [
-        "Automated client scheduling and confirmation system",
-        "Centralized client hub for easy information access",
-        "Streamlined client management system",
-        "Automated payment and membership management"
+        "Your admin tasks were automated, and you could focus on creative, high-impact work (or just take a guilt-free afternoon off).",
+        "Clients were kept in the loop automatically, and approvals and payments happened without the awkward chasing.",
+        "Your deadlines, projects, and files were organized in one place, giving you peace of mind and a clear path forward.",
+        "You felt confident running your business, knowing you've got systems in place that make everything work like clockwork."
       ]
     },
     pricing: "Starting at €399"

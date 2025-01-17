@@ -27,7 +27,7 @@ export const SolutionsPricing = ({ profile, pluralTitle }: SolutionsPricingProps
           </ul>
         </div>
         <div>
-          <h4 className="font-semibold mb-4 font-heading text-left">Some of Our Solutions:</h4>
+          <h4 className="font-semibold mb-4 font-heading text-left">What if...</h4>
           <ul className="space-y-3 text-left">
             {profile.solutions.items.map((item, index) => (
               <li key={index} className="flex items-start gap-2 font-heading">
