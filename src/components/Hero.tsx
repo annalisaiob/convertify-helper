@@ -27,7 +27,7 @@ export const Hero = () => {
           <div className="max-w-3xl text-left animate-fadeIn">
             <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#221F26] mb-8 leading-tight whitespace-pre-line">
               {text}
-              <ArrowRight className="inline-block ml-4 text-navy" size={64} />
+              <ArrowRight className="inline-block ml-4 text-[#E5DEFF]" size={64} />
             </h1>
             <p className="text-xl md:text-2xl text-[#221F26] mb-10 max-w-2xl animate-fadeIn" style={{ animationDelay: "0.2s" }}>
               By building clear processes, streamlining workflows, and automating the repetitive, 
@@ -36,14 +36,14 @@ export const Hero = () => {
             <div className="flex flex-col md:flex-row gap-4 items-start animate-fadeIn" style={{ animationDelay: "0.4s" }}>
               <Button 
                 asChild 
-                className="bg-[#E5DEFF] text-[#221F26] hover:bg-[#FF6700] hover:text-white hover:shadow-[0_0_15px_rgba(255,103,0,0.5)] text-lg px-8 py-6 rounded-full transition-all hover:italic hover:underline"
+                className="bg-[#E5DEFF] text-[#221F26] font-bold hover:bg-[#FF6700] hover:text-white hover:shadow-[0_0_15px_rgba(255,103,0,0.5)] text-lg px-8 py-6 rounded-full transition-all hover:italic hover:underline"
               >
                 <a 
                   href="https://calendly.com/anna-creailab/30min" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  schedule a free strategy call with me
+                  Schedule a Free Strategy Call with Me
                 </a>
               </Button>
             </div>
