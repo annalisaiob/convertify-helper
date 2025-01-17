@@ -9,14 +9,6 @@
     <meta property="og:image" content="/og-image.png" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='80' fill='%23101585'%3Eai%3C/text%3E%3C/svg%3E" />
     <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- Google Analytics tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BST38ZW8GY"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-BST38ZW8GY');
-    </script>
   </head>
 
   <body>
@@ -25,3 +17,127 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
+
+2. Now, let's properly implement the Electric Glam gradient by updating the tailwind.config.ts:
+
+<lov-write file_path="tailwind.config.ts">
+import type { Config } from "tailwindcss";
+
+export default {
+  darkMode: ["class"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
+  prefix: "",
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
+    extend: {
+      fontFamily: {
+        sans: ['Cardo', 'system-ui', 'serif'],
+        heading: ['Helvetica', 'Arial', 'sans-serif'],
+      },
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "#ffffff",
+        foreground: "#E2725B",
+        navy: "#101585",
+        primary: {
+          DEFAULT: "#E2725B",
+          foreground: "#ffffff",
+        },
+        secondary: {
+          DEFAULT: "#101585",
+          foreground: "#ffffff",
+        },
+        accent: {
+          DEFAULT: "#E2725B",
+          foreground: "#ffffff",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "#ffffff",
+          foreground: "#E2725B",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+      },
+      backgroundImage: {
+        'gradient-custom': 'linear-gradient(135deg, #ffffff 0%, #E2725B 100%)',
+        'gradient-hero': 'linear-gradient(135deg, #E2725B 0%, #E2725B 100%)',
+        'gradient-electric': 'linear-gradient(135deg, #007BFF 0%, #2B2B2B 100%)',
+      },
+      borderRadius: {
+        lg: "1rem",
+        md: "0.75rem",
+        sm: "0.5rem",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        fadeIn: "fadeIn 0.5s ease-out forwards",
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;
+
+3. Finally, let's update the Index.tsx to properly apply the gradient:
+
+<lov-write file_path="src/pages/Index.tsx">
+import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
+import { Benefits } from "@/components/Benefits";
+import { BusinessProfiles } from "@/components/BusinessProfiles";
+import { HowItWorks } from "@/components/HowItWorks";
+import { About } from "@/components/About";
+
+const Index = () => {
+  return (
+    <div className="min-h-screen w-full bg-gradient-electric">
+      <Header />
+      <main className="w-full">
+        <Hero />
+        <Benefits />
+        <BusinessProfiles />
+        <HowItWorks />
+        <About />
+      </main>
+    </div>
+  );
+};
+
+export default Index;
