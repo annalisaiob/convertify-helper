@@ -7,9 +7,9 @@ import { About } from "@/components/About";
 
 const Index = () => {
   return (
-    <div className="min-h-screen w-full bg-gradient-electric">
+    <div className="min-h-screen w-full bg-gradient-electric flex flex-col flex-grow">
       <Header />
-      <main className="w-full">
+      <main className="w-full flex-grow">
         <Hero />
         <Benefits />
         <BusinessProfiles />
