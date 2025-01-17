@@ -21,6 +21,7 @@ export default {
       fontFamily: {
         sans: ['Cardo', 'system-ui', 'serif'],
         heading: ['Helvetica', 'Arial', 'sans-serif'],
+        button: ['Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -59,7 +60,7 @@ export default {
         },
       },
       backgroundImage: {
-        'gradient-electric': 'linear-gradient(135deg, #FF007F 0%, #F5F5F5 100%)',
+        'gradient-electric': 'linear-gradient(135deg, #FFE4E1 0%, #F5C7A9 100%)',
       },
       borderRadius: {
         lg: "1rem",
