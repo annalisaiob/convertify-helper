@@ -13,7 +13,7 @@ export const HowItWorks = () => {
           <Card className="bg-white border-secondary/20 p-8 shadow-lg">
             <div className="flex flex-col items-center text-center space-y-4">
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
-                <Phone className="w-8 h-8 text-secondary" />
+                <Phone className="w-8 h-8 text-[#FF6700]" />
               </div>
               <h3 className="text-xl font-bold text-secondary">1. Free Strategy Call</h3>
               <p className="text-gray-600">
@@ -25,7 +25,7 @@ export const HowItWorks = () => {
           <Card className="bg-white border-secondary/20 p-8 shadow-lg">
             <div className="flex flex-col items-center text-center space-y-4">
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
-                <FileText className="w-8 h-8 text-secondary" />
+                <FileText className="w-8 h-8 text-[#FF6700]" />
               </div>
               <h3 className="text-xl font-bold text-secondary">2. Receive Your Business Roadmap</h3>
               <p className="text-gray-600">
@@ -37,7 +37,7 @@ export const HowItWorks = () => {
           <Card className="bg-white border-secondary/20 p-8 shadow-lg">
             <div className="flex flex-col items-center text-center space-y-4">
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
-                <Sparkles className="w-8 h-8 text-secondary" />
+                <Sparkles className="w-8 h-8 text-[#FF6700]" />
               </div>
               <h3 className="text-xl font-bold text-secondary">3. Experience Operational Zen</h3>
               <p className="text-gray-600">
@@ -49,7 +49,7 @@ export const HowItWorks = () => {
 
         <div className="mt-12 text-center">
           <div className="inline-flex items-center gap-2 bg-[#FF6700]/10 text-[#FF6700] px-6 py-3 rounded-full">
-            <Check className="w-5 h-5" />
+            <Check className="w-5 h-5" color="#FF6700" />
             <span className="font-medium">Our Guarantee: Measurable Impact or Nothing</span>
           </div>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
@@ -57,7 +57,7 @@ export const HowItWorks = () => {
           </p>
           <Button 
             asChild 
-            className="mt-8 bg-[#E5DEFF] hover:bg-[#FF6700] hover:text-white hover:shadow-[0_0_15px_rgba(255,103,0,0.5)] text-[#221F26] rounded-full transition-all duration-300"
+            className="mt-8 bg-[#E5DEFF] hover:bg-[#FF6700] hover:text-white text-[#221F26] rounded-full transition-all duration-300"
           >
             <a href="https://calendly.com/anna-creailab/30min" target="_blank" rel="noopener noreferrer">
               Schedule Your Free Strategy Call

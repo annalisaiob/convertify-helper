@@ -39,7 +39,7 @@ export const About = () => {
                 <h2 className="text-3xl md:text-4xl font-display font-bold text-[#221F26]">
                   {text}
                 </h2>
-                <ArrowRight className="w-8 h-8 text-[#E5DEFF]" />
+                <ArrowRight className="w-8 h-8 text-[#FF6700]" />
               </div>
             </div>
 
@@ -75,15 +75,15 @@ export const About = () => {
               </div>
 
               <div className="flex flex-wrap gap-4 mt-8">
-                <Button asChild variant="outline" className="rounded-full bg-[#E5DEFF] hover:bg-[#FF6700] hover:text-white text-[#221F26] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)]">
+                <Button asChild variant="outline" className="rounded-full bg-[#E5DEFF] hover:bg-[#FF6700] hover:text-white text-[#221F26] hover:italic hover:underline transition-all">
                   <a href="https://www.linkedin.com/in/annalisa-iob-a94484a6/" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="mr-2" />
+                    <Linkedin className="mr-2" color="#FF6700" />
                     say hi on linkedin
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full bg-[#E5DEFF] hover:bg-[#FF6700] hover:text-white text-[#221F26] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)]">
+                <Button asChild variant="outline" className="rounded-full bg-[#E5DEFF] hover:bg-[#FF6700] hover:text-white text-[#221F26] hover:italic hover:underline transition-all">
                   <a href="https://annalisaiob.substack.com/" target="_blank" rel="noopener noreferrer">
-                    <Newspaper className="mr-2" />
+                    <Newspaper className="mr-2" color="#FF6700" />
                     follow my story on substack
                   </a>
                 </Button>
