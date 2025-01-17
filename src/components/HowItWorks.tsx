@@ -15,7 +15,7 @@ export const HowItWorks = () => {
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
                 <Phone className="w-8 h-8 text-[#FF6700]" />
               </div>
-              <h3 className="text-xl font-bold text-secondary">1. Free Strategy Call</h3>
+              <h3 className="text-xl font-bold text-secondary"><span className="text-3xl text-[#FF6700] mr-2">1</span>Free Strategy Call</h3>
               <p className="text-gray-600">
                 Schedule a no-obligation call where we map out exactly where you are now, and where you want to go.
               </p>
@@ -27,7 +27,7 @@ export const HowItWorks = () => {
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
                 <FileText className="w-8 h-8 text-[#FF6700]" />
               </div>
-              <h3 className="text-xl font-bold text-secondary">2. Receive Your Business Roadmap</h3>
+              <h3 className="text-xl font-bold text-secondary"><span className="text-3xl text-[#FF6700] mr-2">2</span>Receive Your Business Roadmap</h3>
               <p className="text-gray-600">
                 Over our consultation call - completely free - we'll craft a detailed implementation plan tailored to your business.
               </p>
@@ -39,7 +39,7 @@ export const HowItWorks = () => {
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center">
                 <Sparkles className="w-8 h-8 text-[#FF6700]" />
               </div>
-              <h3 className="text-xl font-bold text-secondary">3. Experience Operational Zen</h3>
+              <h3 className="text-xl font-bold text-secondary"><span className="text-3xl text-[#FF6700] mr-2">3</span>Experience Operational Zen</h3>
               <p className="text-gray-600">
                 Transform your business operations into a smooth, stress-free experience that lets you focus on what matters most.
               </p>
