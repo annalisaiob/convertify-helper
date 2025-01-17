@@ -48,14 +48,14 @@ export const HowItWorks = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-6 py-3 rounded-full">
+          <div className="inline-flex items-center gap-2 bg-[#FF6700]/10 text-[#FF6700] px-6 py-3 rounded-full">
             <Check className="w-5 h-5" />
             <span className="font-medium">our guarantee: measurable impact or nothing</span>
           </div>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
             not satisfied with the implementation plan? no problem. there's absolutely no obligation to proceed. we believe in delivering real value - either we make a measurable impact on your business, or you pay nothing.
           </p>
-          <Button asChild className="mt-8 bg-secondary hover:bg-secondary/90 hover:italic hover:underline text-white rounded-full transition-all">
+          <Button asChild className="mt-8 bg-[#E5DEFF] hover:bg-[#FF6700] hover:text-white hover:italic hover:underline text-[#221F26] rounded-full transition-all">
             <a href="https://calendly.com/anna-creailab/30min" target="_blank" rel="noopener noreferrer">
               schedule your free strategy call
             </a>
