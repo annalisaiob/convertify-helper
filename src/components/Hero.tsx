@@ -15,7 +15,7 @@ export const Hero = () => {
       } else {
         clearInterval(typingInterval);
       }
-    }, 100);
+    }, 50);
 
     return () => clearInterval(typingInterval);
   }, []);
@@ -26,17 +26,20 @@ export const Hero = () => {
         <div className="flex items-start justify-between gap-8">
           <div className="max-w-3xl text-left animate-fadeIn">
             <div className="mb-8">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#221F26] leading-tight whitespace-pre-line">
-                Save 10+ Hours a Week
-              </h1>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#221F26] leading-tight whitespace-pre-line mt-2">
-                Close More Deals
-              </h1>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#221F26] mt-4 leading-tight italic">
-                * and finally, take that weekend off
-              </h2>
+              <div className="whitespace-pre-line">
+                {text.split('\n').map((line, index) => (
+                  <h1 
+                    key={index} 
+                    className={`text-3xl md:text-5xl lg:text-6xl font-bold text-[#221F26] leading-tight ${
+                      index === 2 ? 'mt-4 italic' : 'mt-2'
+                    }`}
+                  >
+                    {line}
+                  </h1>
+                ))}
+              </div>
               <ArrowRight className="inline-block ml-4 text-[#E5DEFF]" size={64} />
-              <h3 className="text-xl md:text-2xl lg:text-3xl text-[#221F26] mt-4 leading-tight">
+              <h3 className="text-xl md:text-2xl lg:text-3xl text-[#221F26] mt-4 leading-tight font-sans italic">
                 Let's get your business running smoother than a fresh jar of Nutella 🥐
               </h3>
             </div>
