@@ -60,7 +60,7 @@ export default {
         },
       },
       backgroundImage: {
-        'gradient-electric': 'linear-gradient(135deg, rgba(255, 228, 225, 0.3) 0%, rgba(229, 222, 255, 0.3) 100%)',
+        'gradient-electric': 'linear-gradient(90deg, rgba(229, 222, 255, 0.2) 0%, rgba(255, 228, 225, 0.2) 100%)',
       },
       borderRadius: {
         lg: "1rem",
