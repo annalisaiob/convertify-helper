@@ -30,7 +30,7 @@ const businessProfiles: BusinessProfile[] = [
   {
     id: "agency",
     title: "An Agency or Small Business",
-    description: "You run a team (big or small) delivering services to multiple clients, such as a marketing agency, design studio, or PR firm.",
+    description: "You run a team (big or small) delivering services to multiple clients or customers—maybe you're a marketing agency, a design studio, a PR firm, or even a local business like a yoga studio or café.",
     icon: Building2,
     struggles: [
       "Managing multiple client projects and timelines without overwhelming your team",
