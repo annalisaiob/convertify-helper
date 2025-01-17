@@ -5,20 +5,20 @@ export const Header = () => {
     <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="text-[#221F26] text-2xl font-button hover:text-[#FF6700] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)]">
-            Creai Lab
+          <span className="text-[#221F26] text-2xl font-button hover:text-[#FF6700] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)] lowercase">
+            creai lab
           </span>
         </div>
         <div className="flex items-center gap-4">
           <nav className="hidden md:flex items-center gap-4">
-            <a href="#business-profiles" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)]">Services</a>
-            <a href="#benefits" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)]">Benefits</a>
-            <a href="#how-it-works" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)]">How It Works</a>
-            <a href="#about" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)]">About</a>
+            <a href="#business-profiles" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)] lowercase">services</a>
+            <a href="#benefits" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)] lowercase">benefits</a>
+            <a href="#how-it-works" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)] lowercase">how it works</a>
+            <a href="#about" className="text-[#403E43] font-button font-bold hover:text-[#FF6700] hover:italic hover:underline transition-all hover:shadow-[0_0_15px_rgba(255,103,0,0.5)] lowercase">about</a>
           </nav>
-          <Button asChild className="bg-[#E5DEFF] text-[#221F26] font-bold hover:bg-[#FF6700] hover:text-white hover:shadow-[0_0_15px_rgba(255,103,0,0.5)] rounded-full transition-all hover:italic hover:underline">
+          <Button asChild className="bg-[#E5DEFF] text-[#221F26] font-bold hover:bg-[#FF6700] hover:text-white hover:shadow-[0_0_15px_rgba(255,103,0,0.5)] rounded-full transition-all hover:italic hover:underline lowercase">
             <a href="#business-profiles">
-              Get Started
+              get started
             </a>
           </Button>
         </div>

@@ -35,6 +35,9 @@ export const Hero = () => {
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#221F26] mt-4 leading-tight italic">
                 * and finally, take that weekend off
               </h2>
+              <h3 className="text-xl md:text-2xl lg:text-3xl text-[#221F26] mt-4 leading-tight">
+                Let's get your business running smoother than a fresh jar of Nutella 🥐
+              </h3>
               <ArrowRight className="inline-block ml-4 text-[#E5DEFF]" size={64} />
             </div>
             <p className="text-xl md:text-2xl text-[#221F26] mb-10 max-w-2xl animate-fadeIn" style={{ animationDelay: "0.2s" }}>
@@ -44,14 +47,14 @@ export const Hero = () => {
             <div className="flex flex-col md:flex-row gap-4 items-start animate-fadeIn" style={{ animationDelay: "0.4s" }}>
               <Button 
                 asChild 
-                className="bg-[#E5DEFF] text-[#221F26] font-bold hover:bg-[#FF6700] hover:text-white hover:shadow-[0_0_15px_rgba(255,103,0,0.5)] text-lg px-8 py-6 rounded-full transition-all hover:italic hover:underline"
+                className="bg-[#E5DEFF] text-[#221F26] font-bold hover:bg-[#FF6700] hover:text-white hover:shadow-[0_0_15px_rgba(255,103,0,0.5)] text-lg px-8 py-6 rounded-full transition-all hover:italic hover:underline lowercase"
               >
                 <a 
                   href="https://calendly.com/anna-creailab/30min" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  Schedule a Free Strategy Call with Me
+                  schedule a free strategy call with me
                 </a>
               </Button>
             </div>
