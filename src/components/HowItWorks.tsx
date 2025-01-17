@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="py-20 bg-white">
+    <section id="how-it-works" className="py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary mb-12 text-center">
           how it works
