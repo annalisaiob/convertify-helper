@@ -11,10 +11,10 @@ export const Header = () => {
           </a>
           
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#services" className="hover-trigger text-lg">services</a>
-            <a href="#tools" className="hover-trigger text-lg">tools</a>
-            <a href="#community" className="hover-trigger text-lg">community</a>
-            <a href="#about" className="hover-trigger text-lg">about</a>
+            <a href="/services" className="hover-trigger text-lg font-heading">services</a>
+            <a href="/tools" className="hover-trigger text-lg font-heading">tools</a>
+            <a href="/community" className="hover-trigger text-lg font-heading">community</a>
+            <a href="/about" className="hover-trigger text-lg font-heading">about</a>
             <Button asChild className="ml-4">
               <a href="#contact">
                 work with me

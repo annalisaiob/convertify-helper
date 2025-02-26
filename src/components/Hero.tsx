@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Users, Sparkles } from "lucide-react";
 
@@ -19,45 +18,45 @@ export const Hero = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
-            <a href="/services" className="group">
-              <div className="h-full border border-border/20 p-8 rounded-lg bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all">
-                <h2 className="font-heading text-2xl mb-4">Services</h2>
-                <p className="text-accent mb-4">Process automation, no-code solutions, and system integration</p>
-                <Button variant="link" className="p-0 group-hover:translate-x-2 transition-transform">
+            <div className="h-full border border-border/20 p-8 rounded-lg bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <h2 className="font-heading text-2xl mb-4">Services</h2>
+              <p className="text-accent mb-4">Process automation, no-code solutions, and system integration</p>
+              <Button variant="link" asChild className="p-0 hover:px-4 transition-all">
+                <a href="/services">
                   Explore Services <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </div>
-            </a>
+                </a>
+              </Button>
+            </div>
 
-            <a href="/tools" className="group">
-              <div className="h-full border border-border/20 p-8 rounded-lg bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all">
-                <h2 className="font-heading text-2xl mb-4">Tools</h2>
-                <p className="text-accent mb-4">Templates, guides, and recommended software stacks</p>
-                <Button variant="link" className="p-0 group-hover:translate-x-2 transition-transform">
+            <div className="h-full border border-border/20 p-8 rounded-lg bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <h2 className="font-heading text-2xl mb-4">Tools</h2>
+              <p className="text-accent mb-4">Templates, guides, and recommended software stacks</p>
+              <Button variant="link" asChild className="p-0 hover:px-4 transition-all">
+                <a href="/tools">
                   View Resources <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </div>
-            </a>
+                </a>
+              </Button>
+            </div>
 
-            <a href="/community" className="group">
-              <div className="h-full border border-border/20 p-8 rounded-lg bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all">
-                <h2 className="font-heading text-2xl mb-4">Community</h2>
-                <p className="text-accent mb-4">Co-working sessions, networking, and collaborative spaces</p>
-                <Button variant="link" className="p-0 group-hover:translate-x-2 transition-transform">
+            <div className="h-full border border-border/20 p-8 rounded-lg bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <h2 className="font-heading text-2xl mb-4">Community</h2>
+              <p className="text-accent mb-4">Co-working sessions, networking, and collaborative spaces</p>
+              <Button variant="link" asChild className="p-0 hover:px-4 transition-all">
+                <a href="/community">
                   Join Events <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </div>
-            </a>
+                </a>
+              </Button>
+            </div>
 
-            <a href="/about" className="group">
-              <div className="h-full border border-border/20 p-8 rounded-lg bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all">
-                <h2 className="font-heading text-2xl mb-4">About</h2>
-                <p className="text-accent mb-4">The story and mission behind Creai Lab</p>
-                <Button variant="link" className="p-0 group-hover:translate-x-2 transition-transform">
+            <div className="h-full border border-border/20 p-8 rounded-lg bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <h2 className="font-heading text-2xl mb-4">About</h2>
+              <p className="text-accent mb-4">The story and mission behind Creai Lab</p>
+              <Button variant="link" asChild className="p-0 hover:px-4 transition-all">
+                <a href="/about">
                   Learn More <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </div>
-            </a>
+                </a>
+              </Button>
+            </div>
           </div>
 
           {/* Call to Action Buttons */}
