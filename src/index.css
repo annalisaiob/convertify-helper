@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,7 +6,7 @@
 @layer base {
   * {
     @apply border-border;
-    cursor: url("data:image/svg+xml,%3Csvg width='96' height='96' viewBox='0 0 96 96' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='48' cy='48' r='32' fill='%23FF007F' opacity='0.2'%3E%3Canimate attributeName='r' values='24;32;24' dur='0.8s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.4;0.2;0.4' dur='0.8s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='48' cy='48' r='24' fill='%23FF007F' opacity='0.4'%3E%3Canimate attributeName='r' values='16;24;16' dur='0.8s' repeatCount='indefinite'/%3E%3Canimate attributeName='opacity' values='0.6;0.3;0.6' dur='0.8s' repeatCount='indefinite'/%3E%3C/circle%3E%3C/svg%3E") 48 48, auto !important;
+    cursor: auto;
   }
 
   html {
