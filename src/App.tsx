@@ -1,6 +1,6 @@
 
 import { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Index from './pages/Index';
 import ServicesPage from './pages/services';
 import AboutPage from './pages/about';
@@ -34,13 +34,17 @@ function App() {
   }, []);
 
   return (
-    <Routes>
-      <Route path="/" element={<Index />} />
-      <Route path="/services" element={<ServicesPage />} />
-      <Route path="/about" element={<AboutPage />} />
-      <Route path="/tools" element={<ToolsPage />} />
-      <Route path="/community" element={<CommunityPage />} />
-    </Routes>
+    <Router>
+      <div className="min-h-screen w-full bg-gradient-electric">
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/tools" element={<ToolsPage />} />
+          <Route path="/community" element={<CommunityPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

@@ -1,54 +1,37 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  /* Basic cursor removal */
   * {
     cursor: none !important;
   }
 
-  body {
-    cursor: none !important;
-  }
-
-  /* Large custom cursor */
+  /* Simple custom cursor */
   #custom-cursor {
-    width: 40px;
-    height: 40px;
-    border: 2px solid white;
+    width: 20px;
+    height: 20px;
+    background: white;
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
     z-index: 9999;
-    background: rgba(255, 255, 255, 0.1);
     transform: translate(-50%, -50%);
-    transition: transform 0.1s ease;
+    transition: width 0.2s, height 0.2s;
   }
 
-  /* Rest of your styles */
-  html {
-    @apply bg-background text-foreground;
-  }
-
-  /* Custom large cursor */
-  body::before {
-    content: '';
+  /* Make cursor larger on clickable elements */
+  a:hover ~ #custom-cursor,
+  button:hover ~ #custom-cursor {
     width: 40px;
     height: 40px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 32 32'%3E%3Cpath d='M8 28l6-6 3 3 11-11V8H22L11 19l-3-3-6 6v6h6z' fill='%23ffffff'/%3E%3C/svg%3E");
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    left: var(--mouse-x, 0);
-    top: var(--mouse-y, 0);
-    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.5);
   }
 
-  @keyframes follow {
-    from, to {
-      transform: translate(var(--mouse-x), var(--mouse-y));
-    }
+  /* Rest of the styles */
+  html {
+    @apply bg-background text-foreground;
   }
 
   h1, h2, h3, h4, h5, h6 {
