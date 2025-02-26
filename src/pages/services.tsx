@@ -1,3 +1,4 @@
+
 import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -19,39 +20,42 @@ const ServicesPage = () => {
           <div className="grid md:grid-cols-2 gap-12 mb-24">
             {/* Current State Section */}
             <div className="bg-white/5 backdrop-blur-sm p-12 rounded-2xl flex flex-col">
-              <h2 className="text-3xl font-heading mb-8">The Challenge</h2>
+              <h2 className="text-3xl font-heading mb-8">Do you ever feel like...</h2>
               <div className="space-y-6">
                 <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">Never-ending to-do lists and constant firefighting instead of progress</p>
+                  <p className="text-lg">Your to-do list is never-ending, and you're always putting out fires instead of getting ahead?</p>
                 </div>
                 <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">Overwhelming admin tasks taking time from what really matters</p>
+                  <p className="text-lg">You're drowning in emails, invoices, and admin tasks, leaving no time for the work that actually matters?</p>
                 </div>
                 <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">Disorganized systems with scattered notes and inefficient processes</p>
+                  <p className="text-lg">Your desk is full of sticky notes, voice memos, and spreadsheets, but nothing is organized the way you need it to be?</p>
                 </div>
                 <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">Complex tool setups that create more problems than they solve</p>
+                  <p className="text-lg">Your tools and systems feel like a jumble, and it's hard to keep everything straight?</p>
+                </div>
+                <div className="p-4 bg-white/5 rounded-lg">
+                  <p className="text-lg">You know things could be working better, but it all feels a bit too much to figure out?</p>
                 </div>
               </div>
             </div>
 
             {/* Future State Section */}
             <div className="bg-white/5 backdrop-blur-sm p-12 rounded-2xl flex flex-col">
-              <h2 className="text-3xl font-heading mb-8">The Solution</h2>
+              <h2 className="text-3xl font-heading mb-8">Imagine instead...</h2>
               <div className="space-y-6">
-                <div className="p-4 bg-white/5 rounded-lg border-l-4 border-green-500">
-                  <p className="text-lg">More time to focus on growth and what truly matters to you</p>
+                <div className="p-4 bg-white/5 rounded-lg">
+                  <p className="text-lg">Having more time to focus on what really matters to you—whether that's getting more clients or just enjoying life.</p>
                 </div>
-                <div className="p-4 bg-white/5 rounded-lg border-l-4 border-green-500">
-                  <p className="text-lg">Streamlined workflows that eliminate stress and keep you ahead</p>
+                <div className="p-4 bg-white/5 rounded-lg">
+                  <p className="text-lg">Cutting down on the constant stress of feeling behind, and finally getting on top of things.</p>
                 </div>
-                <div className="p-4 bg-white/5 rounded-lg border-l-4 border-green-500">
-                  <p className="text-lg">Synchronized tools and systems that work seamlessly together</p>
+                <div className="p-4 bg-white/5 rounded-lg">
+                  <p className="text-lg">Getting your tools and systems working in sync so you don't waste time looking for things or redoing work.</p>
                 </div>
               </div>
               <div className="mt-auto pt-8">
-                <p className="text-xl font-medium text-primary">Let's make this your reality.</p>
+                <p className="text-xl font-medium text-primary">I can help make that happen.</p>
               </div>
             </div>
           </div>
