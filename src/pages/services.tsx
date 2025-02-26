@@ -1,3 +1,4 @@
+
 import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -15,7 +16,7 @@ const ServicesPage = () => {
             <p className="text-xl md:text-2xl text-accent max-w-3xl mx-auto">Let's clear away the chaos and create systems that actually work for you.</p>
           </div>
 
-          {/* Current & Future State Sections in a 2-column layout */}
+          {/* Current & Future State Sections */}
           <div className="grid md:grid-cols-2 gap-12 mb-24">
             {/* Current State Section */}
             <div className="bg-white/5 backdrop-blur-sm p-12 rounded-2xl">
@@ -60,10 +61,11 @@ const ServicesPage = () => {
             </div>
           </div>
           
-          {/* Services Grid - Now in one row */}
+          {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-32">
-            <div className="h-full p-8 bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
-              <div className="mb-8">
+            {/* Service cards with fixed heights */}
+            <div className="flex flex-col h-[360px] p-8 bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
+              <div className="flex-grow">
                 <Workflow className="w-12 h-12 text-primary mb-6" />
                 <h2 className="text-2xl font-heading mb-4">Streamline & Automate</h2>
                 <p className="text-accent">Save 10+ hours a week by cutting out repetitive tasks and setting up systems that work.</p>
@@ -71,14 +73,14 @@ const ServicesPage = () => {
               <Button 
                 onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
                 variant="outline"
-                className="w-full"
+                className="w-full mt-6"
               >
                 Learn More <ArrowRight className="ml-2" />
               </Button>
             </div>
             
-            <div className="h-full p-8 bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
-              <div className="mb-8">
+            <div className="flex flex-col h-[360px] p-8 bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
+              <div className="flex-grow">
                 <Zap className="w-12 h-12 text-primary mb-6" />
                 <h2 className="text-2xl font-heading mb-4">Custom Tools</h2>
                 <p className="text-accent">Get simple, tailored solutions—from better workflows to helpful dashboards.</p>
@@ -86,14 +88,14 @@ const ServicesPage = () => {
               <Button 
                 onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
                 variant="outline"
-                className="w-full"
+                className="w-full mt-6"
               >
                 Explore Solutions <ArrowRight className="ml-2" />
               </Button>
             </div>
             
-            <div className="h-full p-8 bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
-              <div className="mb-8">
+            <div className="flex flex-col h-[360px] p-8 bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
+              <div className="flex-grow">
                 <Settings className="w-12 h-12 text-primary mb-6" />
                 <h2 className="text-2xl font-heading mb-4">Right Tools</h2>
                 <p className="text-accent">Stop wasting time guessing. Get expert guidance on the perfect software stack.</p>
@@ -101,14 +103,14 @@ const ServicesPage = () => {
               <Button 
                 onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
                 variant="outline"
-                className="w-full"
+                className="w-full mt-6"
               >
                 Get Started <ArrowRight className="ml-2" />
               </Button>
             </div>
             
-            <div className="h-full p-8 bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
-              <div className="mb-8">
+            <div className="flex flex-col h-[360px] p-8 bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
+              <div className="flex-grow">
                 <Link className="w-12 h-12 text-primary mb-6" />
                 <h2 className="text-2xl font-heading mb-4">Community</h2>
                 <p className="text-accent">Connect with other creatives and entrepreneurs through events and workshops.</p>
@@ -116,7 +118,7 @@ const ServicesPage = () => {
               <Button 
                 onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
                 variant="outline"
-                className="w-full"
+                className="w-full mt-6"
               >
                 Join Community <ArrowRight className="ml-2" />
               </Button>
