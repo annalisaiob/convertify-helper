@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export const Hero = () => {
@@ -25,9 +25,14 @@ export const Hero = () => {
     <section className="pt-32 pb-20 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col items-start gap-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/5 rounded-full">
+            <Sparkles className="w-4 h-4" />
+            <span className="text-sm font-medium">Transforming Ideas into Efficient Systems</span>
+          </div>
+          
           <div className="max-w-4xl space-y-6">
             <div className="whitespace-pre-line">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight">
                 {text}
               </h1>
             </div>
@@ -40,7 +45,7 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <Button 
               asChild 
-              className="bg-primary text-white px-8 py-6 text-lg hover:bg-primary/90 hover:italic"
+              className="bg-primary text-white px-8 py-6 text-lg hover:bg-primary/90 hover:scale-105 transition-transform duration-200"
             >
               <a href="#services">
                 Explore Services
@@ -50,13 +55,28 @@ export const Hero = () => {
             <Button 
               asChild 
               variant="outline"
-              className="px-8 py-6 text-lg hover:bg-primary hover:text-white"
+              className="px-8 py-6 text-lg hover:bg-primary hover:text-white hover:scale-105 transition-transform duration-200"
             >
               <a href="#contact">
                 Get in Touch
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 w-full">
+            <div className="border border-border/20 p-6 rounded-lg bg-white/50 backdrop-blur-sm">
+              <h3 className="font-heading text-xl mb-2">Process Optimization</h3>
+              <p className="text-accent">Streamline your workflow and reduce repetitive tasks</p>
+            </div>
+            <div className="border border-border/20 p-6 rounded-lg bg-white/50 backdrop-blur-sm">
+              <h3 className="font-heading text-xl mb-2">Custom Solutions</h3>
+              <p className="text-accent">Tailored no-code tools and systems for your business</p>
+            </div>
+            <div className="border border-border/20 p-6 rounded-lg bg-white/50 backdrop-blur-sm">
+              <h3 className="font-heading text-xl mb-2">System Integration</h3>
+              <p className="text-accent">Connect and optimize your existing software stack</p>
+            </div>
           </div>
         </div>
       </div>
