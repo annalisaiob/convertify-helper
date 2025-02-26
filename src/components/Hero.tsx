@@ -1,10 +1,11 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export const Hero = () => {
   const [text, setText] = useState("");
-  const fullText = "save 10+ hours a week\nclose more deals\n* and finally, take that weekend off";
+  const fullText = "Helping creatives, entrepreneurs,\nand independent businesses\nwork smarter, connect, and grow";
   
   useEffect(() => {
     let currentIndex = 0;
@@ -21,55 +22,41 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="pt-32 pb-20 px-4 bg-gradient-hero">
-      <div className="container mx-auto">
-        <div className="flex items-center justify-between gap-8">
-          <div className="max-w-3xl text-left animate-fadeIn relative z-10">
-            <div className="mb-8">
-              <div className="whitespace-pre-line">
-                {text.split('\n').map((line, index) => (
-                  <h1 
-                    key={index} 
-                    className={`
-                      ${index === 2 ? 'text-lg md:text-xl lg:text-2xl mt-4 italic lowercase' : 'text-3xl md:text-5xl lg:text-7xl mt-2 lowercase'} 
-                      font-bold text-[#221F26] leading-tight
-                    `}
-                  >
-                    {index === 0 ? (
-                      <span className="whitespace-nowrap">save 10+ hours a week</span>
-                    ) : line}
-                  </h1>
-                ))}
-              </div>
-              <ArrowRight className="inline-block ml-4" size={64} color="#221F26" />
+    <section className="pt-32 pb-20 px-4">
+      <div className="container mx-auto max-w-6xl">
+        <div className="flex flex-col items-start gap-8">
+          <div className="max-w-4xl space-y-6">
+            <div className="whitespace-pre-line">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading leading-tight">
+                {text}
+              </h1>
             </div>
-            <p className="text-xl md:text-2xl text-[#221F26] mb-10 max-w-2xl animate-fadeIn" style={{ animationDelay: "0.2s" }}>
-              By building clear processes, streamlining workflows, and automating the repetitive, 
-              I give you back your time and peace of mind—all while helping you grow your bottom line.
-              <br /><br />
-              Let's get your business running smoother than a fresh jar of Nutella 🥐
+            <p className="text-lg md:text-xl text-accent mt-6 max-w-2xl">
+              Remove barriers through smarter systems, meaningful connections, 
+              and spaces that spark collaboration.
             </p>
-            <div className="flex flex-col md:flex-row gap-4 items-start animate-fadeIn" style={{ animationDelay: "0.4s" }}>
-              <Button 
-                asChild 
-                className="bg-primary text-primary-foreground font-bold hover:bg-primary/90 text-lg px-8 py-6 rounded-full transition-all hover:italic hover:underline lowercase"
-              >
-                <a 
-                  href="https://calendly.com/anna-creailab/30min" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  schedule a free strategy call with me
-                </a>
-              </Button>
-            </div>
           </div>
-          <div className="hidden lg:flex flex-shrink-0 w-1/3 items-center relative z-0 -ml-20">
-            <img 
-              src="/lovable-uploads/00e4501b-1662-41c0-a496-dd53b1e86f0b.png" 
-              alt="Illustration of person working" 
-              className="w-full h-auto"
-            />
+          
+          <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <Button 
+              asChild 
+              className="bg-primary text-white px-8 py-6 text-lg hover:bg-primary/90 hover:italic"
+            >
+              <a href="#services">
+                Explore Services
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
+            <Button 
+              asChild 
+              variant="outline"
+              className="px-8 py-6 text-lg hover:bg-primary hover:text-white"
+            >
+              <a href="#contact">
+                Get in Touch
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
           </div>
         </div>
       </div>

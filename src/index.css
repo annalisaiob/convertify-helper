@@ -1,52 +1,68 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-  }
-
   * {
     @apply border-border;
+    cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='4' fill='%23000000' opacity='0.5'/%3E%3C/svg%3E") 12 12, auto;
   }
 
-  html, body {
-    @apply min-h-screen;
+  html {
+    @apply bg-background text-foreground;
   }
 
   body {
-    @apply bg-gradient-electric text-foreground font-sans min-h-screen;
+    @apply antialiased min-h-screen bg-gradient-electric font-sans;
   }
 
-  h1, h2, h3, h4, h5, h6, .card-title {
-    @apply font-heading text-[#221F26] !important;
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
   }
 
-  button {
-    @apply font-button;
+  a {
+    @apply transition-all duration-200 hover:italic hover:underline;
   }
 
-  p {
-    @apply text-[#221F26];
+  .hover-trigger {
+    @apply relative inline-block;
   }
+
+  .hover-trigger::after {
+    content: '';
+    @apply absolute w-0 h-px bg-current left-0 -bottom-1 transition-all duration-200;
+  }
+
+  .hover-trigger:hover::after {
+    @apply w-full;
+  }
+
+  /* Grid Layout */
+  .grid-layout {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+  }
+
+  /* Button Styles */
+  .btn {
+    @apply px-6 py-3 font-medium transition-all duration-200 
+           border border-primary hover:bg-primary hover:text-white
+           flex items-center justify-center gap-2;
+  }
+
+  /* Section Spacing */
+  .section-spacing {
+    @apply py-16 md:py-24;
+  }
+
+  /* Container Width */
+  .container-width {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Custom Cursor Ping Effect */
+.cursor-ping {
+  @apply absolute w-1 h-1 bg-black rounded-full animate-pingDot;
+  pointer-events: none;
 }

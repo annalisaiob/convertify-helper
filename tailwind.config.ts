@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,53 +20,40 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Cardo', 'system-ui', 'serif'],
-        heading: ['Helvetica', 'Arial', 'sans-serif'],
-        button: ['Helvetica', 'Arial', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        heading: ['Playfair Display', 'serif'],
+        mono: ['Menlo', 'Monaco', 'Courier New', 'monospace'],
       },
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
+        border: "#333333",
+        input: "#333333",
+        ring: "#333333",
         background: "#ffffff",
         foreground: "#221F26",
-        navy: "#101585",
         primary: {
           DEFAULT: "#221F26",
           foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#221F26",
+          DEFAULT: "#333333",
           foreground: "#ffffff",
         },
         accent: {
-          DEFAULT: "#221F26",
+          DEFAULT: "#555555",
           foreground: "#ffffff",
         },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
         muted: {
-          DEFAULT: "#ffffff",
-          foreground: "#221F26",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "#221F26",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
+          DEFAULT: "#F1F1F1",
           foreground: "#221F26",
         },
       },
       backgroundImage: {
-        'gradient-electric': 'linear-gradient(to top, rgba(217, 70, 239, 0.05) 0%, #FFFFFF 100%)',
+        'gradient-electric': 'linear-gradient(to top, rgba(0, 0, 0, 0.03) 0%, #FFFFFF 100%)',
       },
       borderRadius: {
-        lg: "1rem",
-        md: "0.75rem",
-        sm: "0.5rem",
+        lg: "0.5rem",
+        md: "0.375rem",
+        sm: "0.25rem",
       },
       keyframes: {
         "accordion-down": {
@@ -80,11 +68,18 @@ export default {
           "0%": { opacity: "0", transform: "translateY(10px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        pingDot: {
+          "75%, 100%": {
+            transform: "scale(1.5)",
+            opacity: "0",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         fadeIn: "fadeIn 0.5s ease-out forwards",
+        pingDot: "pingDot 1s cubic-bezier(0, 0, 0.2, 1) infinite",
       },
     },
   },
