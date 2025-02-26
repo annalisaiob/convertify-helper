@@ -24,7 +24,7 @@ export const Hero = () => {
   return (
     <section className="pt-32 pb-20 px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col items-start gap-8">
+        <div className="flex flex-col items-center text-center gap-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/5 rounded-full">
             <Sparkles className="w-4 h-4" />
             <span className="text-sm font-medium">Transforming Ideas into Efficient Systems</span>
@@ -36,7 +36,7 @@ export const Hero = () => {
                 {text}
               </h1>
             </div>
-            <p className="text-lg md:text-xl text-accent mt-6 max-w-2xl">
+            <p className="text-lg md:text-xl text-accent mt-6 max-w-2xl mx-auto">
               Remove barriers through smarter systems, meaningful connections, 
               and spaces that spark collaboration.
             </p>
@@ -64,18 +64,22 @@ export const Hero = () => {
             </Button>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 w-full">
             <div className="border border-border/20 p-6 rounded-lg bg-white/50 backdrop-blur-sm">
-              <h3 className="font-heading text-xl mb-2">Process Optimization</h3>
-              <p className="text-accent">Streamline your workflow and reduce repetitive tasks</p>
+              <h3 className="font-heading text-xl mb-2">Process Optimization & Automation</h3>
+              <p className="text-accent">Streamline workflows and reduce repetitive tasks through automated systems</p>
             </div>
             <div className="border border-border/20 p-6 rounded-lg bg-white/50 backdrop-blur-sm">
-              <h3 className="font-heading text-xl mb-2">Custom Solutions</h3>
-              <p className="text-accent">Tailored no-code tools and systems for your business</p>
+              <h3 className="font-heading text-xl mb-2">Custom No-Code Solutions</h3>
+              <p className="text-accent">Build internal tools, dashboards, and databases without coding</p>
             </div>
             <div className="border border-border/20 p-6 rounded-lg bg-white/50 backdrop-blur-sm">
-              <h3 className="font-heading text-xl mb-2">System Integration</h3>
-              <p className="text-accent">Connect and optimize your existing software stack</p>
+              <h3 className="font-heading text-xl mb-2">Tool Implementation & Integration</h3>
+              <p className="text-accent">Adopt and connect the right software for your business needs</p>
+            </div>
+            <div className="border border-border/20 p-6 rounded-lg bg-white/50 backdrop-blur-sm">
+              <h3 className="font-heading text-xl mb-2">Community & Events</h3>
+              <p className="text-accent">Join workshops, co-working sessions, and connect with fellow creatives</p>
             </div>
           </div>
         </div>
