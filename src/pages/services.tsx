@@ -1,3 +1,4 @@
+
 import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -11,7 +12,7 @@ const ServicesPage = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Hero Section */}
           <div className="text-center mb-24">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading mb-8">See What Matters Most, Scale With Ease</h1>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading mb-8">Stop Drowning in Admin. Get Back to What You Love.</h1>
             <p className="text-xl md:text-2xl text-accent max-w-3xl mx-auto mb-6">
               Get the clarity you need to make strategic decisions, while automated systems handle the rest. More visibility, less busywork.
             </p>
