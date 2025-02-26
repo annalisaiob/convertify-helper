@@ -15,7 +15,7 @@ export const Header = () => {
             <a href="/tools" className="text-3xl font-heading hover:text-primary/80 transition-colors">tools</a>
             <a href="/community" className="text-3xl font-heading hover:text-primary/80 transition-colors">community</a>
             <a href="/about" className="text-3xl font-heading hover:text-primary/80 transition-colors">about</a>
-            <Button asChild size="md" className="text-lg">
+            <Button asChild size="sm" className="text-lg">
               <a href="#contact">
                 work with me
               </a>
