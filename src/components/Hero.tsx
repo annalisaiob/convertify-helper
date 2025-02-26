@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export const Hero = () => {
@@ -24,12 +24,7 @@ export const Hero = () => {
   return (
     <section className="pt-32 pb-20 px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col items-center text-center gap-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/5 rounded-full">
-            <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-medium">Transforming Ideas into Efficient Systems</span>
-          </div>
-          
+        <div className="flex flex-col items-center text-center gap-8">          
           <div className="max-w-4xl space-y-6">
             <div className="whitespace-pre-line">
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight">
