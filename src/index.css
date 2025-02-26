@@ -92,7 +92,12 @@
 
 /* Button hover effect */
 .btn:hover {
-  @apply transform -translate-y-0.5 shadow-lg;
+  @apply transform -translate-y-0.5 shadow-lg px-8 py-4;
+}
+
+/* Link hover styles */
+.hover-link {
+  @apply transition-all duration-200 hover:italic;
 }
 
 /* Section transitions */
