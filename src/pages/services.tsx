@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -16,118 +15,110 @@ const ServicesPage = () => {
             <p className="text-xl md:text-2xl text-accent max-w-3xl mx-auto">Transform your business operations with smart systems that work for you, not against you.</p>
           </div>
 
-          {/* Current & Future State Sections */}
+          {/* Current & Future State Sections - Redesigned */}
           <div className="grid md:grid-cols-2 gap-12 mb-24">
             {/* Current State Section */}
-            <div className="bg-white/5 backdrop-blur-sm p-12 rounded-2xl">
-              <h2 className="text-3xl font-heading mb-8">Do you ever feel like...</h2>
-              <ul className="space-y-6 text-lg">
-                <li className="flex gap-4 items-start">
-                  <div className="w-2 h-2 rounded-full bg-red-500 mt-2.5"></div>
-                  Your to-do list is never-ending, and you're always putting out fires instead of getting ahead?
-                </li>
-                <li className="flex gap-4 items-start">
-                  <div className="w-2 h-2 rounded-full bg-red-500 mt-2.5"></div>
-                  You're drowning in emails, invoices, and admin tasks, leaving no time for the work that actually matters?
-                </li>
-                <li className="flex gap-4 items-start">
-                  <div className="w-2 h-2 rounded-full bg-red-500 mt-2.5"></div>
-                  Your desk is full of sticky notes, voice memos, and spreadsheets, but nothing is organized the way you need it to be?
-                </li>
-                <li className="flex gap-4 items-start">
-                  <div className="w-2 h-2 rounded-full bg-red-500 mt-2.5"></div>
-                  Your tools and systems feel like a jumble, and it's hard to keep everything straight?
-                </li>
-                <li className="flex gap-4 items-start">
-                  <div className="w-2 h-2 rounded-full bg-red-500 mt-2.5"></div>
-                  You know things could be working better, but it all feels a bit too much to figure out?
-                </li>
-              </ul>
+            <div className="bg-white/5 backdrop-blur-sm p-12 rounded-2xl flex flex-col">
+              <h2 className="text-3xl font-heading mb-8">The Challenge</h2>
+              <div className="space-y-6">
+                <div className="p-4 bg-white/5 rounded-lg">
+                  <p className="text-lg">Never-ending to-do lists and constant firefighting instead of progress</p>
+                </div>
+                <div className="p-4 bg-white/5 rounded-lg">
+                  <p className="text-lg">Overwhelming admin tasks taking time from what really matters</p>
+                </div>
+                <div className="p-4 bg-white/5 rounded-lg">
+                  <p className="text-lg">Disorganized systems with scattered notes and inefficient processes</p>
+                </div>
+                <div className="p-4 bg-white/5 rounded-lg">
+                  <p className="text-lg">Complex tool setups that create more problems than they solve</p>
+                </div>
+              </div>
             </div>
 
             {/* Future State Section */}
-            <div className="bg-white/5 backdrop-blur-sm p-12 rounded-2xl">
-              <h2 className="text-3xl font-heading mb-8">Imagine instead...</h2>
-              <ul className="space-y-6 text-lg">
-                <li className="flex gap-4 items-start">
-                  <div className="w-2 h-2 rounded-full bg-green-500 mt-2.5"></div>
-                  Having more time to focus on what really matters to you—whether that's getting more clients or just enjoying life.
-                </li>
-                <li className="flex gap-4 items-start">
-                  <div className="w-2 h-2 rounded-full bg-green-500 mt-2.5"></div>
-                  Cutting down on the constant stress of feeling behind, and finally getting on top of things.
-                </li>
-                <li className="flex gap-4 items-start">
-                  <div className="w-2 h-2 rounded-full bg-green-500 mt-2.5"></div>
-                  Getting your tools and systems working in sync so you don't waste time looking for things or redoing work.
-                </li>
-              </ul>
-              <p className="mt-8 text-lg font-medium text-primary">I can help make that happen.</p>
+            <div className="bg-white/5 backdrop-blur-sm p-12 rounded-2xl flex flex-col">
+              <h2 className="text-3xl font-heading mb-8">The Solution</h2>
+              <div className="space-y-6">
+                <div className="p-4 bg-white/5 rounded-lg border-l-4 border-green-500">
+                  <p className="text-lg">More time to focus on growth and what truly matters to you</p>
+                </div>
+                <div className="p-4 bg-white/5 rounded-lg border-l-4 border-green-500">
+                  <p className="text-lg">Streamlined workflows that eliminate stress and keep you ahead</p>
+                </div>
+                <div className="p-4 bg-white/5 rounded-lg border-l-4 border-green-500">
+                  <p className="text-lg">Synchronized tools and systems that work seamlessly together</p>
+                </div>
+              </div>
+              <div className="mt-auto pt-8">
+                <p className="text-xl font-medium text-primary">Let's make this your reality.</p>
+              </div>
             </div>
           </div>
           
           {/* Services Grid */}
           <div className="mb-24">
-            <h2 className="text-4xl font-heading mb-16 text-center">What I Do</h2>
+            <h2 className="text-4xl font-heading mb-16 text-center">How I Can Help</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="flex flex-col h-[360px] p-8 bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
-                <div className="flex-grow">
-                  <Workflow className="w-12 h-12 text-primary mb-6" />
-                  <h2 className="text-2xl font-heading mb-4">Streamline & Automate Your Work</h2>
-                  <p className="text-accent">Save 10+ hours a week by cutting out repetitive tasks and setting up systems that actually work for you.</p>
+              {/* Service Cards - All with identical structure for consistent heights */}
+              <div className="group flex flex-col bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
+                <div className="p-8 flex-grow flex flex-col">
+                  <Workflow className="w-12 h-12 text-primary mb-6 group-hover:scale-110 transition-transform" />
+                  <h3 className="text-2xl font-heading mb-4">Streamline & Automate</h3>
+                  <p className="text-accent mb-6 flex-grow">Save 10+ hours a week by cutting out repetitive tasks and setting up systems that work for you.</p>
+                  <Button 
+                    onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
+                    variant="outline"
+                    className="w-full"
+                  >
+                    Learn More <ArrowRight className="ml-2" />
+                  </Button>
                 </div>
-                <Button 
-                  onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
-                  variant="outline"
-                  className="w-full mt-6"
-                >
-                  Learn More <ArrowRight className="ml-2" />
-                </Button>
               </div>
               
-              <div className="flex flex-col h-[360px] p-8 bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
-                <div className="flex-grow">
-                  <Zap className="w-12 h-12 text-primary mb-6" />
-                  <h2 className="text-2xl font-heading mb-4">Build Simple, Custom Tools</h2>
-                  <p className="text-accent">Get simple, tailored solutions—whether it's a better workflow or a dashboard that helps you stay on track.</p>
+              <div className="group flex flex-col bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
+                <div className="p-8 flex-grow flex flex-col">
+                  <Zap className="w-12 h-12 text-primary mb-6 group-hover:scale-110 transition-transform" />
+                  <h3 className="text-2xl font-heading mb-4">Custom Tools</h3>
+                  <p className="text-accent mb-6 flex-grow">Get simple, tailored solutions—whether it's a better workflow or a dashboard that helps you stay on track.</p>
+                  <Button 
+                    onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
+                    variant="outline"
+                    className="w-full"
+                  >
+                    Explore Solutions <ArrowRight className="ml-2" />
+                  </Button>
                 </div>
-                <Button 
-                  onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
-                  variant="outline"
-                  className="w-full mt-6"
-                >
-                  Explore Solutions <ArrowRight className="ml-2" />
-                </Button>
               </div>
               
-              <div className="flex flex-col h-[360px] p-8 bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
-                <div className="flex-grow">
-                  <Settings className="w-12 h-12 text-primary mb-6" />
-                  <h2 className="text-2xl font-heading mb-4">Choose & Set Up the Right Tools</h2>
-                  <p className="text-accent">Stop wasting time guessing. Get expert guidance on finding and implementing the perfect software solutions.</p>
+              <div className="group flex flex-col bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
+                <div className="p-8 flex-grow flex flex-col">
+                  <Settings className="w-12 h-12 text-primary mb-6 group-hover:scale-110 transition-transform" />
+                  <h3 className="text-2xl font-heading mb-4">Right Tools</h3>
+                  <p className="text-accent mb-6 flex-grow">Stop wasting time guessing. Get expert guidance on finding and implementing the perfect software solutions.</p>
+                  <Button 
+                    onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
+                    variant="outline"
+                    className="w-full"
+                  >
+                    Get Started <ArrowRight className="ml-2" />
+                  </Button>
                 </div>
-                <Button 
-                  onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
-                  variant="outline"
-                  className="w-full mt-6"
-                >
-                  Get Started <ArrowRight className="ml-2" />
-                </Button>
               </div>
               
-              <div className="flex flex-col h-[360px] p-8 bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
-                <div className="flex-grow">
-                  <Link className="w-12 h-12 text-primary mb-6" />
-                  <h2 className="text-2xl font-heading mb-4">Connect with Resources & Community</h2>
-                  <p className="text-accent">Through events, workshops, and collaborations, we help creatives and entrepreneurs meet, learn, and grow.</p>
+              <div className="group flex flex-col bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
+                <div className="p-8 flex-grow flex flex-col">
+                  <Link className="w-12 h-12 text-primary mb-6 group-hover:scale-110 transition-transform" />
+                  <h3 className="text-2xl font-heading mb-4">Community</h3>
+                  <p className="text-accent mb-6 flex-grow">Connect with other creatives and entrepreneurs through events, workshops, and collaborations.</p>
+                  <Button 
+                    onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
+                    variant="outline"
+                    className="w-full"
+                  >
+                    Join Community <ArrowRight className="ml-2" />
+                  </Button>
                 </div>
-                <Button 
-                  onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
-                  variant="outline"
-                  className="w-full mt-6"
-                >
-                  Join Community <ArrowRight className="ml-2" />
-                </Button>
               </div>
             </div>
           </div>
