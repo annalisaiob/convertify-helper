@@ -13,62 +13,95 @@ export const Hero = () => {
               Clear away clutter.<br />
               Unlock creativity.
             </h1>
-            <p className="text-lg md:text-xl text-accent max-w-2xl mx-auto">
-              A space for creatives, entrepreneurs, and independent businesses to find the right tools, 
-              connect with like-minded people, and build efficient systems.
+            <p className="text-lg md:text-xl text-accent max-w-2xl mx-auto mb-8">
+              Do you ever feel like...
             </p>
+            <ul className="text-left text-lg space-y-4 max-w-2xl mx-auto mb-12">
+              <li className="flex items-start gap-3">
+                <span className="text-red-500 font-bold">🔴</span>
+                Your to-do list is never-ending, and you're always putting out fires instead of getting ahead?
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-red-500 font-bold">🔴</span>
+                You're drowning in emails, invoices, and admin tasks, leaving no time for the work that actually matters?
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-red-500 font-bold">🔴</span>
+                Your desk is full of sticky notes, voice memos, and spreadsheets, but nothing is organized?
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-red-500 font-bold">🔴</span>
+                Your tools and systems feel like a jumble, and it's hard to keep everything straight?
+              </li>
+            </ul>
+
+            <p className="text-xl font-heading mb-8">Imagine instead...</p>
+            
+            <ul className="text-left text-lg space-y-4 max-w-2xl mx-auto mb-12">
+              <li className="flex items-start gap-3">
+                <span className="text-green-500 font-bold">✅</span>
+                Having more time to focus on what really matters to you.
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-green-500 font-bold">✅</span>
+                Cutting down on the constant stress of feeling behind.
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-green-500 font-bold">✅</span>
+                Getting your tools and systems working in sync perfectly.
+              </li>
+            </ul>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
             <div className="h-full border border-border/20 p-8 rounded-lg bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all">
-              <h2 className="font-heading text-2xl mb-4">Services</h2>
-              <p className="text-accent mb-4">Process automation, no-code solutions, and system integration</p>
+              <h2 className="font-heading text-2xl mb-4">⚡ Streamline & Automate</h2>
+              <p className="text-accent mb-4">Save 10+ hours a week by cutting out repetitive tasks and setting up systems that work for you.</p>
               <Button variant="link" asChild className="p-0 hover:px-4 transition-all">
-                <a href="/services">
-                  Explore Services <ArrowRight className="ml-2 w-4 h-4" />
-                </a>
-              </Button>
-            </div>
-
-            <div className="h-full border border-border/20 p-8 rounded-lg bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all">
-              <h2 className="font-heading text-2xl mb-4">Tools</h2>
-              <p className="text-accent mb-4">Templates, guides, and recommended software stacks</p>
-              <Button variant="link" asChild className="p-0 hover:px-4 transition-all">
-                <a href="/tools">
-                  View Resources <ArrowRight className="ml-2 w-4 h-4" />
-                </a>
-              </Button>
-            </div>
-
-            <div className="h-full border border-border/20 p-8 rounded-lg bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all">
-              <h2 className="font-heading text-2xl mb-4">Community</h2>
-              <p className="text-accent mb-4">Co-working sessions, networking, and collaborative spaces</p>
-              <Button variant="link" asChild className="p-0 hover:px-4 transition-all">
-                <a href="/community">
-                  Join Events <ArrowRight className="ml-2 w-4 h-4" />
-                </a>
-              </Button>
-            </div>
-
-            <div className="h-full border border-border/20 p-8 rounded-lg bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all">
-              <h2 className="font-heading text-2xl mb-4">About</h2>
-              <p className="text-accent mb-4">The story and mission behind Creai Lab</p>
-              <Button variant="link" asChild className="p-0 hover:px-4 transition-all">
-                <a href="/about">
+                <Link to="/services">
                   Learn More <ArrowRight className="ml-2 w-4 h-4" />
-                </a>
+                </Link>
+              </Button>
+            </div>
+
+            <div className="h-full border border-border/20 p-8 rounded-lg bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <h2 className="font-heading text-2xl mb-4">🛠️ Custom Tools</h2>
+              <p className="text-accent mb-4">Get simple, tailored solutions—from better workflows to helpful dashboards.</p>
+              <Button variant="link" asChild className="p-0 hover:px-4 transition-all">
+                <Link to="/services">
+                  View Solutions <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </Button>
+            </div>
+
+            <div className="h-full border border-border/20 p-8 rounded-lg bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <h2 className="font-heading text-2xl mb-4">🔗 Right Tools</h2>
+              <p className="text-accent mb-4">Stop wasting time guessing. Get help finding and setting up the perfect software stack.</p>
+              <Button variant="link" asChild className="p-0 hover:px-4 transition-all">
+                <Link to="/services">
+                  Explore Tools <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </Button>
+            </div>
+
+            <div className="h-full border border-border/20 p-8 rounded-lg bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <h2 className="font-heading text-2xl mb-4">🤝 Community</h2>
+              <p className="text-accent mb-4">Connect with other creatives and entrepreneurs through events and workshops.</p>
+              <Button variant="link" asChild className="p-0 hover:px-4 transition-all">
+                <Link to="/community">
+                  Join Events <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
               </Button>
             </div>
           </div>
 
-          {/* Call to Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               asChild 
               className="bg-primary text-white px-8 py-6 text-lg hover:bg-primary/90 hover:scale-105 transition-transform duration-200"
             >
               <Link to="/services">
-                Work with me
+                Clear the Clutter Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -78,7 +111,7 @@ export const Hero = () => {
               className="px-8 py-6 text-lg hover:bg-primary hover:text-white hover:scale-105 transition-transform duration-200"
             >
               <a href="#upcoming-events">
-                Upcoming Events
+                Join an Event
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
