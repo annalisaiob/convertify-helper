@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,25 +9,29 @@
     cursor: none !important;
   }
 
-  /* Simple custom cursor */
+  /* Custom cursor */
   #custom-cursor {
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    border: 2px solid white;
+    background: transparent;
+    border-radius: 0;
     position: fixed;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    transition: width 0.2s, height 0.2s;
+    transition: all 0.1s ease;
+    clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%);
   }
 
-  /* Make cursor larger on clickable elements */
+  /* Hover states for clickable elements */
   a:hover ~ #custom-cursor,
   button:hover ~ #custom-cursor {
     width: 40px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.2);
+    border-width: 3px;
+    border-radius: 0;
   }
 
   /* Rest of the styles */
