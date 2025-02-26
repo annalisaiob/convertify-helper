@@ -4,6 +4,7 @@ import Index from "@/pages/Index";
 import ServicesPage from "@/pages/services";
 import ToolsPage from "@/pages/tools";
 import CommunityPage from "@/pages/community";
+import AboutPage from "@/pages/about";
 import "./App.css";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/tools" element={<ToolsPage />} />
           <Route path="/community" element={<CommunityPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
       </div>
     </Router>

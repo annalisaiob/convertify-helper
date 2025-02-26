@@ -5,7 +5,7 @@
 @layer base {
   * {
     @apply border-border;
-    cursor: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 4H12V8H16V12H20V16H24V20H20V16H16V12H12V8H8V4Z M8 4H4V24H8V28H12V24H8V4Z' fill='white' stroke='black' stroke-width='2'/%3E%3Ccircle cx='8' cy='4' r='3' fill='%23FF007F'%3E%3Canimate attributeName='r' values='2;3;2' dur='1s' repeatCount='indefinite' /%3E%3Canimate attributeName='opacity' values='0.8;1;0.8' dur='1s' repeatCount='indefinite' /%3E%3CanimateTransform attributeName='transform' type='translate' values='0,0;1,-1;0,0' dur='1s' repeatCount='indefinite' /%3E%3C/circle%3E%3C/svg%3E") 4 4, auto;
+    cursor: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 4L8 8L12 8L12 12L16 12L16 16L20 16L20 20L16 20L16 16L12 16L12 12L8 12L8 8L4 8L4 4L8 4Z' fill='white' stroke='black' stroke-width='2'/%3E%3Ccircle cx='8' cy='4' r='6' fill='%23FF007F' opacity='0.4'%3E%3Canimate attributeName='r' values='4;6;4' dur='1s' repeatCount='indefinite' /%3E%3Canimate attributeName='opacity' values='0.4;0.6;0.4' dur='1s' repeatCount='indefinite' /%3E%3C/circle%3E%3Ccircle cx='8' cy='4' r='3' fill='%23FF007F'%3E%3Canimate attributeName='r' values='2;3;2' dur='1s' repeatCount='indefinite' /%3E%3C/circle%3E%3C/svg%3E") 4 4, auto;
   }
 
   html {
