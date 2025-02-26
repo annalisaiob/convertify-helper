@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Users, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -14,43 +13,8 @@ export const Hero = () => {
               Unlock creativity.
             </h1>
             <p className="text-lg md:text-xl text-accent max-w-2xl mx-auto mb-8">
-              Do you ever feel like...
+              Transform your business operations with smart automation and custom tools.
             </p>
-            <ul className="text-left text-lg space-y-4 max-w-2xl mx-auto mb-12">
-              <li className="flex items-start gap-3">
-                <span className="text-red-500 font-bold">🔴</span>
-                Your to-do list is never-ending, and you're always putting out fires instead of getting ahead?
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-red-500 font-bold">🔴</span>
-                You're drowning in emails, invoices, and admin tasks, leaving no time for the work that actually matters?
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-red-500 font-bold">🔴</span>
-                Your desk is full of sticky notes, voice memos, and spreadsheets, but nothing is organized?
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-red-500 font-bold">🔴</span>
-                Your tools and systems feel like a jumble, and it's hard to keep everything straight?
-              </li>
-            </ul>
-
-            <p className="text-xl font-heading mb-8">Imagine instead...</p>
-            
-            <ul className="text-left text-lg space-y-4 max-w-2xl mx-auto mb-12">
-              <li className="flex items-start gap-3">
-                <span className="text-green-500 font-bold">✅</span>
-                Having more time to focus on what really matters to you.
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-green-500 font-bold">✅</span>
-                Cutting down on the constant stress of feeling behind.
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-green-500 font-bold">✅</span>
-                Getting your tools and systems working in sync perfectly.
-              </li>
-            </ul>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
