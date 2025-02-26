@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Calendar, Users, Sparkles } from "lucide-react";
 
 export const Hero = () => {
   return (
@@ -60,6 +60,7 @@ export const Hero = () => {
             </a>
           </div>
 
+          {/* Call to Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               asChild 
@@ -80,6 +81,44 @@ export const Hero = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
+          </div>
+
+          {/* Latest Updates Section */}
+          <div className="w-full py-16 bg-white/30 backdrop-blur-sm rounded-xl">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl font-heading mb-12 text-center">Latest Updates</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Next Event */}
+                <div className="bg-white/50 p-6 rounded-lg border border-border/20">
+                  <Calendar className="w-8 h-8 mb-4 text-primary" />
+                  <h3 className="font-heading text-xl mb-2">Next Co-working Session</h3>
+                  <p className="text-accent">Join us this Friday for "I'm Working Late" night. Bring your projects!</p>
+                  <Button variant="link" className="mt-4">
+                    RSVP Now <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </div>
+
+                {/* Community Highlight */}
+                <div className="bg-white/50 p-6 rounded-lg border border-border/20">
+                  <Users className="w-8 h-8 mb-4 text-primary" />
+                  <h3 className="font-heading text-xl mb-2">Community Spotlight</h3>
+                  <p className="text-accent">Meet our members and their creative projects in our weekly showcase.</p>
+                  <Button variant="link" className="mt-4">
+                    View Stories <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </div>
+
+                {/* New Resource */}
+                <div className="bg-white/50 p-6 rounded-lg border border-border/20">
+                  <Sparkles className="w-8 h-8 mb-4 text-primary" />
+                  <h3 className="font-heading text-xl mb-2">New Resources</h3>
+                  <p className="text-accent">Just released: Automation workflow templates for creative businesses.</p>
+                  <Button variant="link" className="mt-4">
+                    Download Now <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
