@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,15 +12,14 @@
   #custom-cursor {
     width: 32px;
     height: 32px;
-    border: 2px solid white;
-    background: transparent;
-    border-radius: 0;
+    border: 2px solid #221F26;
+    background: rgba(34, 31, 38, 0.1);
     position: fixed;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
     transition: all 0.1s ease;
-    clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 100%, 50% 50%, 100% 0, 0 100%);
   }
 
   /* Hover states for clickable elements */
@@ -29,9 +27,8 @@
   button:hover ~ #custom-cursor {
     width: 40px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(34, 31, 38, 0.2);
     border-width: 3px;
-    border-radius: 0;
   }
 
   /* Rest of the styles */
