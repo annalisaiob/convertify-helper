@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,8 +25,9 @@
     position: fixed;
     pointer-events: none;
     z-index: 9999;
+    left: var(--mouse-x, 0);
+    top: var(--mouse-y, 0);
     transform: translate(-50%, -50%);
-    animation: follow 0.01s linear;
   }
 
   @keyframes follow {
