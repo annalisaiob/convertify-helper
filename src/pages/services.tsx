@@ -1,46 +1,159 @@
 
+import React, { useState } from "react";
 import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Workflow, Zap, Settings, Link } from "lucide-react";
+import { Helmet } from "react-helmet";
+import { 
+  ArrowRight, 
+  Workflow, 
+  Zap, 
+  Database, 
+  Code, 
+  Layers, 
+  Projector, 
+  Shield, 
+  Key, 
+  Search,
+  X 
+} from "lucide-react";
+
+// Define service types for better organization
+type ServiceCategory = {
+  title: string;
+  description: string;
+  icon: React.ElementType;
+  services: Service[];
+};
+
+type Service = {
+  title: string;
+  description: string;
+  extendedDescription: string;
+  keywords: string[];
+};
 
 const ServicesPage = () => {
+  // State for tracking selected service for quote request
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
+
+  // Service categories with their services
+  const serviceCategories: ServiceCategory[] = [
+    {
+      title: "Technology Integration & Setup",
+      description: "Streamline your business with expert technology implementation and personalized tool setups.",
+      icon: Layers,
+      services: [
+        {
+          title: "Tools Setup & Configuration",
+          description: "Expert setup and customization of productivity tools like Notion, Monday.com, ClickUp, and various CRM systems.",
+          extendedDescription: "We'll analyze your business needs, create custom templates, workflows, and automations in your preferred tools. Our Notion consulting and CRM setup services ensure your systems are tailored specifically to your workflow, saving you hours of configuration time and maximizing ROI from day one.",
+          keywords: ["tech stack consulting", "CRM setup", "Notion consulting", "freelancer tools", "small business automation"]
+        },
+        {
+          title: "No-Code Tool Implementation",
+          description: "Build powerful systems without coding using platforms like Softr, Lovable, and other no-code solutions.",
+          extendedDescription: "Transform your ideas into functional apps, websites, and internal tools without writing a single line of code. Our no-code workflow automation experts will help you leverage these platforms to create databases, client portals, dashboards, and other business systems that look professional and work flawlessly.",
+          keywords: ["no-code workflow automation", "small business automation", "tech stack consulting", "process optimization consulting"]
+        }
+      ]
+    },
+    {
+      title: "Workflow & Process Automation",
+      description: "Eliminate repetitive tasks and streamline operations with custom automation solutions.",
+      icon: Workflow,
+      services: [
+        {
+          title: "Workflow Automation",
+          description: "Connect your tools and automate processes using platforms like n8n, Make, and Zapier.",
+          extendedDescription: "Our Zapier automation experts will identify tasks that can be automated, design custom workflows that connect all your business tools, and implement robust solutions that eliminate manual data entry, reduce errors, and save you 10+ hours per week. Perfect for freelancers and small businesses looking to scale their operations.",
+          keywords: ["automation", "process optimization", "Zapier automation", "automation services for small businesses", "business process management"]
+        },
+        {
+          title: "AI Agent Development",
+          description: "Create custom AI assistants that handle specific tasks in your business workflow.",
+          extendedDescription: "Leverage cutting-edge AI technology to create specialized agents that can manage customer support, data analysis, content creation, and more. Our AI tools for freelancers are designed to augment your capabilities, allowing you to deliver better results with less effort while maintaining complete control over the process.",
+          keywords: ["AI", "AI agent development", "AI tools for freelancers", "AI readiness assessment", "small business automation"]
+        }
+      ]
+    },
+    {
+      title: "Data & Project Management",
+      description: "Transform chaos into clarity with structured project management and data organization.",
+      icon: Database,
+      services: [
+        {
+          title: "Data & Information Management",
+          description: "Organize your business data, implement systems to maintain information flow and accessibility.",
+          extendedDescription: "Implement comprehensive data lifecycle management systems that ensure your critical information is organized, accessible, and secure. We'll set up databases, knowledge management systems, and documentation frameworks that grow with your business and make information retrieval effortless.",
+          keywords: ["data lifecycle management", "process optimization", "small business automation", "tech stack consulting"]
+        },
+        {
+          title: "Business Process Management",
+          description: "Streamline operations with comprehensive process mapping, optimization, and implementation.",
+          extendedDescription: "Our business process management services help you identify bottlenecks, streamline workflows, and implement systems that ensure consistency and efficiency. We'll map your current processes, identify improvement opportunities, and create standardized procedures that can be easily followed by your team or virtual assistants.",
+          keywords: ["business process management", "process optimization consulting", "automation services for small businesses", "personal tech navigation"]
+        }
+      ]
+    }
+  ];
+
+  const handleServiceClick = (service: Service) => {
+    // Toggle service selection
+    if (selectedService === service) {
+      setSelectedService(null);
+    } else {
+      setSelectedService(service);
+    }
+  };
+
+  const handleRequestQuote = () => {
+    window.open("https://calendly.com/anna-creailab/", "_blank");
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>CreAI Lab Services - AI & Automation for Freelancers & Small Businesses</title>
+        <meta name="description" content="Expert process optimization, workflow automation, and AI solutions for freelancers and small businesses. Save time and scale your operations with our specialized services." />
+        <meta name="keywords" content="process optimization, automation, AI, freelancer tools, small business automation, process optimization consulting, automation services for small businesses, AI tools for freelancers, no-code workflow automation, tech stack consulting, business process management, data lifecycle management, personal tech navigation, AI readiness assessment, freelancer community, CRM setup, Notion consulting, Zapier automation, AI agent development" />
+      </Helmet>
+      
       <Header />
+      
       <main className="flex-grow pt-32 pb-20">
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Hero Section */}
           <div className="text-center mb-24">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading mb-8">Stop Drowning in Admin. Get Back to What You Love.</h1>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading mb-8">Transform Your Business With AI & Automation</h1>
             <p className="text-xl md:text-2xl text-accent max-w-3xl mx-auto mb-6">
-              Get the clarity you need to make strategic decisions, while automated systems handle the rest. More visibility, less busywork.
+              Streamline your workflow, eliminate repetitive tasks, and leverage AI to work smarter, not harder. Free up 10+ hours weekly to focus on what truly matters.
             </p>
             <p className="text-lg md:text-xl text-accent max-w-2xl mx-auto">
-              Free up 10+ hours weekly, serve more clients, and finally focus on growth—not administrative tasks.
+              Our process optimization consulting services are tailored for freelancers and small businesses seeking sustainable growth without the administrative burden.
             </p>
           </div>
 
-          {/* Current & Future State Sections - Redesigned */}
+          {/* Current & Future State Sections */}
           <div className="grid md:grid-cols-2 gap-12 mb-24">
             {/* Current State Section */}
             <div className="bg-white/5 backdrop-blur-sm p-12 rounded-2xl flex flex-col">
               <h2 className="text-3xl font-heading mb-8">Do you ever feel like...</h2>
               <div className="space-y-6">
                 <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">Your to-do list is never-ending, and you're always putting out fires instead of getting ahead?</p>
+                  <p className="text-lg">Your business operations are filled with repetitive tasks that could easily be automated?</p>
                 </div>
                 <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">You're drowning in emails, invoices, and admin tasks, leaving no time for the work that actually matters?</p>
+                  <p className="text-lg">You're investing in too many tools but still don't have the streamlined workflow you need?</p>
                 </div>
                 <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">Your desk is full of sticky notes, voice memos, and spreadsheets, but nothing is organized the way you need it to be?</p>
+                  <p className="text-lg">Your data is scattered across platforms, making it difficult to make informed decisions?</p>
                 </div>
                 <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">Your tools and systems feel like a jumble, and it's hard to keep everything straight?</p>
+                  <p className="text-lg">You want to leverage AI but aren't sure where to start or if your business is ready?</p>
                 </div>
                 <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">You know things could be working better, but it all feels a bit too much to figure out?</p>
+                  <p className="text-lg">Your business growth is limited by your capacity to handle administrative tasks?</p>
                 </div>
               </div>
             </div>
@@ -50,122 +163,151 @@ const ServicesPage = () => {
               <h2 className="text-3xl font-heading mb-8">Imagine instead...</h2>
               <div className="space-y-6">
                 <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">Having more time to focus on what really matters to you—whether that's getting more clients or just enjoying life.</p>
+                  <p className="text-lg">A fully integrated tech stack where your tools communicate seamlessly, eliminating duplicate data entry.</p>
                 </div>
                 <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">Cutting down on the constant stress of feeling behind, and finally getting on top of things.</p>
+                  <p className="text-lg">Automated workflows that handle routine tasks while you focus on client work and business development.</p>
                 </div>
                 <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">Getting your tools and systems working in sync so you don't waste time looking for things or redoing work.</p>
+                  <p className="text-lg">AI assistants that augment your capabilities, helping you deliver better results with less effort.</p>
+                </div>
+                <div className="p-4 bg-white/5 rounded-lg">
+                  <p className="text-lg">A clear system for managing projects and data that scales with your business growth.</p>
                 </div>
               </div>
               <div className="mt-auto pt-8">
-                <p className="text-xl font-medium text-primary">I can help make that happen.</p>
+                <p className="text-xl font-medium text-primary">We transform these possibilities into your reality.</p>
               </div>
             </div>
           </div>
           
-          {/* Services Grid */}
+          {/* Services Categories */}
           <div className="mb-24">
-            <h2 className="text-4xl font-heading mb-16 text-center">How I Can Help</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {/* Service Cards - All with identical structure for consistent heights */}
-              <div className="group flex flex-col bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
-                <div className="p-8 flex-grow flex flex-col">
-                  <Workflow className="w-12 h-12 text-primary mb-6 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-2xl font-heading mb-4">Streamline & Automate</h3>
-                  <p className="text-accent mb-6 flex-grow">Save 10+ hours a week by cutting out repetitive tasks and setting up systems that work for you.</p>
-                  <Button 
-                    onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
-                    variant="outline"
-                    className="w-full"
-                  >
-                    Learn More <ArrowRight className="ml-2" />
-                  </Button>
+            <h2 className="text-4xl font-heading mb-16 text-center" id="services">Our Specialized Services</h2>
+            
+            {serviceCategories.map((category, idx) => (
+              <div key={idx} className="mb-20">
+                <div className="flex items-center gap-4 mb-8">
+                  <category.icon className="w-10 h-10 text-primary" />
+                  <h3 className="text-3xl font-heading">{category.title}</h3>
+                </div>
+                <p className="text-xl text-accent mb-10 max-w-4xl">{category.description}</p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {category.services.map((service, serviceIdx) => (
+                    <div 
+                      key={serviceIdx}
+                      className={`transition-all duration-300 bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl overflow-hidden ${selectedService === service ? 'md:col-span-2' : ''}`}
+                    >
+                      <div 
+                        className="p-8 cursor-pointer"
+                        onClick={() => handleServiceClick(service)}
+                      >
+                        <div className="flex justify-between items-start">
+                          <h4 className="text-2xl font-heading mb-4">{service.title}</h4>
+                          {selectedService === service ? (
+                            <Button variant="ghost" size="sm" onClick={(e) => {
+                              e.stopPropagation();
+                              setSelectedService(null);
+                            }} className="p-1">
+                              <X className="h-5 w-5" />
+                            </Button>
+                          ) : null}
+                        </div>
+                        <p className="text-accent mb-6">{service.description}</p>
+                        
+                        {selectedService === service && (
+                          <div className="mt-4 animate-fadeIn">
+                            <p className="text-accent mb-8">{service.extendedDescription}</p>
+                            <div className="flex flex-wrap gap-2 mb-6">
+                              {service.keywords.map((keyword, keywordIdx) => (
+                                <span key={keywordIdx} className="text-xs bg-white/10 text-primary px-3 py-1 rounded-full">
+                                  {keyword}
+                                </span>
+                              ))}
+                            </div>
+                            <Button 
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleRequestQuote();
+                              }}
+                              className="w-full"
+                            >
+                              Request Quote for {service.title} <ArrowRight className="ml-2" />
+                            </Button>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-              
-              <div className="group flex flex-col bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
-                <div className="p-8 flex-grow flex flex-col">
-                  <Zap className="w-12 h-12 text-primary mb-6 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-2xl font-heading mb-4">Custom Tools</h3>
-                  <p className="text-accent mb-6 flex-grow">Get simple, tailored solutions—whether it's a better workflow or a dashboard that helps you stay on track.</p>
-                  <Button 
-                    onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
-                    variant="outline"
-                    className="w-full"
-                  >
-                    Explore Solutions <ArrowRight className="ml-2" />
-                  </Button>
-                </div>
-              </div>
-              
-              <div className="group flex flex-col bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
-                <div className="p-8 flex-grow flex flex-col">
-                  <Settings className="w-12 h-12 text-primary mb-6 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-2xl font-heading mb-4">Right Tools</h3>
-                  <p className="text-accent mb-6 flex-grow">Stop wasting time guessing. Get expert guidance on finding and implementing the perfect software solutions.</p>
-                  <Button 
-                    onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
-                    variant="outline"
-                    className="w-full"
-                  >
-                    Get Started <ArrowRight className="ml-2" />
-                  </Button>
-                </div>
-              </div>
-              
-              <div className="group flex flex-col bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl transition-all duration-300">
-                <div className="p-8 flex-grow flex flex-col">
-                  <Link className="w-12 h-12 text-primary mb-6 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-2xl font-heading mb-4">Community</h3>
-                  <p className="text-accent mb-6 flex-grow">Connect with other creatives and entrepreneurs through events, workshops, and collaborations.</p>
-                  <Button 
-                    onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
-                    variant="outline"
-                    className="w-full"
-                  >
-                    Join Community <ArrowRight className="ml-2" />
-                  </Button>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* How It Works Section */}
           <div className="mb-32">
-            <h2 className="text-4xl md:text-5xl font-heading mb-16 text-center">How It Works</h2>
+            <h2 className="text-4xl md:text-5xl font-heading mb-16 text-center">Our Process</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               <div className="p-12 border border-primary/20 rounded-2xl bg-white/5 backdrop-blur-sm">
                 <div className="text-6xl font-heading text-primary/50 mb-8">01</div>
-                <h3 className="text-2xl font-heading mb-6">Let's Talk</h3>
-                <p className="text-accent text-lg mb-8">We'll have a quick, no-pressure chat to figure out what's slowing you down.</p>
-                <Button 
-                  onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
-                  className="w-full"
-                >
-                  Book Your Free Call <ArrowRight className="ml-2" />
-                </Button>
+                <h3 className="text-2xl font-heading mb-6">Discovery</h3>
+                <p className="text-accent text-lg mb-8">We analyze your current workflows, tools, and pain points to identify optimization opportunities.</p>
               </div>
               
               <div className="p-12 border border-primary/20 rounded-2xl bg-white/5 backdrop-blur-sm">
                 <div className="text-6xl font-heading text-primary/50 mb-8">02</div>
-                <h3 className="text-2xl font-heading mb-6">Get a Custom Plan</h3>
-                <p className="text-accent text-lg mb-8">I'll map out a simple plan to streamline how you work and save you time.</p>
+                <h3 className="text-2xl font-heading mb-6">Solution Design</h3>
+                <p className="text-accent text-lg mb-8">We create a customized implementation plan that addresses your specific business challenges.</p>
               </div>
               
               <div className="p-12 border border-primary/20 rounded-2xl bg-white/5 backdrop-blur-sm">
                 <div className="text-6xl font-heading text-primary/50 mb-8">03</div>
-                <h3 className="text-2xl font-heading mb-6">Work With More Ease</h3>
-                <p className="text-accent text-lg mb-8">Less stress, more flow—giving you the time and energy to focus on what matters most.</p>
+                <h3 className="text-2xl font-heading mb-6">Implementation</h3>
+                <p className="text-accent text-lg mb-8">We set up your systems, automate workflows, and train you to leverage your new tools effectively.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* General Quote Request Section */}
+          <div className="text-center bg-white/5 backdrop-blur-sm rounded-2xl p-16 mb-24">
+            <h2 className="text-4xl md:text-5xl font-heading mb-8">Ready to Transform Your Business?</h2>
+            <p className="text-xl text-accent mb-12 max-w-2xl mx-auto">
+              Request a personalized quote for any of our services. We'll analyze your needs and provide a detailed proposal within 24 hours.
+            </p>
+            <Button 
+              onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
+              className="text-lg px-12 py-8 hover:scale-105"
+            >
+              Request Your Free Quote <ArrowRight className="ml-2" />
+            </Button>
+          </div>
+
+          {/* FAQ Section for SEO */}
+          <div className="mb-24">
+            <h2 className="text-4xl font-heading mb-12 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-8 max-w-4xl mx-auto">
+              <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl">
+                <h3 className="text-2xl font-heading mb-4">How long does implementation typically take?</h3>
+                <p className="text-accent">Implementation timelines vary based on project complexity. Simple automations can be completed in 1-2 weeks, while comprehensive system setups may take 4-8 weeks. We'll provide a detailed timeline during our initial consultation.</p>
+              </div>
+              
+              <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl">
+                <h3 className="text-2xl font-heading mb-4">Do you offer ongoing support after implementation?</h3>
+                <p className="text-accent">Yes, we offer various support packages to ensure your systems continue running smoothly. These range from monthly check-ins to comprehensive management and optimization services.</p>
+              </div>
+              
+              <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl">
+                <h3 className="text-2xl font-heading mb-4">How do I know if my business is ready for AI implementation?</h3>
+                <p className="text-accent">Take our free AI readiness assessment to evaluate your current processes and data structure. We'll provide recommendations on where AI can make the biggest impact in your specific business context.</p>
               </div>
             </div>
           </div>
 
           {/* CTA Section */}
           <div className="text-center bg-white/5 backdrop-blur-sm rounded-2xl p-16">
-            <h2 className="text-4xl md:text-5xl font-heading mb-8">Ready to Clear the Clutter?</h2>
-            <p className="text-xl text-accent mb-12 max-w-2xl mx-auto">Let's tackle the chaos and free up your time. Book a free consultation and see how much easier things can be.</p>
+            <h2 className="text-4xl md:text-5xl font-heading mb-8">Start Your Business Transformation</h2>
+            <p className="text-xl text-accent mb-12 max-w-2xl mx-auto">Book a free consultation to discuss your business challenges and explore how our process optimization solutions can help you scale efficiently.</p>
             <Button 
               onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
               className="text-lg px-12 py-8 hover:scale-105"
