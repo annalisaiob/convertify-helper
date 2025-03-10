@@ -2,7 +2,7 @@
 import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Download, ArrowRight } from "lucide-react";
+import { Download, ArrowRight, Sparkles, Brain, List, Code, Bot, Calendar, WandSparkles, Settings } from "lucide-react";
 
 const ToolsPage = () => {
   return (
@@ -11,32 +11,122 @@ const ToolsPage = () => {
       <main className="flex-grow pt-32 pb-20">
         <div className="container mx-auto px-4">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading mb-12 text-center">Tools & Resources</h1>
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {/* Template Card */}
-            <div className="border border-border/20 p-8 rounded-lg bg-white/50">
-              <h3 className="font-heading text-2xl mb-4">Workflow Templates</h3>
-              <p className="text-accent mb-6">Ready-to-use templates for common business processes</p>
-              <Button variant="outline" className="w-full">
-                <Download className="mr-2" /> Download
-              </Button>
+          
+          <div className="mb-16">
+            <h2 className="text-3xl font-heading mb-8 text-center">Free Downloads</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Template Card */}
+              <div className="border border-border/20 p-8 rounded-lg bg-white/50 hover:shadow-lg transition-all">
+                <h3 className="font-heading text-2xl mb-4">Workflow Templates</h3>
+                <p className="text-accent mb-6">Ready-to-use templates for common business processes</p>
+                <Button variant="outline" className="w-full">
+                  <Download className="mr-2" /> Download
+                </Button>
+              </div>
+              
+              {/* Guide Card */}
+              <div className="border border-border/20 p-8 rounded-lg bg-white/50 hover:shadow-lg transition-all">
+                <h3 className="font-heading text-2xl mb-4">Setup Guides</h3>
+                <p className="text-accent mb-6">Step-by-step guides for tool implementation</p>
+                <Button variant="outline" className="w-full">
+                  <Download className="mr-2" /> Access Guides
+                </Button>
+              </div>
+              
+              {/* Resource Card */}
+              <div className="border border-border/20 p-8 rounded-lg bg-white/50 hover:shadow-lg transition-all">
+                <h3 className="font-heading text-2xl mb-4">Resource Library</h3>
+                <p className="text-accent mb-6">Curated collection of helpful resources</p>
+                <Button variant="outline" className="w-full">
+                  <Download className="mr-2" /> Browse Library
+                </Button>
+              </div>
             </div>
-            
-            {/* Guide Card */}
-            <div className="border border-border/20 p-8 rounded-lg bg-white/50">
-              <h3 className="font-heading text-2xl mb-4">Setup Guides</h3>
-              <p className="text-accent mb-6">Step-by-step guides for tool implementation</p>
-              <Button variant="outline" className="w-full">
-                <Download className="mr-2" /> Access Guides
-              </Button>
+          </div>
+
+          {/* Coming Soon Section */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-heading mb-8 text-center">Coming Soon</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Tech Stack Finder */}
+              <div className="border border-border/20 p-8 rounded-lg bg-white/50 relative overflow-hidden group hover:shadow-lg transition-all">
+                <div className="absolute -right-10 -top-10 bg-primary/10 w-40 h-40 rounded-full blur-xl group-hover:bg-primary/20 transition-all"></div>
+                <WandSparkles className="w-12 h-12 text-primary mb-4" />
+                <h3 className="font-heading text-2xl mb-4">Tech Stack Finder</h3>
+                <p className="text-accent mb-2">Find your perfect tech stack with budget-based recommendations and personalized tech maps.</p>
+                <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mt-4">
+                  Coming Soon
+                </div>
+              </div>
+              
+              {/* AI Readiness Assessment */}
+              <div className="border border-border/20 p-8 rounded-lg bg-white/50 relative overflow-hidden group hover:shadow-lg transition-all">
+                <div className="absolute -right-10 -top-10 bg-primary/10 w-40 h-40 rounded-full blur-xl group-hover:bg-primary/20 transition-all"></div>
+                <Brain className="w-12 h-12 text-primary mb-4" />
+                <h3 className="font-heading text-2xl mb-4">AI Readiness Assessment</h3>
+                <p className="text-accent mb-2">Discover if your business is ready to implement AI solutions with a customized assessment for freelancers and professionals.</p>
+                <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mt-4">
+                  Coming Soon
+                </div>
+              </div>
             </div>
-            
-            {/* Resource Card */}
-            <div className="border border-border/20 p-8 rounded-lg bg-white/50">
-              <h3 className="font-heading text-2xl mb-4">Resource Library</h3>
-              <p className="text-accent mb-6">Curated collection of helpful resources</p>
-              <Button variant="outline" className="w-full">
-                <Download className="mr-2" /> Browse Library
-              </Button>
+          </div>
+
+          {/* AI Tools List */}
+          <div className="mb-16">
+            <div className="flex flex-col md:flex-row items-center justify-between mb-8">
+              <h2 className="text-3xl font-heading">AI Tools List</h2>
+              <p className="text-accent italic">Published twice a month</p>
+            </div>
+            <div className="border border-border/20 p-8 rounded-lg bg-white/50 hover:shadow-lg transition-all">
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                <List className="w-16 h-16 text-primary flex-shrink-0" />
+                <div>
+                  <h3 className="font-heading text-2xl mb-2">Latest AI Tools & Trends</h3>
+                  <p className="text-accent mb-4">Stay ahead of the curve with my bi-monthly curated list of the latest AI tools and trends to keep an eye on. Perfect for busy professionals who want to stay informed without spending hours researching.</p>
+                  <Button>
+                    Subscribe <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Upcoming Courses */}
+          <div>
+            <h2 className="text-3xl font-heading mb-8 text-center">Upcoming Courses</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* AI Agents Course */}
+              <div className="border border-border/20 p-8 rounded-lg bg-white/50 relative overflow-hidden group hover:shadow-lg transition-all">
+                <div className="absolute -right-10 -top-10 bg-primary/10 w-40 h-40 rounded-full blur-xl group-hover:bg-primary/20 transition-all"></div>
+                <Bot className="w-12 h-12 text-primary mb-4" />
+                <h3 className="font-heading text-2xl mb-4">What the Heck is an AI Agent?</h3>
+                <p className="text-accent mb-6">A beginner-friendly course to help you understand AI agents, how they work, and how to use them effectively in your business.</p>
+                <div className="flex justify-between items-center">
+                  <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                    Coming June 2024
+                  </div>
+                  <Button variant="outline">
+                    Join Waitlist <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+              
+              {/* AI Tools Course */}
+              <div className="border border-border/20 p-8 rounded-lg bg-white/50 relative overflow-hidden group hover:shadow-lg transition-all">
+                <div className="absolute -right-10 -top-10 bg-primary/10 w-40 h-40 rounded-full blur-xl group-hover:bg-primary/20 transition-all"></div>
+                <Settings className="w-12 h-12 text-primary mb-4" />
+                <h3 className="font-heading text-2xl mb-4">AI Tools for Your Workflow</h3>
+                <p className="text-accent mb-6">Learn how to integrate AI tools into your existing workflow to save time, reduce errors, and focus on your core business.</p>
+                <div className="flex justify-between items-center">
+                  <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                    Coming August 2024
+                  </div>
+                  <Button variant="outline">
+                    Join Waitlist <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
