@@ -55,7 +55,7 @@ const ToolsPage = () => {
                 <h3 className="font-heading text-2xl mb-4">Tech Stack Finder</h3>
                 <p className="text-accent mb-2">Find your perfect tech stack with budget-based recommendations and personalized tech maps.</p>
                 <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mt-4">
-                  Coming Soon
+                  Coming April 2025
                 </div>
               </div>
               
@@ -64,9 +64,9 @@ const ToolsPage = () => {
                 <div className="absolute -right-10 -top-10 bg-primary/10 w-40 h-40 rounded-full blur-xl group-hover:bg-primary/20 transition-all"></div>
                 <Brain className="w-12 h-12 text-primary mb-4" />
                 <h3 className="font-heading text-2xl mb-4">AI Readiness Assessment</h3>
-                <p className="text-accent mb-2">Discover if your business is ready to implement AI solutions with a customized assessment for freelancers and professionals.</p>
+                <p className="text-accent mb-2">A comprehensive evaluation tool for freelancers and entrepreneurs to assess their readiness for AI integration, identifying opportunities and gaps in their current workflow.</p>
                 <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mt-4">
-                  Coming Soon
+                  Coming April 2025
                 </div>
               </div>
             </div>
@@ -112,12 +112,12 @@ const ToolsPage = () => {
                 </div>
               </div>
               
-              {/* AI Tools Course */}
+              {/* Automation Course */}
               <div className="border border-border/20 p-8 rounded-lg bg-white/50 relative overflow-hidden group hover:shadow-lg transition-all">
                 <div className="absolute -right-10 -top-10 bg-primary/10 w-40 h-40 rounded-full blur-xl group-hover:bg-primary/20 transition-all"></div>
                 <Settings className="w-12 h-12 text-primary mb-4" />
-                <h3 className="font-heading text-2xl mb-4">AI Tools for Your Workflow</h3>
-                <p className="text-accent mb-6">Learn how to integrate AI tools into your existing workflow to save time, reduce errors, and focus on your core business.</p>
+                <h3 className="font-heading text-2xl mb-4">Automate Your Business with n8n</h3>
+                <p className="text-accent mb-6">Learn how to create powerful automation workflows that connect your favorite tools. From automatically processing client inquiries to syncing data across platforms - save hours of manual work.</p>
                 <div className="flex justify-between items-center">
                   <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
                     Coming August 2024
