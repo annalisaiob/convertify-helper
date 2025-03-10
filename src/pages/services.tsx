@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,26 +8,25 @@ import {
   Workflow,
   Zap,
   Database,
+  FileText,
+  CalendarCheck,
+  GitBranch,
+  Settings,
+  BookOpen,
   Code,
+  Users,
+  BarChart3,
+  Coffee,
+  MessageSquare,
   Layers,
   Shield,
   Key,
   Search,
   X,
   ChevronDown,
-  ChevronUp,
-  Users,
-  BarChart3,
-  FileText,
-  Settings,
-  GitBranch,
-  BookOpen,
-  CalendarCheck,
-  MessageSquare,
-  Coffee
+  ChevronUp
 } from "lucide-react";
 
-// Define service types for better organization
 type ServiceCategory = {
   title: string;
   description: string;
@@ -50,12 +48,10 @@ type FAQItem = {
 };
 
 const ServicesPage = () => {
-  // State for tracking selected service for quote request
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [openFAQs, setOpenFAQs] = useState<number[]>([]);
-  const [openCategories, setOpenCategories] = useState<number[]>([0, 1, 2]); // Default to all open
-  
-  // Category toggle handler
+  const [openCategories, setOpenCategories] = useState<number[]>([0, 1, 2]);
+
   const toggleCategory = (index: number) => {
     setOpenCategories(prev => 
       prev.includes(index) 
@@ -64,7 +60,6 @@ const ServicesPage = () => {
     );
   };
 
-  // FAQ toggle handler
   const toggleFAQ = (index: number) => {
     setOpenFAQs(prev => 
       prev.includes(index) 
@@ -73,7 +68,6 @@ const ServicesPage = () => {
     );
   };
 
-  // Service categories with their services
   const serviceCategories: ServiceCategory[] = [
     {
       title: "Technology Integration & Setup",
@@ -166,7 +160,6 @@ const ServicesPage = () => {
     }
   ];
 
-  // FAQ items
   const faqItems: FAQItem[] = [
     {
       question: "Who should consider these services?",
@@ -195,7 +188,6 @@ const ServicesPage = () => {
   ];
 
   const handleServiceClick = (service: Service) => {
-    // Toggle service selection
     if (selectedService === service) {
       setSelectedService(null);
     } else {
@@ -219,7 +211,6 @@ const ServicesPage = () => {
       
       <main className="flex-grow pt-32 pb-20">
         <div className="container mx-auto px-4 max-w-6xl">
-          {/* Hero Section - More Concise */}
           <div className="text-center mb-20">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading mb-6">AI & Automation Solutions</h1>
             <p className="text-xl text-accent max-w-2xl mx-auto">
@@ -227,7 +218,6 @@ const ServicesPage = () => {
             </p>
           </div>
           
-          {/* Services Categories */}
           <div className="mb-24">
             <h2 className="text-4xl font-heading mb-12 text-center" id="services">Our Specialized Services</h2>
             
@@ -320,7 +310,6 @@ const ServicesPage = () => {
             </div>
           </div>
 
-          {/* How It Works Section */}
           <div className="mb-24">
             <h2 className="text-4xl font-heading mb-12 text-center">Our Process</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -344,7 +333,6 @@ const ServicesPage = () => {
             </div>
           </div>
 
-          {/* FAQ Section with Accordion */}
           <div className="mb-24 bg-white/5 backdrop-blur-sm rounded-2xl p-8">
             <h2 className="text-4xl font-heading mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-4 max-w-4xl mx-auto">
@@ -374,7 +362,6 @@ const ServicesPage = () => {
             </div>
           </div>
 
-          {/* Quote Request Section */}
           <div className="text-center bg-white/5 backdrop-blur-sm rounded-2xl p-12 mb-16">
             <h2 className="text-3xl md:text-4xl font-heading mb-6">Ready to Transform Your Business?</h2>
             <p className="text-lg text-accent mb-8 max-w-2xl mx-auto">
