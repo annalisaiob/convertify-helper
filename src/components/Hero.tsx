@@ -1,6 +1,5 @@
-
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, Users, Sparkles, Tool, Workflow, Bot } from "lucide-react";
+import { ArrowRight, Calendar, Users, Sparkles, Wrench, Workflow, Bot } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const Hero = () => {
@@ -22,7 +21,7 @@ export const Hero = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
             <div className="h-full border border-border/20 p-8 rounded-lg bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all">
-              <Tool className="w-10 h-10 text-primary mb-4" />
+              <Wrench className="w-10 h-10 text-primary mb-4" />
               <h2 className="font-heading text-2xl mb-4">Consultancy Services</h2>
               <p className="text-accent mb-4">Expert tools setup, workflow automation, and AI solutions tailored for your business</p>
               <Button variant="link" asChild className="p-0 hover:px-4 transition-all">
@@ -55,7 +54,6 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Call to Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               asChild 
@@ -78,12 +76,10 @@ export const Hero = () => {
             </Button>
           </div>
 
-          {/* Latest Updates Section */}
           <div id="latest-updates" className="w-full py-16 bg-white/30 backdrop-blur-sm rounded-xl">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl font-heading mb-12 text-center">Latest Updates</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Next Event */}
                 <div className="bg-white/50 p-6 rounded-lg border border-border/20">
                   <Calendar className="w-8 h-8 mb-4 text-primary" />
                   <h3 className="font-heading text-xl mb-2">Upcoming Co-working Session</h3>
@@ -93,7 +89,6 @@ export const Hero = () => {
                   </Button>
                 </div>
 
-                {/* AI Readiness */}
                 <div className="bg-white/50 p-6 rounded-lg border border-border/20">
                   <Bot className="w-8 h-8 mb-4 text-primary" />
                   <h3 className="font-heading text-xl mb-2">AI Readiness Assessment</h3>
@@ -103,7 +98,6 @@ export const Hero = () => {
                   </Button>
                 </div>
 
-                {/* New Resource */}
                 <div className="bg-white/50 p-6 rounded-lg border border-border/20">
                   <Sparkles className="w-8 h-8 mb-4 text-primary" />
                   <h3 className="font-heading text-xl mb-2">New Resources</h3>
