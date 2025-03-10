@@ -3,12 +3,18 @@ import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Calendar, Users, ArrowRight, Bot, Settings } from "lucide-react";
+import { Helmet } from "react-helmet";
 
 const CommunityPage = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow pt-32 pb-20">
+        <Helmet>
+          <title>AI Community & Events for Freelancers | CreAI Lab</title>
+          <meta name="description" content="Join the Lazy High Achievers community in Paris for co-working sessions, masterminds, and online events focused on AI and automation for freelancers." />
+          <meta name="keywords" content="AI community, freelancer events, Paris co-working, entrepreneur meetups, AI webinars, business automation events" />
+        </Helmet>
         <div className="container mx-auto px-4">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading mb-12 text-center">Community & Events</h1>
           
@@ -64,7 +70,7 @@ const CommunityPage = () => {
                   <h3 className="font-heading text-2xl mb-2">What the Heck is an AI Agent?</h3>
                   <p className="text-accent mb-4">An upcoming online webinar to help you understand AI agents, how they work, and how to use them effectively in your business.</p>
                   <div className="flex items-center gap-4">
-                    <span className="text-sm font-medium text-primary">June 2024</span>
+                    <span className="text-sm font-medium text-primary">April 2025</span>
                     <Button variant="outline">
                       Join Waitlist <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
@@ -80,7 +86,7 @@ const CommunityPage = () => {
                   <h3 className="font-heading text-2xl mb-2">Automate Your Business with n8n</h3>
                   <p className="text-accent mb-4">Learn how to create powerful automation workflows that connect your favorite tools - save hours of manual work in this hands-on workshop.</p>
                   <div className="flex items-center gap-4">
-                    <span className="text-sm font-medium text-primary">August 2024</span>
+                    <span className="text-sm font-medium text-primary">April 2025</span>
                     <Button variant="outline">
                       Join Waitlist <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>

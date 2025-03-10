@@ -3,12 +3,18 @@ import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Download, ArrowRight, Sparkles, Brain, List, Code, Bot, Calendar, WandSparkles, Settings } from "lucide-react";
+import { Helmet } from "react-helmet";
 
 const ToolsPage = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow pt-32 pb-20">
+        <Helmet>
+          <title>AI Tools & Resources for Freelancers | CreAI Lab</title>
+          <meta name="description" content="Access free AI tools, resources, and upcoming courses for freelancers and small businesses. Stay updated with our bi-monthly AI tools list." />
+          <meta name="keywords" content="AI tools, freelancer resources, business automation, tech stack finder, AI readiness, no-code workflows, business templates" />
+        </Helmet>
         <div className="container mx-auto px-4">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading mb-12 text-center">Tools & Resources</h1>
           
@@ -104,7 +110,7 @@ const ToolsPage = () => {
                 <p className="text-accent mb-6">A beginner-friendly course to help you understand AI agents, how they work, and how to use them effectively in your business.</p>
                 <div className="flex justify-between items-center">
                   <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                    Coming June 2024
+                    Coming April 2025
                   </div>
                   <Button variant="outline">
                     Join Waitlist <ArrowRight className="ml-2 h-4 w-4" />
@@ -120,7 +126,7 @@ const ToolsPage = () => {
                 <p className="text-accent mb-6">Learn how to create powerful automation workflows that connect your favorite tools. From automatically processing client inquiries to syncing data across platforms - save hours of manual work.</p>
                 <div className="flex justify-between items-center">
                   <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                    Coming August 2024
+                    Coming April 2025
                   </div>
                   <Button variant="outline">
                     Join Waitlist <ArrowRight className="ml-2 h-4 w-4" />
