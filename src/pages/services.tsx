@@ -4,18 +4,21 @@ import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet";
-import { 
-  ArrowRight, 
-  Workflow, 
-  Zap, 
-  Database, 
-  Code, 
-  Layers, 
-  Projector, 
-  Shield, 
-  Key, 
+import {
+  ArrowRight,
+  Workflow,
+  Zap,
+  Database,
+  Code,
+  Layers,
+  Shield,
+  Key,
   Search,
-  X 
+  X,
+  ChevronDown,
+  ChevronUp,
+  Users,
+  BarChart3
 } from "lucide-react";
 
 // Define service types for better organization
@@ -33,9 +36,24 @@ type Service = {
   keywords: string[];
 };
 
+type FAQItem = {
+  question: string;
+  answer: string;
+};
+
 const ServicesPage = () => {
   // State for tracking selected service for quote request
   const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [openFAQs, setOpenFAQs] = useState<number[]>([]);
+
+  // FAQ toggle handler
+  const toggleFAQ = (index: number) => {
+    setOpenFAQs(prev => 
+      prev.includes(index) 
+        ? prev.filter(item => item !== index)
+        : [...prev, index]
+    );
+  };
 
   // Service categories with their services
   const serviceCategories: ServiceCategory[] = [
@@ -98,6 +116,34 @@ const ServicesPage = () => {
     }
   ];
 
+  // FAQ items
+  const faqItems: FAQItem[] = [
+    {
+      question: "Who should consider these services?",
+      answer: "Our services are ideal for freelancers, solopreneurs, and small business owners who feel overwhelmed by administrative tasks, want to leverage technology more effectively, or are looking to scale their operations without hiring additional staff."
+    },
+    {
+      question: "Why should I invest in process optimization and automation?",
+      answer: "If you ever feel like your business operations are filled with repetitive tasks that could be automated, you're investing in too many tools without a streamlined workflow, your data is scattered across platforms, or your growth is limited by your capacity to handle administrative tasks - our services will help you overcome these challenges and focus on what truly matters in your business."
+    },
+    {
+      question: "What results can I expect?",
+      answer: "Our clients typically experience a fully integrated tech stack where tools communicate seamlessly, automated workflows that handle routine tasks, AI assistants that augment capabilities, and clear systems for managing projects and data that scale with business growth - all leading to saving 10+ hours per week."
+    },
+    {
+      question: "How long does implementation typically take?",
+      answer: "Implementation timelines vary based on project complexity. Simple automations can be completed in 1-2 weeks, while comprehensive system setups may take 4-8 weeks. We'll provide a detailed timeline during our initial consultation."
+    },
+    {
+      question: "Do you offer ongoing support after implementation?",
+      answer: "Yes, we offer various support packages to ensure your systems continue running smoothly. These range from monthly check-ins to comprehensive management and optimization services."
+    },
+    {
+      question: "How do I know if my business is ready for AI implementation?",
+      answer: "Take our free AI readiness assessment to evaluate your current processes and data structure. We'll provide recommendations on where AI can make the biggest impact in your specific business context."
+    }
+  ];
+
   const handleServiceClick = (service: Service) => {
     // Toggle service selection
     if (selectedService === service) {
@@ -133,116 +179,71 @@ const ServicesPage = () => {
               Our process optimization consulting services are tailored for freelancers and small businesses seeking sustainable growth without the administrative burden.
             </p>
           </div>
-
-          {/* Current & Future State Sections */}
-          <div className="grid md:grid-cols-2 gap-12 mb-24">
-            {/* Current State Section */}
-            <div className="bg-white/5 backdrop-blur-sm p-12 rounded-2xl flex flex-col">
-              <h2 className="text-3xl font-heading mb-8">Do you ever feel like...</h2>
-              <div className="space-y-6">
-                <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">Your business operations are filled with repetitive tasks that could easily be automated?</p>
-                </div>
-                <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">You're investing in too many tools but still don't have the streamlined workflow you need?</p>
-                </div>
-                <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">Your data is scattered across platforms, making it difficult to make informed decisions?</p>
-                </div>
-                <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">You want to leverage AI but aren't sure where to start or if your business is ready?</p>
-                </div>
-                <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">Your business growth is limited by your capacity to handle administrative tasks?</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Future State Section */}
-            <div className="bg-white/5 backdrop-blur-sm p-12 rounded-2xl flex flex-col">
-              <h2 className="text-3xl font-heading mb-8">Imagine instead...</h2>
-              <div className="space-y-6">
-                <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">A fully integrated tech stack where your tools communicate seamlessly, eliminating duplicate data entry.</p>
-                </div>
-                <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">Automated workflows that handle routine tasks while you focus on client work and business development.</p>
-                </div>
-                <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">AI assistants that augment your capabilities, helping you deliver better results with less effort.</p>
-                </div>
-                <div className="p-4 bg-white/5 rounded-lg">
-                  <p className="text-lg">A clear system for managing projects and data that scales with your business growth.</p>
-                </div>
-              </div>
-              <div className="mt-auto pt-8">
-                <p className="text-xl font-medium text-primary">We transform these possibilities into your reality.</p>
-              </div>
-            </div>
-          </div>
           
           {/* Services Categories */}
           <div className="mb-24">
             <h2 className="text-4xl font-heading mb-16 text-center" id="services">Our Specialized Services</h2>
             
-            {serviceCategories.map((category, idx) => (
-              <div key={idx} className="mb-20">
-                <div className="flex items-center gap-4 mb-8">
-                  <category.icon className="w-10 h-10 text-primary" />
-                  <h3 className="text-3xl font-heading">{category.title}</h3>
-                </div>
-                <p className="text-xl text-accent mb-10 max-w-4xl">{category.description}</p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {category.services.map((service, serviceIdx) => (
-                    <div 
-                      key={serviceIdx}
-                      className={`transition-all duration-300 bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl overflow-hidden ${selectedService === service ? 'md:col-span-2' : ''}`}
-                    >
+            <div className="space-y-24">
+              {serviceCategories.map((category, idx) => (
+                <div key={idx} className="mb-20">
+                  <div className="flex items-center gap-4 mb-8">
+                    <category.icon className="w-10 h-10 text-primary" />
+                    <h3 className="text-3xl font-heading">{category.title}</h3>
+                  </div>
+                  <p className="text-xl text-accent mb-10 max-w-4xl">{category.description}</p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {category.services.map((service, serviceIdx) => (
                       <div 
-                        className="p-8 cursor-pointer"
-                        onClick={() => handleServiceClick(service)}
+                        key={serviceIdx}
+                        className={`transition-all duration-300 bg-white/5 backdrop-blur-sm rounded-2xl hover:shadow-xl overflow-hidden ${selectedService === service ? 'md:col-span-2' : ''}`}
                       >
-                        <div className="flex justify-between items-start">
-                          <h4 className="text-2xl font-heading mb-4">{service.title}</h4>
-                          {selectedService === service ? (
-                            <Button variant="ghost" size="sm" onClick={(e) => {
-                              e.stopPropagation();
-                              setSelectedService(null);
-                            }} className="p-1">
-                              <X className="h-5 w-5" />
-                            </Button>
-                          ) : null}
-                        </div>
-                        <p className="text-accent mb-6">{service.description}</p>
-                        
-                        {selectedService === service && (
-                          <div className="mt-4 animate-fadeIn">
-                            <p className="text-accent mb-8">{service.extendedDescription}</p>
-                            <div className="flex flex-wrap gap-2 mb-6">
-                              {service.keywords.map((keyword, keywordIdx) => (
-                                <span key={keywordIdx} className="text-xs bg-white/10 text-primary px-3 py-1 rounded-full">
-                                  {keyword}
-                                </span>
-                              ))}
-                            </div>
-                            <Button 
-                              onClick={(e) => {
+                        <div 
+                          className="p-8 cursor-pointer"
+                          onClick={() => handleServiceClick(service)}
+                        >
+                          <div className="flex justify-between items-start">
+                            <h4 className="text-2xl font-heading mb-4">{service.title}</h4>
+                            {selectedService === service ? (
+                              <Button variant="ghost" size="sm" onClick={(e) => {
                                 e.stopPropagation();
-                                handleRequestQuote();
-                              }}
-                              className="w-full"
-                            >
-                              Request Quote for {service.title} <ArrowRight className="ml-2" />
-                            </Button>
+                                setSelectedService(null);
+                              }} className="p-1">
+                                <X className="h-5 w-5" />
+                              </Button>
+                            ) : null}
                           </div>
-                        )}
+                          <p className="text-accent mb-6">{service.description}</p>
+                          
+                          {selectedService === service && (
+                            <div className="mt-4 animate-fadeIn">
+                              <p className="text-accent mb-8">{service.extendedDescription}</p>
+                              <div className="flex flex-wrap gap-2 mb-6">
+                                {service.keywords.map((keyword, keywordIdx) => (
+                                  <span key={keywordIdx} className="text-xs bg-white/10 text-primary px-3 py-1 rounded-full">
+                                    {keyword}
+                                  </span>
+                                ))}
+                              </div>
+                              <Button 
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleRequestQuote();
+                                }}
+                                className="w-full"
+                              >
+                                Request Quote for {service.title} <ArrowRight className="ml-2" />
+                              </Button>
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* How It Works Section */}
@@ -269,6 +270,36 @@ const ServicesPage = () => {
             </div>
           </div>
 
+          {/* FAQ Section with Accordion */}
+          <div className="mb-24 bg-white/5 backdrop-blur-sm rounded-2xl p-12">
+            <h2 className="text-4xl font-heading mb-12 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4 max-w-4xl mx-auto">
+              {faqItems.map((faq, index) => (
+                <div 
+                  key={index} 
+                  className="border border-primary/10 rounded-xl overflow-hidden"
+                >
+                  <button 
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full text-left p-6 flex justify-between items-center hover:bg-white/5 transition-colors"
+                  >
+                    <h3 className="text-xl font-heading">{faq.question}</h3>
+                    {openFAQs.includes(index) ? (
+                      <ChevronUp className="w-5 h-5 flex-shrink-0" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 flex-shrink-0" />
+                    )}
+                  </button>
+                  {openFAQs.includes(index) && (
+                    <div className="p-6 pt-0 animate-fadeIn">
+                      <p className="text-accent">{faq.answer}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* General Quote Request Section */}
           <div className="text-center bg-white/5 backdrop-blur-sm rounded-2xl p-16 mb-24">
             <h2 className="text-4xl md:text-5xl font-heading mb-8">Ready to Transform Your Business?</h2>
@@ -281,27 +312,6 @@ const ServicesPage = () => {
             >
               Request Your Free Quote <ArrowRight className="ml-2" />
             </Button>
-          </div>
-
-          {/* FAQ Section for SEO */}
-          <div className="mb-24">
-            <h2 className="text-4xl font-heading mb-12 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-8 max-w-4xl mx-auto">
-              <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl">
-                <h3 className="text-2xl font-heading mb-4">How long does implementation typically take?</h3>
-                <p className="text-accent">Implementation timelines vary based on project complexity. Simple automations can be completed in 1-2 weeks, while comprehensive system setups may take 4-8 weeks. We'll provide a detailed timeline during our initial consultation.</p>
-              </div>
-              
-              <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl">
-                <h3 className="text-2xl font-heading mb-4">Do you offer ongoing support after implementation?</h3>
-                <p className="text-accent">Yes, we offer various support packages to ensure your systems continue running smoothly. These range from monthly check-ins to comprehensive management and optimization services.</p>
-              </div>
-              
-              <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl">
-                <h3 className="text-2xl font-heading mb-4">How do I know if my business is ready for AI implementation?</h3>
-                <p className="text-accent">Take our free AI readiness assessment to evaluate your current processes and data structure. We'll provide recommendations on where AI can make the biggest impact in your specific business context.</p>
-              </div>
-            </div>
           </div>
 
           {/* CTA Section */}
