@@ -15,7 +15,7 @@ export const Hero = () => {
               Stop drowning in admin work. Free up 10+ hours weekly, serve more clients, and finally focus on growth.
             </p>
             <p className="text-lg md:text-xl text-accent max-w-2xl mx-auto">
-              CreAI Lab helps freelancers and small businesses optimize processes, automate workflows, and leverage AI tools to work smarter, not harder.
+              CreAI Lab helps freelancers and small businesses with solutions tailored to their specific needs, not generic templates. As the child of a small business owner, I understand your challenges and listen carefully to what you really need.
             </p>
           </div>
           

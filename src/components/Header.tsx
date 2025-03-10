@@ -17,7 +17,7 @@ export const Header = () => {
             <a href="/about" className="text-3xl font-heading hover:text-primary/80 transition-colors">about</a>
             <Button asChild size="sm" className="text-lg">
               <a href="#contact">
-                work with me
+                get a free quote
               </a>
             </Button>
           </nav>

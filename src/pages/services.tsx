@@ -50,7 +50,7 @@ type FAQItem = {
 const ServicesPage = () => {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [openFAQs, setOpenFAQs] = useState<number[]>([]);
-  const [openCategories, setOpenCategories] = useState<number[]>([0, 1, 2]);
+  const [openCategories, setOpenCategories] = useState<number[]>([0]);
 
   const toggleCategory = (index: number) => {
     setOpenCategories(prev => 
