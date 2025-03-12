@@ -58,7 +58,7 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               asChild 
-              className="bg-primary text-white px-8 py-6 text-lg hover:bg-primary/90 hover:scale-105 transition-transform duration-200"
+              className="px-8 py-6 text-lg hover:scale-105 transition-transform duration-200"
             >
               <a href="https://calendly.com/anna-creailab/30min" target="_blank" rel="noopener noreferrer">
                 Book a Free Chat
@@ -68,7 +68,7 @@ export const Hero = () => {
             <Button 
               asChild 
               variant="outline"
-              className="px-8 py-6 text-lg hover:bg-primary hover:text-white hover:scale-105 transition-transform duration-200"
+              className="px-8 py-6 text-lg hover:scale-105 transition-transform duration-200"
             >
               <Link to="/community">
                 Upcoming Events
