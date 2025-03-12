@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 export const Header = () => {
   const [buttonText, setButtonText] = useState("tell me your star sign");
+  const [communityText, setCommunityText] = useState("community & events");
   
   useEffect(() => {
     const timer1 = setTimeout(() => {
@@ -20,6 +21,28 @@ export const Header = () => {
     };
   }, []);
 
+  // Add animation for community menu item
+  useEffect(() => {
+    // Initial state is "community & events"
+    
+    // After the initial animation, start the loop
+    const initialTimer = setTimeout(() => {
+      setCommunityText("community");
+      
+      // Setup the toggling loop
+      const toggleText = () => {
+        setCommunityText(prev => prev === "community" ? "events" : "community");
+      };
+      
+      // Start toggling every 3 seconds
+      const intervalId = setInterval(toggleText, 3000);
+      
+      return () => clearInterval(intervalId);
+    }, 4000); // Wait for the initial button animation to finish
+    
+    return () => clearTimeout(initialTimer);
+  }, []);
+
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-border/50">
       <div className="container mx-auto px-4 py-4">
@@ -31,7 +54,9 @@ export const Header = () => {
           <nav className="hidden md:flex items-center gap-4">
             <a href="/services" className="text-3xl font-heading hover:text-primary/80 transition-colors">services</a>
             <a href="/tools" className="text-3xl font-heading hover:text-primary/80 transition-colors">tools</a>
-            <a href="/community" className="text-3xl font-heading hover:text-primary/80 transition-colors">community</a>
+            <a href="/community" className="text-3xl font-heading hover:text-primary/80 transition-colors">
+              {communityText}
+            </a>
             <a href="/about" className="text-3xl font-heading hover:text-primary/80 transition-colors">about</a>
             <Button asChild size="sm" className="text-lg min-w-40 transition-all duration-300">
               <a href="https://polished-care-fbe.notion.site/1b4195d3201d8095bb2cc810ebd5c696?pvs=105" target="_blank" rel="noopener noreferrer">
