@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ReactGA from 'react-ga4';
@@ -9,7 +10,7 @@ import CommunityPage from './pages/community';
 import './App.css';
 
 // Initialize GA4 with your measurement ID
-ReactGA.initialize('G-XXXXXXXXXX'); // Replace with your actual GA4 measurement ID
+ReactGA.initialize('G-BST38ZW8GY'); // Google Analytics 4 measurement ID
 
 function App() {
   useEffect(() => {
