@@ -46,7 +46,7 @@ const Toast = React.forwardRef<
 >(({ className, variant, ...props }, ref) => {
   return (
     <>
-      <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[100] data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+      <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[100] data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0" data-state={props.open ? "open" : "closed"} />
       <ToastPrimitives.Root
         ref={ref}
         className={cn(toastVariants({ variant }), className, "z-[101] p-8")}
