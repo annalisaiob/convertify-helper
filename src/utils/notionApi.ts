@@ -21,6 +21,12 @@ export async function fetchNotionUpdates(apiKey: string, databaseId: string): Pr
     console.log("Initializing Notion client with API key:", apiKey.substring(0, 5) + "..." + apiKey.substring(apiKey.length - 5));
     console.log("Database ID:", databaseId);
     
+    // Check if we're running in a browser environment
+    if (typeof window !== 'undefined') {
+      console.log("Browser environment detected. Direct Notion API calls will be blocked by CORS.");
+      throw new Error("CORS_ERROR");
+    }
+    
     const notion = new Client({ auth: apiKey });
     
     console.log("Querying Notion database");
@@ -72,6 +78,11 @@ export async function fetchNotionUpdates(apiKey: string, databaseId: string): Pr
     return updates;
   } catch (error: any) {
     console.error("Error fetching from Notion:", error);
+    
+    // Special case for CORS errors
+    if (error.message === "CORS_ERROR") {
+      throw new Error("CORS_ERROR");
+    }
     
     // Provide more specific error messages based on error type
     if (error.code === 'unauthorized') {

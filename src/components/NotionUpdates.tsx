@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar, Newspaper, Folder, ArrowRight, Loader2, Key, Database, AlertCircle, RefreshCw } from "lucide-react";
+import { Calendar, Newspaper, Folder, ArrowRight, Loader2, Key, Database, AlertCircle, RefreshCw, Server } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { fetchNotionUpdates, NotionUpdate } from "@/utils/notionApi";
 
@@ -40,6 +40,7 @@ export const NotionUpdates = () => {
   const [isConfigured, setIsConfigured] = useState(false);
   const [fetchError, setFetchError] = useState<string | null>(null);
   const [usingSampleData, setUsingSampleData] = useState(false);
+  const [corsError, setCorsError] = useState(false);
   const { toast } = useToast();
 
   // Check if Notion API is configured
@@ -62,6 +63,7 @@ export const NotionUpdates = () => {
     setLoading(true);
     setFetchError(null);
     setUsingSampleData(false);
+    setCorsError(false);
     
     try {
       // If we have API credentials, try to fetch from Notion
@@ -86,15 +88,22 @@ export const NotionUpdates = () => {
           }
         } catch (error: any) {
           console.error("Error fetching from Notion:", error);
-          setFetchError(`Failed to fetch data from Notion: ${error.message || 'Unknown error'}. Please verify your API key and database ID.`);
-          toast({
-            title: "Notion API Error",
-            description: "There was an error connecting to your Notion database",
-            variant: "destructive",
-          });
-          // Fall back to sample data
-          setUpdates(SAMPLE_UPDATES);
-          setUsingSampleData(true);
+          
+          if (error.message === "CORS_ERROR") {
+            setCorsError(true);
+            setUpdates(SAMPLE_UPDATES);
+            setUsingSampleData(true);
+          } else {
+            setFetchError(`Failed to fetch data from Notion: ${error.message || 'Unknown error'}. Please verify your API key and database ID.`);
+            toast({
+              title: "Notion API Error",
+              description: "There was an error connecting to your Notion database",
+              variant: "destructive",
+            });
+            // Fall back to sample data
+            setUpdates(SAMPLE_UPDATES);
+            setUsingSampleData(true);
+          }
         }
       } else {
         // Use sample data if not configured
@@ -248,7 +257,29 @@ export const NotionUpdates = () => {
           </div>
         )}
 
-        {usingSampleData && !fetchError && isConfigured && (
+        {corsError && (
+          <div className="bg-amber-50 border border-amber-200 text-amber-800 p-4 rounded-lg mb-6">
+            <div className="flex items-start gap-2">
+              <Server className="w-5 h-5 mt-0.5" />
+              <div>
+                <p className="font-medium">CORS Error: Browser Security Limitation</p>
+                <p className="text-sm">
+                  Your browser is blocking direct requests to the Notion API due to Cross-Origin Resource Sharing (CORS) security restrictions.
+                </p>
+                <p className="text-sm mt-2">
+                  To connect to Notion, you would need a server-side solution:
+                </p>
+                <ul className="list-disc list-inside text-sm mt-1 ml-2">
+                  <li>Create a server-side proxy or serverless function</li>
+                  <li>Use a dedicated Notion integration service</li>
+                </ul>
+                <p className="text-xs mt-2">Showing sample data instead.</p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {usingSampleData && !fetchError && !corsError && isConfigured && (
           <div className="bg-yellow-50 border border-yellow-200 text-yellow-700 p-4 rounded-lg mb-6">
             <div className="flex items-start gap-2">
               <AlertCircle className="w-5 h-5 mt-0.5" />
@@ -263,7 +294,7 @@ export const NotionUpdates = () => {
           </div>
         )}
 
-        {fetchError && (
+        {fetchError && !corsError && (
           <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg mb-6">
             <div className="flex items-start gap-2">
               <AlertCircle className="w-5 h-5 mt-0.5" />
