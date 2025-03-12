@@ -23,28 +23,28 @@ const CommunityPage = () => {
           <section className="mb-20">
             <h2 className="text-4xl font-heading mb-8">Communities in Paris</h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="border border-border/20 p-8 rounded-lg bg-white/50">
+              <div className="border border-border/20 p-8 rounded-lg bg-white/50 flex flex-col h-full">
                 <div className="flex items-center mb-4">
                   <Users className="w-8 h-8 text-primary mr-2" />
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
                 <h3 className="font-heading text-2xl mb-2">(Lazy) High Achievers</h3>
-                <p className="text-accent mb-4">My community for creatives, freelancers, entrepreneurs, artists, writers and others who achieve big things without burning out. Join our weekly co-working sessions every Monday in Paris.</p>
-                <Button asChild>
+                <p className="text-accent mb-4 flex-grow">My free community for creatives, freelancers, entrepreneurs, artists, writers and others who achieve big things without burning out. Join our weekly co-working sessions every Monday in Paris.</p>
+                <Button asChild className="mt-auto">
                   <a href="https://www.meetup.com/lazy-high-achievers/" target="_blank" rel="noopener noreferrer">
                     Join Community <ArrowRight className="ml-2" />
                   </a>
                 </Button>
               </div>
               
-              <div className="border border-border/20 p-8 rounded-lg bg-white/50">
+              <div className="border border-border/20 p-8 rounded-lg bg-white/50 flex flex-col h-full">
                 <div className="flex items-center mb-4">
                   <Users className="w-8 h-8 text-primary mr-2" />
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
                 <h3 className="font-heading text-2xl mb-2">Paatch</h3>
-                <p className="text-accent mb-4">Join my friends at Paatch for events around France and coliving and trips aimed at freelancers and remote workers.</p>
-                <Button asChild>
+                <p className="text-accent mb-4 flex-grow">Join my friends at Paatch for events around France and coliving and trips aimed at freelancers and remote workers.</p>
+                <Button asChild className="mt-auto">
                   <a href="https://www.paat.ch/en" target="_blank" rel="noopener noreferrer">
                     Visit Paatch <ArrowRight className="ml-2" />
                   </a>
