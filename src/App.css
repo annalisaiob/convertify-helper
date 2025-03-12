@@ -48,17 +48,47 @@
 
 @keyframes dinoWalk {
   0% {
-    transform: translateX(-100px) scaleX(1);
+    transform: translateX(-150px) scaleX(1);
   }
   50% {
-    transform: translateX(calc(50vw - 50px)) scaleX(1);
+    transform: translateX(calc(50vw - 75px)) scaleX(1);
   }
   100% {
-    transform: translateX(calc(100vw + 100px)) scaleX(1);
+    transform: translateX(calc(100vw + 150px)) scaleX(1);
   }
 }
 
 .pixelated-dino {
   image-rendering: pixelated;
   animation-timing-function: steps(12, end);
+  z-index: 50;
+}
+
+.pixelated-apple {
+  image-rendering: pixelated;
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 40;
+}
+
+/* Apple disappearing animation */
+@keyframes appleEaten {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+/* Add a class for when an apple gets eaten */
+.apple-eaten {
+  animation: appleEaten 0.5s forwards;
 }
