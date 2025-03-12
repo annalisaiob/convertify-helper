@@ -5,7 +5,7 @@ import { NotionUpdate } from "@/utils/notionApi";
 import { fetchNotionUpdatesViaProxy } from "@/utils/supabaseNotionProxy";
 import { Button } from "@/components/ui/button";
 
-// Sample updates as fallback content
+// Sample updates as fallback content - only shown if API fails
 const SAMPLE_UPDATES: NotionUpdate[] = [
   {
     id: "1",
@@ -32,18 +32,24 @@ const SAMPLE_UPDATES: NotionUpdate[] = [
 ];
 
 export const NotionUpdates = () => {
-  const [updates, setUpdates] = useState<NotionUpdate[]>(SAMPLE_UPDATES);
+  const [updates, setUpdates] = useState<NotionUpdate[]>([]);
   const [loading, setLoading] = useState(true);
 
   const fetchUpdates = async () => {
+    setLoading(true);
     try {
       const notionUpdates = await fetchNotionUpdatesViaProxy();
       if (notionUpdates && notionUpdates.length > 0) {
         setUpdates(notionUpdates);
+      } else {
+        // Only use sample updates if we got an empty array
+        console.log("No updates returned from API, using sample data");
+        setUpdates(SAMPLE_UPDATES);
       }
     } catch (error) {
       console.error("Error fetching updates:", error);
       // Silently fall back to sample updates
+      setUpdates(SAMPLE_UPDATES);
     } finally {
       setLoading(false);
     }
