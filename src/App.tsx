@@ -1,7 +1,7 @@
-
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ReactGA from 'react-ga4';
+import { DinoAnimation } from './components/DinoAnimation';
 import Index from './pages/Index';
 import ServicesPage from './pages/services';
 import AboutPage from './pages/about';
@@ -50,6 +50,7 @@ function App() {
           <Route path="/tools" element={<ToolsPage />} />
           <Route path="/community" element={<CommunityPage />} />
         </Routes>
+        <DinoAnimation />
       </div>
     </Router>
   );

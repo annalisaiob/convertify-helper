@@ -44,3 +44,17 @@
 .read-the-docs {
   color: #888;
 }
+
+@keyframes dinoWalk {
+  0% {
+    transform: translateX(-100px) scaleX(1);
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px)) scaleX(1);
+  }
+}
+
+.pixelated-dino {
+  image-rendering: pixelated;
+  animation-timing-function: steps(6, end);
+}
