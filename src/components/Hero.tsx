@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Wrench, Workflow, Bot } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -16,7 +17,7 @@ export const Hero = () => {
               <p className="text-lg md:text-xl text-accent max-w-2xl mx-auto">
                 Save 10+ hours every week with smart tech solutions. Handle more clients and projects without the overwhelm.
               </p>
-              <p className="text-lg md:text-xl text-accent max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-accent max-w-2xl mx-auto">
                 I help freelancers and small business owners build simple systems that work for your unique needs. No one-size-fits-all solutions - just practical tools that fit your specific workflow.
               </p>
             </div>
