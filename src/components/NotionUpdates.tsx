@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar, Newspaper, Folder, ArrowRight, Loader2, Key, Database, AlertCircle } from "lucide-react";
+import { Calendar, Newspaper, Folder, ArrowRight, Loader2, Key, Database, AlertCircle, RefreshCw } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { fetchNotionUpdates, NotionUpdate } from "@/utils/notionApi";
 
@@ -39,6 +39,7 @@ export const NotionUpdates = () => {
   const [databaseId, setDatabaseId] = useState("");
   const [isConfigured, setIsConfigured] = useState(false);
   const [fetchError, setFetchError] = useState<string | null>(null);
+  const [usingSampleData, setUsingSampleData] = useState(false);
   const { toast } = useToast();
 
   // Check if Notion API is configured
@@ -47,68 +48,77 @@ export const NotionUpdates = () => {
     const savedDatabaseId = localStorage.getItem("notion_database_id");
     
     if (savedApiKey && savedDatabaseId) {
+      console.log("Found saved Notion credentials");
       setApiKey(savedApiKey);
       setDatabaseId(savedDatabaseId);
       setIsConfigured(true);
+    } else {
+      console.log("No saved Notion credentials found");
+      setShowSetup(true);
     }
   }, []);
 
-  useEffect(() => {
-    const fetchUpdates = async () => {
-      setLoading(true);
-      setFetchError(null);
-      
-      try {
-        // If we have API credentials, try to fetch from Notion
-        if (isConfigured) {
-          console.log("Attempting to fetch from Notion with configured credentials");
-          try {
-            const notionUpdates = await fetchNotionUpdates(apiKey, databaseId);
-            console.log("Fetched updates:", notionUpdates);
-            
-            if (notionUpdates && notionUpdates.length > 0) {
-              setUpdates(notionUpdates);
-              toast({
-                title: "Connected to Notion",
-                description: `Successfully fetched ${notionUpdates.length} updates from your Notion database`,
-              });
-            } else {
-              console.warn("No updates found in Notion database");
-              setFetchError("No items found in your Notion database. Make sure you have added content with the correct properties.");
-              // Still use the sample data as fallback
-              setUpdates(SAMPLE_UPDATES);
-            }
-          } catch (error: any) {
-            console.error("Error fetching from Notion:", error);
-            setFetchError(`Failed to fetch data from Notion: ${error.message || 'Unknown error'}. Please verify your API key and database ID.`);
+  const fetchUpdates = async () => {
+    setLoading(true);
+    setFetchError(null);
+    setUsingSampleData(false);
+    
+    try {
+      // If we have API credentials, try to fetch from Notion
+      if (isConfigured) {
+        console.log("Attempting to fetch from Notion with configured credentials");
+        try {
+          const notionUpdates = await fetchNotionUpdates(apiKey, databaseId);
+          console.log("Fetched updates:", notionUpdates);
+          
+          if (notionUpdates && notionUpdates.length > 0) {
+            setUpdates(notionUpdates);
             toast({
-              title: "Notion API Error",
-              description: "There was an error connecting to your Notion database",
-              variant: "destructive",
+              title: "Connected to Notion",
+              description: `Successfully fetched ${notionUpdates.length} updates from your Notion database`,
             });
-            // Fall back to sample data
+          } else {
+            console.warn("No updates found in Notion database");
+            setFetchError("No items found in your Notion database. Make sure you have added content with the correct properties.");
+            // Still use the sample data as fallback
             setUpdates(SAMPLE_UPDATES);
+            setUsingSampleData(true);
           }
-        } else {
-          // Use sample data if not configured
-          console.log("Using sample data (not configured)");
+        } catch (error: any) {
+          console.error("Error fetching from Notion:", error);
+          setFetchError(`Failed to fetch data from Notion: ${error.message || 'Unknown error'}. Please verify your API key and database ID.`);
+          toast({
+            title: "Notion API Error",
+            description: "There was an error connecting to your Notion database",
+            variant: "destructive",
+          });
+          // Fall back to sample data
           setUpdates(SAMPLE_UPDATES);
+          setUsingSampleData(true);
         }
-      } catch (error: any) {
-        console.error("Error in update fetch logic:", error);
-        setFetchError(`An unexpected error occurred: ${error.message || 'Unknown error'}. Please try again later.`);
-        toast({
-          title: "Couldn't load updates",
-          description: "Please check back later",
-          variant: "destructive",
-        });
-        // Fall back to sample data
+      } else {
+        // Use sample data if not configured
+        console.log("Using sample data (not configured)");
         setUpdates(SAMPLE_UPDATES);
-      } finally {
-        setLoading(false);
+        setUsingSampleData(true);
       }
-    };
+    } catch (error: any) {
+      console.error("Error in update fetch logic:", error);
+      setFetchError(`An unexpected error occurred: ${error.message || 'Unknown error'}. Please try again later.`);
+      toast({
+        title: "Couldn't load updates",
+        description: "Please check back later",
+        variant: "destructive",
+      });
+      // Fall back to sample data
+      setUpdates(SAMPLE_UPDATES);
+      setUsingSampleData(true);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchUpdates();
   }, [toast, isConfigured, apiKey, databaseId]);
 
@@ -124,7 +134,7 @@ export const NotionUpdates = () => {
       });
       
       // Reload updates with the new configuration
-      setLoading(true);
+      fetchUpdates();
     } else {
       toast({
         title: "Missing information",
@@ -160,25 +170,38 @@ export const NotionUpdates = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-12">
           <h2 className="text-3xl font-heading text-center">Latest Updates</h2>
-          {!showSetup ? (
-            <Button 
-              variant="outline" 
-              size="sm" 
-              onClick={() => setShowSetup(true)}
-              className="flex items-center gap-2"
-            >
-              <Database className="w-4 h-4" />
-              {isConfigured ? "Update Notion Config" : "Connect to Notion"}
-            </Button>
-          ) : (
-            <Button 
-              variant="outline" 
-              size="sm" 
-              onClick={() => setShowSetup(false)}
-            >
-              Cancel
-            </Button>
-          )}
+          <div className="flex gap-2">
+            {isConfigured && (
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={fetchUpdates}
+                className="flex items-center gap-2"
+              >
+                <RefreshCw className="w-4 h-4" />
+                Refresh
+              </Button>
+            )}
+            {!showSetup ? (
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={() => setShowSetup(true)}
+                className="flex items-center gap-2"
+              >
+                <Database className="w-4 h-4" />
+                {isConfigured ? "Update Notion Config" : "Connect to Notion"}
+              </Button>
+            ) : (
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={() => setShowSetup(false)}
+              >
+                Cancel
+              </Button>
+            )}
+          </div>
         </div>
 
         {showSetup && (
@@ -221,6 +244,21 @@ export const NotionUpdates = () => {
                 </div>
               </div>
               <Button onClick={saveNotionConfig}>Save Configuration</Button>
+            </div>
+          </div>
+        )}
+
+        {usingSampleData && !fetchError && isConfigured && (
+          <div className="bg-yellow-50 border border-yellow-200 text-yellow-700 p-4 rounded-lg mb-6">
+            <div className="flex items-start gap-2">
+              <AlertCircle className="w-5 h-5 mt-0.5" />
+              <div>
+                <p className="font-medium">Using sample data</p>
+                <p className="text-sm">Currently showing sample data. No data could be fetched from your Notion database.</p>
+                <p className="text-xs mt-2">
+                  Make sure your Notion database has the following properties: Title, Description, Category (select), Link, Image, and Date.
+                </p>
+              </div>
             </div>
           </div>
         )}

@@ -13,11 +13,17 @@ export type NotionUpdate = {
 };
 
 export async function fetchNotionUpdates(apiKey: string, databaseId: string): Promise<NotionUpdate[]> {
+  if (!apiKey || !databaseId) {
+    throw new Error("Notion API key and database ID are required");
+  }
+
   try {
-    console.log("Initializing Notion client");
+    console.log("Initializing Notion client with API key:", apiKey.substring(0, 5) + "..." + apiKey.substring(apiKey.length - 5));
+    console.log("Database ID:", databaseId);
+    
     const notion = new Client({ auth: apiKey });
     
-    console.log("Querying Notion database:", databaseId);
+    console.log("Querying Notion database");
     const response = await notion.databases.query({
       database_id: databaseId,
       sorts: [
@@ -33,6 +39,9 @@ export async function fetchNotionUpdates(apiKey: string, databaseId: string): Pr
     // Log the first result to see its structure (if available)
     if (response.results.length > 0) {
       console.log("Sample result structure:", JSON.stringify(response.results[0], null, 2));
+    } else {
+      console.warn("No results returned from Notion database");
+      return [];
     }
 
     const updates: NotionUpdate[] = response.results.map((page: any) => {
@@ -61,8 +70,16 @@ export async function fetchNotionUpdates(apiKey: string, databaseId: string): Pr
 
     console.log("Processed updates:", updates.length);
     return updates;
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error fetching from Notion:", error);
-    throw new Error("Failed to fetch updates from Notion");
+    
+    // Provide more specific error messages based on error type
+    if (error.code === 'unauthorized') {
+      throw new Error("Invalid Notion API key. Please check your credentials.");
+    } else if (error.code === 'object_not_found') {
+      throw new Error("Database not found. Please check your database ID.");
+    } else {
+      throw new Error(`Failed to fetch updates from Notion: ${error.message || 'Unknown error'}`);
+    }
   }
 }
