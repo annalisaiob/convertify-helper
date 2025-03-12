@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar, Newspaper, Folder, ArrowRight, Loader2, Key, Database } from "lucide-react";
+import { Calendar, Newspaper, Folder, ArrowRight, Loader2, Key, Database, AlertCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { fetchNotionUpdates, NotionUpdate } from "@/utils/notionApi";
 
@@ -61,16 +61,26 @@ export const NotionUpdates = () => {
       try {
         // If we have API credentials, try to fetch from Notion
         if (isConfigured) {
+          console.log("Attempting to fetch from Notion with configured credentials");
           try {
             const notionUpdates = await fetchNotionUpdates(apiKey, databaseId);
-            setUpdates(notionUpdates);
-            toast({
-              title: "Connected to Notion",
-              description: "Successfully fetched updates from your Notion database",
-            });
-          } catch (error) {
+            console.log("Fetched updates:", notionUpdates);
+            
+            if (notionUpdates && notionUpdates.length > 0) {
+              setUpdates(notionUpdates);
+              toast({
+                title: "Connected to Notion",
+                description: `Successfully fetched ${notionUpdates.length} updates from your Notion database`,
+              });
+            } else {
+              console.warn("No updates found in Notion database");
+              setFetchError("No items found in your Notion database. Make sure you have added content with the correct properties.");
+              // Still use the sample data as fallback
+              setUpdates(SAMPLE_UPDATES);
+            }
+          } catch (error: any) {
             console.error("Error fetching from Notion:", error);
-            setFetchError("Failed to fetch data from Notion. Please verify your API key and database ID.");
+            setFetchError(`Failed to fetch data from Notion: ${error.message || 'Unknown error'}. Please verify your API key and database ID.`);
             toast({
               title: "Notion API Error",
               description: "There was an error connecting to your Notion database",
@@ -81,11 +91,12 @@ export const NotionUpdates = () => {
           }
         } else {
           // Use sample data if not configured
+          console.log("Using sample data (not configured)");
           setUpdates(SAMPLE_UPDATES);
         }
-      } catch (error) {
-        console.error("Error fetching updates:", error);
-        setFetchError("An unexpected error occurred. Please try again later.");
+      } catch (error: any) {
+        console.error("Error in update fetch logic:", error);
+        setFetchError(`An unexpected error occurred: ${error.message || 'Unknown error'}. Please try again later.`);
         toast({
           title: "Couldn't load updates",
           description: "Please check back later",
@@ -216,9 +227,14 @@ export const NotionUpdates = () => {
 
         {fetchError && (
           <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg mb-6">
-            <p className="font-medium">Error connecting to Notion</p>
-            <p className="text-sm">{fetchError}</p>
-            <p className="text-xs mt-2">Showing sample data instead.</p>
+            <div className="flex items-start gap-2">
+              <AlertCircle className="w-5 h-5 mt-0.5" />
+              <div>
+                <p className="font-medium">Error connecting to Notion</p>
+                <p className="text-sm">{fetchError}</p>
+                <p className="text-xs mt-2">Showing sample data instead.</p>
+              </div>
+            </div>
           </div>
         )}
 
@@ -231,6 +247,11 @@ export const NotionUpdates = () => {
                   src={update.imageUrl} 
                   alt={update.title}
                   className="w-full h-40 object-cover rounded-lg mb-4"
+                  onError={(e) => {
+                    console.error("Image failed to load:", update.imageUrl);
+                    // Hide the broken image
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
                 />
               )}
               <h3 className="font-heading text-xl mb-2">{update.title}</h3>
