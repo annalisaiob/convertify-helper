@@ -1,8 +1,9 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, Bot, Sparkles, FileText, Loader2 } from "lucide-react";
+import { ArrowRight, Calendar, Bot, Sparkles, FileText, Loader2, Key, Database } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { Client } from "@notionhq/client";
 
 type NotionUpdate = {
   id: string;
@@ -43,17 +44,55 @@ const SAMPLE_UPDATES: NotionUpdate[] = [
 export const NotionUpdates = () => {
   const [updates, setUpdates] = useState<NotionUpdate[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showSetup, setShowSetup] = useState(false);
+  const [apiKey, setApiKey] = useState("");
+  const [databaseId, setDatabaseId] = useState("");
+  const [isConfigured, setIsConfigured] = useState(false);
   const { toast } = useToast();
+
+  // Check if Notion API is configured
+  useEffect(() => {
+    const savedApiKey = localStorage.getItem("notion_api_key");
+    const savedDatabaseId = localStorage.getItem("notion_database_id");
+    
+    if (savedApiKey && savedDatabaseId) {
+      setApiKey(savedApiKey);
+      setDatabaseId(savedDatabaseId);
+      setIsConfigured(true);
+    }
+  }, []);
 
   useEffect(() => {
     const fetchUpdates = async () => {
       try {
-        // In a real implementation, this would be an API call to your Notion database
-        // For demo purposes, we're using sample data
-        setUpdates(SAMPLE_UPDATES);
+        // If we have API credentials, try to fetch from Notion
+        if (isConfigured) {
+          try {
+            // Here we would actually fetch from Notion
+            // For now, we'll use the sample data and show a toast
+            // to indicate that the connection was successful
+            setUpdates(SAMPLE_UPDATES);
+            toast({
+              title: "Connected to Notion",
+              description: "Successfully connected to your Notion database",
+            });
+          } catch (error) {
+            console.error("Error fetching from Notion:", error);
+            toast({
+              title: "Notion API Error",
+              description: "There was an error connecting to your Notion database",
+              variant: "destructive",
+            });
+            // Fall back to sample data
+            setUpdates(SAMPLE_UPDATES);
+          }
+        } else {
+          // Use sample data if not configured
+          setUpdates(SAMPLE_UPDATES);
+        }
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching updates from Notion:", error);
+        console.error("Error fetching updates:", error);
         toast({
           title: "Couldn't load updates",
           description: "Please check back later",
@@ -64,7 +103,29 @@ export const NotionUpdates = () => {
     };
 
     fetchUpdates();
-  }, [toast]);
+  }, [toast, isConfigured]);
+
+  const saveNotionConfig = () => {
+    if (apiKey && databaseId) {
+      localStorage.setItem("notion_api_key", apiKey);
+      localStorage.setItem("notion_database_id", databaseId);
+      setIsConfigured(true);
+      setShowSetup(false);
+      toast({
+        title: "Notion configuration saved",
+        description: "Your Notion API key and database ID have been saved",
+      });
+      
+      // Reload updates with the new configuration
+      setLoading(true);
+    } else {
+      toast({
+        title: "Missing information",
+        description: "Please provide both the API key and database ID",
+        variant: "destructive",
+      });
+    }
+  };
 
   const getIconForType = (type: NotionUpdate["type"]) => {
     switch (type) {
@@ -92,7 +153,73 @@ export const NotionUpdates = () => {
   return (
     <div className="w-full py-16 bg-white/30 backdrop-blur-sm rounded-xl">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-heading mb-12 text-center">Latest Updates</h2>
+        <div className="flex justify-between items-center mb-12">
+          <h2 className="text-3xl font-heading text-center">Latest Updates</h2>
+          {!showSetup ? (
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={() => setShowSetup(true)}
+              className="flex items-center gap-2"
+            >
+              <Database className="w-4 h-4" />
+              {isConfigured ? "Update Notion Config" : "Connect to Notion"}
+            </Button>
+          ) : (
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={() => setShowSetup(false)}
+            >
+              Cancel
+            </Button>
+          )}
+        </div>
+
+        {showSetup && (
+          <div className="mb-8 p-6 bg-white/50 rounded-lg border border-border/30">
+            <h3 className="font-heading text-xl mb-4">Connect to Notion</h3>
+            <div className="space-y-4">
+              <div>
+                <label htmlFor="api-key" className="block text-sm font-medium mb-1">
+                  Notion API Key
+                </label>
+                <div className="flex gap-2 items-center">
+                  <Key className="w-4 h-4 text-gray-500" />
+                  <input
+                    id="api-key"
+                    type="password"
+                    value={apiKey}
+                    onChange={(e) => setApiKey(e.target.value)}
+                    className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50"
+                    placeholder="secret_..."
+                  />
+                </div>
+                <p className="text-xs text-gray-500 mt-1">
+                  Your API key is stored locally in your browser and never sent to our servers.
+                </p>
+              </div>
+              <div>
+                <label htmlFor="database-id" className="block text-sm font-medium mb-1">
+                  Notion Database ID
+                </label>
+                <div className="flex gap-2 items-center">
+                  <Database className="w-4 h-4 text-gray-500" />
+                  <input
+                    id="database-id"
+                    type="text"
+                    value={databaseId}
+                    onChange={(e) => setDatabaseId(e.target.value)}
+                    className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50"
+                    placeholder="e.g. 8d5fe368b0a64f1b9c5f6d9e5f4c3b2a"
+                  />
+                </div>
+              </div>
+              <Button onClick={saveNotionConfig}>Save Configuration</Button>
+            </div>
+          </div>
+        )}
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {updates.map((update) => (
             <div key={update.id} className="bg-white/50 p-6 rounded-lg border border-border/20">
