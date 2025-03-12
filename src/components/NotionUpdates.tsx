@@ -3,16 +3,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Bot, Sparkles, FileText, Loader2, Key, Database } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { Client } from "@notionhq/client";
-
-type NotionUpdate = {
-  id: string;
-  title: string;
-  description: string;
-  type: "event" | "guide" | "template" | "blog";
-  link: string;
-  date?: string;
-};
+import { fetchNotionUpdates, NotionUpdate } from "@/utils/notionApi";
 
 // This would normally come from an API call to Notion
 // For now, we'll use sample data that you can replace later with actual Notion integration
@@ -48,6 +39,7 @@ export const NotionUpdates = () => {
   const [apiKey, setApiKey] = useState("");
   const [databaseId, setDatabaseId] = useState("");
   const [isConfigured, setIsConfigured] = useState(false);
+  const [fetchError, setFetchError] = useState<string | null>(null);
   const { toast } = useToast();
 
   // Check if Notion API is configured
@@ -64,20 +56,22 @@ export const NotionUpdates = () => {
 
   useEffect(() => {
     const fetchUpdates = async () => {
+      setLoading(true);
+      setFetchError(null);
+      
       try {
         // If we have API credentials, try to fetch from Notion
         if (isConfigured) {
           try {
-            // Here we would actually fetch from Notion
-            // For now, we'll use the sample data and show a toast
-            // to indicate that the connection was successful
-            setUpdates(SAMPLE_UPDATES);
+            const notionUpdates = await fetchNotionUpdates(apiKey, databaseId);
+            setUpdates(notionUpdates);
             toast({
               title: "Connected to Notion",
-              description: "Successfully connected to your Notion database",
+              description: "Successfully fetched updates from your Notion database",
             });
           } catch (error) {
             console.error("Error fetching from Notion:", error);
+            setFetchError("Failed to fetch data from Notion. Please verify your API key and database ID.");
             toast({
               title: "Notion API Error",
               description: "There was an error connecting to your Notion database",
@@ -90,20 +84,23 @@ export const NotionUpdates = () => {
           // Use sample data if not configured
           setUpdates(SAMPLE_UPDATES);
         }
-        setLoading(false);
       } catch (error) {
         console.error("Error fetching updates:", error);
+        setFetchError("An unexpected error occurred. Please try again later.");
         toast({
           title: "Couldn't load updates",
           description: "Please check back later",
           variant: "destructive",
         });
+        // Fall back to sample data
+        setUpdates(SAMPLE_UPDATES);
+      } finally {
         setLoading(false);
       }
     };
 
     fetchUpdates();
-  }, [toast, isConfigured]);
+  }, [toast, isConfigured, apiKey, databaseId]);
 
   const saveNotionConfig = () => {
     if (apiKey && databaseId) {
@@ -217,6 +214,14 @@ export const NotionUpdates = () => {
               </div>
               <Button onClick={saveNotionConfig}>Save Configuration</Button>
             </div>
+          </div>
+        )}
+
+        {fetchError && (
+          <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg mb-6">
+            <p className="font-medium">Error connecting to Notion</p>
+            <p className="text-sm">{fetchError}</p>
+            <p className="text-xs mt-2">Showing sample data instead.</p>
           </div>
         )}
 
