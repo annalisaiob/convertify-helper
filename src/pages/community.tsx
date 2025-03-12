@@ -28,8 +28,8 @@ const CommunityPage = () => {
                   <Users className="w-8 h-8 text-primary mr-2" />
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
-                <h3 className="font-heading text-2xl mb-2">Lazy High Achievers</h3>
-                <p className="text-accent mb-4">My community for freelancers and entrepreneurs who achieve big things without burning out. Join our weekly co-working sessions every Friday in Paris.</p>
+                <h3 className="font-heading text-2xl mb-2">(Lazy) High Achievers</h3>
+                <p className="text-accent mb-4">My community for creatives, freelancers, entrepreneurs, artists, writers and others who achieve big things without burning out. Join our weekly co-working sessions every Monday in Paris.</p>
                 <Button asChild>
                   <a href="https://www.meetup.com/lazy-high-achievers/" target="_blank" rel="noopener noreferrer">
                     Join Community <ArrowRight className="ml-2" />
@@ -43,7 +43,7 @@ const CommunityPage = () => {
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
                 <h3 className="font-heading text-2xl mb-2">Paatch</h3>
-                <p className="text-accent mb-4">My friends at Paatch build a community of business owners, freelancers, and remote workers in Paris who want to connect and grow together.</p>
+                <p className="text-accent mb-4">Join them for events around France and coliving and trips aimed at freelancers and remote workers.</p>
                 <Button asChild>
                   <a href="https://www.paat.ch/en" target="_blank" rel="noopener noreferrer">
                     Visit Paatch <ArrowRight className="ml-2" />
@@ -62,8 +62,8 @@ const CommunityPage = () => {
                   <Calendar className="w-8 h-8 text-primary mr-2" />
                   <Heart className="w-5 h-5 text-primary" />
                 </div>
-                <h3 className="font-heading text-2xl mb-2">"I'm Working Late" Night</h3>
-                <p className="text-accent mb-4">Join our weekly co-working session every Friday in Paris with the Lazy High Achievers community</p>
+                <h3 className="font-heading text-2xl mb-2">Monday Co-working</h3>
+                <p className="text-accent mb-4">Join our weekly co-working session every Monday in Paris with the (Lazy) High Achievers community</p>
                 <Button asChild>
                   <a href="https://www.meetup.com/lazy-high-achievers/events/" target="_blank" rel="noopener noreferrer">
                     RSVP Now <ArrowRight className="ml-2" />
