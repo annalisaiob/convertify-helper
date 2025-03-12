@@ -11,9 +11,9 @@ const CommunityPage = () => {
       <Header />
       <main className="flex-grow pt-32 pb-20">
         <Helmet>
-          <title>AI Community & Events for Freelancers | CreAI Lab</title>
-          <meta name="description" content="Join the Lazy High Achievers community in Paris for co-working sessions, masterminds, and online events focused on AI and automation for freelancers." />
-          <meta name="keywords" content="AI community, freelancer events, Paris co-working, entrepreneur meetups, AI webinars, business automation events" />
+          <title>Community & Events for Freelancers & Small Businesses | CreAI Lab</title>
+          <meta name="description" content="Join the CreAI Lab community for co-working sessions, masterminds, and online events focused on AI and automation for freelancers and small businesses." />
+          <meta name="keywords" content="AI community, freelancer events, business networking, entrepreneur meetups, AI webinars, business automation events" />
         </Helmet>
         <div className="container mx-auto px-4">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading mb-12 text-center">Community & Events</h1>

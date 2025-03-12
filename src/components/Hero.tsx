@@ -60,20 +60,20 @@ export const Hero = () => {
               asChild 
               className="bg-primary text-white px-8 py-6 text-lg hover:bg-primary/90 hover:scale-105 transition-transform duration-200"
             >
-              <Link to="/services">
+              <a href="https://calendly.com/anna-creailab/30min" target="_blank" rel="noopener noreferrer">
                 Book a Free Chat
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </a>
             </Button>
             <Button 
               asChild 
               variant="outline"
               className="px-8 py-6 text-lg hover:bg-primary hover:text-white hover:scale-105 transition-transform duration-200"
             >
-              <a href="#latest-updates">
-                Latest Updates
+              <Link to="/community">
+                Upcoming Events
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
+              </Link>
             </Button>
           </div>
 
