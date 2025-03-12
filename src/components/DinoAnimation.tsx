@@ -1,5 +1,6 @@
 
 import { useEffect, useState, useRef } from 'react';
+import { Apple } from 'lucide-react';
 
 export const DinoAnimation = () => {
   const [show, setShow] = useState(false);
@@ -82,26 +83,25 @@ export const DinoAnimation = () => {
         <div 
           key={apple.id}
           id={`apple-${apple.id}`}
-          className={`fixed bottom-6 w-8 h-8 bg-red-500 pixelated-apple ${apple.eaten ? 'apple-eaten' : ''}`}
+          className={`fixed bottom-6 w-10 h-10 text-red-500 pixelated-apple ${apple.eaten ? 'apple-eaten' : ''}`}
           style={{
             left: `${apple.position}px`,
-            WebkitMaskImage: `url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 2h2v2h-2zM8 2h2v2h-2zM6 4h2v2h-2zM8 4h2v2h-2zM4 6h2v2h-2zM6 6h2v2h-2zM8 6h2v2h-2zM10 6h2v2h-2zM2 8h2v2h-2zM4 8h2v2h-2zM6 8h2v2h-2zM8 8h2v2h-2zM10 8h2v2h-2zM12 8h2v2h-2zM2 10h2v2h-2zM4 10h2v2h-2zM6 10h2v2h-2zM8 10h2v2h-2zM10 10h2v2h-2zM12 10h2v2h-2zM4 12h2v2h-2zM6 12h2v2h-2zM8 12h2v2h-2zM10 12h2v2h-2z' fill='black'/%3E%3C/svg%3E")`,
-            WebkitMaskRepeat: 'no-repeat',
-            WebkitMaskSize: 'contain',
           }}
-        />
+        >
+          <Apple className="w-full h-full" />
+        </div>
       ))}
 
       {/* Render dino */}
       <div 
         ref={dinoRef}
-        className="fixed bottom-4 w-32 h-32 bg-green-600 pixelated-dino"
+        className="fixed bottom-4 w-32 h-32 pixelated-dino"
         onAnimationEnd={handleAnimationEnd}
         style={{
           animation: 'dinoWalk 15s linear forwards',
-          WebkitMaskImage: `url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 14h4v4h-4zM22 14h4v4h-4zM26 14h4v4h-4zM30 14h4v4h-4zM34 14h4v4h-4zM38 14h4v4h-4zM14 18h4v4h-4zM18 18h4v4h-4zM38 18h4v4h-4zM42 18h4v4h-4zM10 22h4v4h-4zM14 22h4v4h-4zM42 22h4v4h-4zM46 22h4v4h-4zM10 26h4v4h-4zM14 26h4v4h-4zM42 26h4v4h-4zM46 26h4v4h-4zM10 30h4v4h-4zM14 30h4v4h-4zM42 30h4v4h-4zM46 30h4v4h-4zM10 34h4v4h-4zM14 34h4v4h-4zM18 34h4v4h-4zM22 34h4v4h-4zM26 34h4v4h-4zM30 34h4v4h-4zM34 34h4v4h-4zM38 34h4v4h-4zM42 34h4v4h-4zM46 34h4v4h-4zM14 38h4v4h-4zM18 38h4v4h-4zM22 38h4v4h-4zM26 38h4v4h-4zM30 38h4v4h-4zM34 38h4v4h-4zM38 38h4v4h-4zM42 38h4v4h-4zM14 42h4v4h-4zM18 42h4v4h-4zM22 42h4v4h-4zM26 42h4v4h-4zM30 42h4v4h-4zM34 42h4v4h-4zM38 42h4v4h-4zM18 46h4v4h-4zM34 46h4v4h-4z' fill='black'/%3E%3C/svg%3E")`,
-          WebkitMaskRepeat: 'no-repeat',
-          WebkitMaskSize: 'contain',
+          backgroundImage: `url('/placeholder.svg')`,
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
         }}
       />
     </>
