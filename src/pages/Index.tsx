@@ -1,7 +1,5 @@
-
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { NotionUpdates } from "@/components/NotionUpdates";
 import Footer from "@/components/Footer";
 import { Helmet } from "react-helmet";
 
@@ -23,9 +21,6 @@ const Index = () => {
       <Header />
       <main className="w-full flex-grow">
         <Hero />
-        <section className="py-16">
-          <NotionUpdates />
-        </section>
       </main>
       <Footer />
     </div>
