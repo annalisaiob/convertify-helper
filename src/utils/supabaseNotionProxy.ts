@@ -1,6 +1,7 @@
 
 import { NotionUpdate } from "./notionApi";
 import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 export async function fetchNotionUpdatesViaProxy(): Promise<NotionUpdate[]> {
   try {
@@ -13,6 +14,11 @@ export async function fetchNotionUpdatesViaProxy(): Promise<NotionUpdate[]> {
     }
 
     console.log("Full response from edge function:", data);
+
+    if (!data || data.error) {
+      console.error("Error from Notion proxy:", data?.error);
+      throw new Error(data?.error || 'Unknown error from Notion proxy');
+    }
 
     if (!Array.isArray(data?.updates)) {
       console.error("Invalid updates format:", data);

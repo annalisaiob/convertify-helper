@@ -14,15 +14,15 @@ serve(async (req) => {
   }
 
   try {
-    // Get Notion API key from environment variable (Supabase secret)
-    const notionApiKey = Deno.env.get('NOTION_API_KEY');
+    // Get Notion integration token from environment variable (Supabase secret)
+    const notionToken = Deno.env.get('NOTION_API_KEY');
     const defaultDatabaseId = Deno.env.get('NOTION_DATABASE_ID');
 
-    // Add detailed logging about the API key
-    console.log("Notion API key:", notionApiKey ? "Present (starts with: " + notionApiKey.substring(0, 4) + "...)" : "Missing");
+    // Add detailed logging about the token and database ID
+    console.log("Notion token:", notionToken ? "Present (masked for security)" : "Missing");
     console.log("Database ID:", defaultDatabaseId ? defaultDatabaseId : "Missing");
 
-    if (!notionApiKey) {
+    if (!notionToken) {
       console.error("Missing NOTION_API_KEY in environment variables");
       return new Response(
         JSON.stringify({ 
@@ -62,14 +62,14 @@ serve(async (req) => {
 
     console.log("Initializing Notion client...");
     const notion = new Client({ 
-      auth: notionApiKey,
+      auth: notionToken,
     });
 
     // Test connection with a simple API call
     try {
       console.log("Testing Notion API connection...");
-      await notion.users.me();
-      console.log("✅ Notion API connection test successful");
+      const user = await notion.users.me();
+      console.log("✅ Notion API connection test successful. User:", user.name);
     } catch (error) {
       console.error("❌ Failed to connect to Notion API:", error);
       return new Response(
@@ -97,6 +97,11 @@ serve(async (req) => {
       });
 
       console.log(`Received ${response.results.length} results from Notion`);
+      
+      // Log first result structure if available
+      if (response.results.length > 0) {
+        console.log("First result properties:", Object.keys(response.results[0].properties));
+      }
       
       const updates = response.results.map((page: any) => {
         const properties = page.properties;
