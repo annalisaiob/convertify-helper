@@ -78,12 +78,12 @@ const ToolsPage = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       toast({
-        title: "Resources Under Development",
+        title: "Exciting News!",
         description: (
           <div className="flex flex-col gap-4">
-            <p>I'm busy developing all of these resources. If you want to keep up to date, join the waitlist here:</p>
+            <p>I'm working hard on creating these amazing resources for you! Want to be the first to know when they're ready?</p>
             <Button className="w-full" onClick={() => window.open("https://polished-care-fbe.notion.site/1b4195d3201d80d98ccddc22b48310a9?pvs=105", "_blank")}>
-              Join Waitlist <ArrowRight className="ml-2 h-4 w-4" />
+              Join the Waitlist <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         ),
