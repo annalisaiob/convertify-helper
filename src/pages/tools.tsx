@@ -6,6 +6,7 @@ import { Download, ArrowRight, Sparkles, Brain, List, Code, Bot, Calendar, WandS
 import { Helmet } from "react-helmet";
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { Toaster } from "@/components/ui/toaster";
 
 // Card categories
 type CardCategory = "All" | "Courses" | "AI Trends" | "Tools" | "Templates";
@@ -155,6 +156,8 @@ const ToolsPage = () => {
             ))}
           </div>
         </div>
+        {/* Add Toaster component to render the toast */}
+        <Toaster />
       </main>
       <Footer />
     </div>
