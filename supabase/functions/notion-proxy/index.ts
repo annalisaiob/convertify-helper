@@ -18,6 +18,9 @@ serve(async (req) => {
     const notionApiKey = Deno.env.get('NOTION_API_KEY');
     const defaultDatabaseId = Deno.env.get('NOTION_DATABASE_ID');
 
+    console.log("Notion API key available:", !!notionApiKey);
+    console.log("Default database ID available:", !!defaultDatabaseId);
+
     // If secrets aren't set, return a helpful error
     if (!notionApiKey) {
       console.error("NOTION_API_KEY secret is not set in Supabase");
@@ -67,6 +70,8 @@ serve(async (req) => {
     try {
       // Query the database
       console.log("Querying Notion database...");
+      
+      // Properly type and configure the query
       const response = await notion.databases.query({
         database_id: databaseId,
         sorts: [
@@ -80,9 +85,7 @@ serve(async (req) => {
       console.log(`Received ${response.results.length} results from Notion`);
       
       // Log the full response for debugging
-      if (response.results.length > 0) {
-        console.log("First result structure:", JSON.stringify(response.results[0], null, 2));
-      }
+      console.log("Full Notion response:", JSON.stringify(response));
       
       // Process the results into our expected format
       const updates = response.results.map((page: any) => {
@@ -95,8 +98,6 @@ serve(async (req) => {
         const link = properties.Link?.url || "/";
         const imageUrl = properties.Image?.files?.[0]?.file?.url || properties.Image?.files?.[0]?.external?.url;
         const dateProperty = properties.Date?.date?.start;
-        
-        // Skip the Status column as it's internal
         
         console.log(`Processed item: ${title} (${type})`);
         
@@ -120,6 +121,8 @@ serve(async (req) => {
       );
     } catch (notionError: any) {
       console.error("Error querying Notion API:", notionError);
+      console.error("Error message:", notionError.message);
+      console.error("Error stack:", notionError.stack);
       
       // Create a user-friendly error message for Notion API errors
       let errorMessage = "Failed to fetch updates from Notion";
@@ -145,6 +148,8 @@ serve(async (req) => {
     }
   } catch (error: any) {
     console.error("Error in notion-proxy function:", error);
+    console.error("Error message:", error.message);
+    console.error("Error stack:", error.stack);
     
     // Create a user-friendly error message
     let errorMessage = "Failed to fetch updates from Notion";

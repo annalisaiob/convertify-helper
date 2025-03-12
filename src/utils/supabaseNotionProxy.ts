@@ -9,19 +9,19 @@ export async function fetchNotionUpdatesViaProxy(): Promise<NotionUpdate[]> {
     
     if (error) {
       console.error("Edge function error:", error);
-      throw new Error('Failed to fetch updates');
+      throw new Error(`Failed to fetch updates: ${error.message}`);
     }
 
-    console.log("Response from edge function:", data);
+    console.log("Full response from edge function:", data);
 
     if (!Array.isArray(data?.updates)) {
       console.error("Invalid updates format:", data);
-      throw new Error('Failed to fetch updates');
+      throw new Error('Invalid response format from proxy');
     }
     
     return data.updates as NotionUpdate[];
   } catch (error) {
     console.error("Error fetching via proxy:", error);
-    throw new Error('Failed to fetch updates');
+    throw error;
   }
 }

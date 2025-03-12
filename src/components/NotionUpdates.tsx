@@ -34,11 +34,9 @@ const SAMPLE_UPDATES: NotionUpdate[] = [
 export const NotionUpdates = () => {
   const [updates, setUpdates] = useState<NotionUpdate[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
 
   const fetchUpdates = async () => {
     setLoading(true);
-    setError(false);
     
     try {
       console.log("Starting to fetch Notion updates...");
@@ -51,12 +49,11 @@ export const NotionUpdates = () => {
       } else {
         console.log("No updates returned from API, using sample data");
         setUpdates(SAMPLE_UPDATES);
-        setError(true);
       }
     } catch (error) {
       console.error("Error fetching updates:", error);
+      console.log("Using sample data due to fetch error");
       setUpdates(SAMPLE_UPDATES);
-      setError(true);
     } finally {
       setLoading(false);
     }
