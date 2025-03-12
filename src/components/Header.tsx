@@ -11,7 +11,7 @@ export const Header = () => {
     }, 2000);
     
     const timer2 = setTimeout(() => {
-      setButtonText("get a free quote");
+      setButtonText("get in touch");
     }, 4000);
     
     return () => {
@@ -34,7 +34,7 @@ export const Header = () => {
             <a href="/community" className="text-3xl font-heading hover:text-primary/80 transition-colors">community</a>
             <a href="/about" className="text-3xl font-heading hover:text-primary/80 transition-colors">about</a>
             <Button asChild size="sm" className="text-lg min-w-40 transition-all duration-300">
-              <a href="#contact">
+              <a href="https://polished-care-fbe.notion.site/1b4195d3201d8095bb2cc810ebd5c696?pvs=105" target="_blank" rel="noopener noreferrer">
                 {buttonText}
               </a>
             </Button>
