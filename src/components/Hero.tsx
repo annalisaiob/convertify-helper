@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Wrench, Workflow, Bot } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -6,19 +5,21 @@ import { NotionUpdates } from "./NotionUpdates";
 
 export const Hero = () => {
   return (
-    <section className="pt-32 pb-20 px-4">
+    <section className="py-40 px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col items-center text-center gap-16">          
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading leading-tight mb-8">
+        <div className="flex flex-col items-center text-center gap-20">          
+          <div className="max-w-4xl space-y-8">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading leading-tight">
               Automation & AI Solutions for Growing Businesses
             </h1>
-            <p className="text-lg md:text-xl text-accent max-w-2xl mx-auto mb-4">
-              Save 10+ hours every week with smart tech solutions. Handle more clients and projects without the overwhelm.
-            </p>
-            <p className="text-lg md:text-xl text-accent max-w-2xl mx-auto">
-              I help freelancers and small business owners build simple systems that work for your unique needs. No one-size-fits-all solutions - just practical tools that fit your specific workflow.
-            </p>
+            <div className="space-y-6">
+              <p className="text-lg md:text-xl text-accent max-w-2xl mx-auto">
+                Save 10+ hours every week with smart tech solutions. Handle more clients and projects without the overwhelm.
+              </p>
+              <p className="text-lg md:text-xl text-accent max-w-2xl mx-auto">
+                I help freelancers and small business owners build simple systems that work for your unique needs. No one-size-fits-all solutions - just practical tools that fit your specific workflow.
+              </p>
+            </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
@@ -56,7 +57,7 @@ export const Hero = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-6">
             <Button 
               asChild 
               className="px-8 py-6 text-lg hover:scale-105 transition-transform duration-200"
