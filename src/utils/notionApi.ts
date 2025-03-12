@@ -23,7 +23,7 @@ export async function fetchNotionUpdates(apiKey: string, databaseId: string): Pr
     
     // Check if we're running in a browser environment
     if (typeof window !== 'undefined') {
-      console.log("Browser environment detected. Direct Notion API calls will be blocked by CORS.");
+      console.log("Browser environment detected - direct Notion API calls will be blocked by CORS");
       throw new Error("CORS_ERROR");
     }
     

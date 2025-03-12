@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar, Newspaper, Folder, ArrowRight, Loader2, Key, Database, AlertCircle, RefreshCw, Server } from "lucide-react";
+import { Calendar, Newspaper, Folder, ArrowRight, Loader2, Key, Database, AlertCircle, RefreshCw, Server, ExternalLink } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { fetchNotionUpdates, NotionUpdate } from "@/utils/notionApi";
 
@@ -259,21 +259,62 @@ export const NotionUpdates = () => {
 
         {corsError && (
           <div className="bg-amber-50 border border-amber-200 text-amber-800 p-4 rounded-lg mb-6">
-            <div className="flex items-start gap-2">
-              <Server className="w-5 h-5 mt-0.5" />
+            <div className="flex items-start gap-3">
+              <Server className="w-5 h-5 mt-0.5 flex-shrink-0" />
               <div>
-                <p className="font-medium">CORS Error: Browser Security Limitation</p>
-                <p className="text-sm">
+                <p className="font-medium mb-2">CORS Error: Browser Security Limitation</p>
+                <p className="text-sm mb-3">
                   Your browser is blocking direct requests to the Notion API due to Cross-Origin Resource Sharing (CORS) security restrictions.
                 </p>
-                <p className="text-sm mt-2">
-                  To connect to Notion, you would need a server-side solution:
-                </p>
-                <ul className="list-disc list-inside text-sm mt-1 ml-2">
-                  <li>Create a server-side proxy or serverless function</li>
-                  <li>Use a dedicated Notion integration service</li>
-                </ul>
-                <p className="text-xs mt-2">Showing sample data instead.</p>
+                <p className="text-sm font-medium">Solutions:</p>
+                <div className="mb-3 space-y-4 mt-2">
+                  <div className="bg-white/40 p-3 rounded border border-amber-200/50">
+                    <p className="font-medium text-sm mb-1 flex items-center">
+                      <span className="w-5 h-5 rounded-full bg-amber-100 text-amber-800 inline-flex items-center justify-center mr-2 text-xs">1</span>
+                      Create a server-side proxy or serverless function
+                    </p>
+                    <p className="text-xs ml-7">
+                      Set up a small backend API that makes requests to Notion on behalf of your frontend.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-white/40 p-3 rounded border border-amber-200/50">
+                    <p className="font-medium text-sm mb-1 flex items-center">
+                      <span className="w-5 h-5 rounded-full bg-amber-100 text-amber-800 inline-flex items-center justify-center mr-2 text-xs">2</span>
+                      Use a CORS proxy service
+                    </p>
+                    <p className="text-xs ml-7">
+                      Services like CORS Anywhere can help bypass CORS restrictions for development purposes.
+                    </p>
+                    <div className="mt-2 ml-7">
+                      <Button size="sm" variant="outline" asChild className="text-xs h-7 px-2">
+                        <a href="https://cors-anywhere.herokuapp.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                          <ExternalLink className="w-3 h-3" />
+                          CORS Anywhere
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white/40 p-3 rounded border border-amber-200/50">
+                    <p className="font-medium text-sm mb-1 flex items-center">
+                      <span className="w-5 h-5 rounded-full bg-amber-100 text-amber-800 inline-flex items-center justify-center mr-2 text-xs">3</span>
+                      Use Notion's JavaScript SDK with a backend
+                    </p>
+                    <p className="text-xs ml-7">
+                      Learn more about integrating Notion properly with a backend service.
+                    </p>
+                    <div className="mt-2 ml-7">
+                      <Button size="sm" variant="outline" asChild className="text-xs h-7 px-2">
+                        <a href="https://developers.notion.com/docs" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                          <ExternalLink className="w-3 h-3" />
+                          Notion API Docs
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-xs italic">Showing sample data in the meantime. CORS issues can only be solved with server-side solutions.</p>
               </div>
             </div>
           </div>
