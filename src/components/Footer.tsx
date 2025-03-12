@@ -1,3 +1,4 @@
+
 import { Linkedin, Newspaper, Mail } from "lucide-react";
 
 const Footer = () => {
@@ -44,6 +45,11 @@ const Footer = () => {
           
           <div className="text-sm text-gray-600 pt-4 border-t border-gray-200 w-full text-center">
             <p>© {currentYear} CreAI Lab. All rights reserved.</p>
+            <p className="mt-2 text-xs">
+              <a href="https://www.flaticon.com/free-icons/dinosaur" title="dinosaur icons" className="hover:underline">
+                Dinosaur icons created by Freepik - Flaticon
+              </a>
+            </p>
           </div>
         </div>
       </div>

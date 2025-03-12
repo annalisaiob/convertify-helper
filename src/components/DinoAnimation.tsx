@@ -1,6 +1,6 @@
 
 import { useEffect, useState, useRef } from 'react';
-import { Apple, Turtle } from 'lucide-react';
+import { Apple } from 'lucide-react';
 
 export const DinoAnimation = () => {
   const [show, setShow] = useState(false);
@@ -92,13 +92,17 @@ export const DinoAnimation = () => {
         </div>
       ))}
 
-      {/* Render dino as Turtle icon */}
+      {/* Render dino as custom image */}
       <div 
         ref={dinoRef}
-        className="fixed bottom-4 w-32 h-32 text-green-600 pixelated-dino"
+        className="fixed bottom-4 w-32 h-32 pixelated-dino"
         onAnimationEnd={handleAnimationEnd}
       >
-        <Turtle className="w-full h-full" />
+        <img 
+          src="/lovable-uploads/a49fb822-c7e9-435c-bc9d-ffd5b479ebb0.png" 
+          alt="Cute dinosaur" 
+          className="w-full h-full" 
+        />
       </div>
     </>
   );
