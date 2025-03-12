@@ -95,7 +95,7 @@ export const DinoAnimation = () => {
       {/* Render dino as Turtle icon */}
       <div 
         ref={dinoRef}
-        className="fixed bottom-4 w-40 h-40 text-green-600 pixelated-dino"
+        className="fixed bottom-4 w-32 h-32 text-green-600 pixelated-dino"
         onAnimationEnd={handleAnimationEnd}
       >
         <Turtle className="w-full h-full" />
