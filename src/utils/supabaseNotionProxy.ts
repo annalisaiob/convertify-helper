@@ -7,9 +7,7 @@ export async function fetchNotionUpdatesViaProxy(): Promise<NotionUpdate[]> {
   try {
     console.log("Fetching from Notion via Supabase edge function");
     
-    const { data, error, status } = await supabase.functions.invoke('notion-proxy');
-    
-    console.log("Status code from edge function:", status);
+    const { data, error } = await supabase.functions.invoke('notion-proxy');
     
     if (error) {
       console.error("Edge function error:", error);
