@@ -22,7 +22,10 @@ serve(async (req) => {
     if (!notionApiKey) {
       console.error("NOTION_API_KEY secret is not set in Supabase");
       return new Response(
-        JSON.stringify({ error: "Server configuration error: NOTION_API_KEY not set" }),
+        JSON.stringify({ 
+          error: "Server configuration error: NOTION_API_KEY not set",
+          updates: [] 
+        }),
         { 
           status: 500, 
           headers: { ...corsHeaders, 'Content-Type': 'application/json' }
@@ -45,7 +48,10 @@ serve(async (req) => {
     if (!databaseId) {
       console.error("No database ID provided and NOTION_DATABASE_ID secret is not set");
       return new Response(
-        JSON.stringify({ error: "Database ID is required but not provided" }),
+        JSON.stringify({ 
+          error: "Database ID is required but not provided", 
+          updates: [] 
+        }),
         { 
           status: 400, 
           headers: { ...corsHeaders, 'Content-Type': 'application/json' }
@@ -60,6 +66,7 @@ serve(async (req) => {
     
     try {
       // Query the database
+      console.log("Querying Notion database...");
       const response = await notion.databases.query({
         database_id: databaseId,
         sorts: [
@@ -72,17 +79,26 @@ serve(async (req) => {
 
       console.log(`Received ${response.results.length} results from Notion`);
       
+      // Log the full response for debugging
+      if (response.results.length > 0) {
+        console.log("First result structure:", JSON.stringify(response.results[0], null, 2));
+      }
+      
       // Process the results into our expected format
       const updates = response.results.map((page: any) => {
         const properties = page.properties;
         
-        // Extract values with more cautious property access
+        // Extract values with more cautious property access and logging
         const title = properties.Title?.title?.[0]?.plain_text || "No Title";
         const description = properties.Description?.rich_text?.[0]?.plain_text || "";
         const type = properties.Category?.select?.name?.toLowerCase() || "news";
         const link = properties.Link?.url || "/";
         const imageUrl = properties.Image?.files?.[0]?.file?.url || properties.Image?.files?.[0]?.external?.url;
         const dateProperty = properties.Date?.date?.start;
+        
+        // Skip the Status column as it's internal
+        
+        console.log(`Processed item: ${title} (${type})`);
         
         return {
           id: page.id,
@@ -118,7 +134,8 @@ serve(async (req) => {
       return new Response(
         JSON.stringify({ 
           error: errorMessage,
-          details: notionError.stack || "No additional details available"
+          details: notionError.stack || "No additional details available",
+          updates: [] 
         }),
         { 
           status: 500, 
@@ -138,7 +155,8 @@ serve(async (req) => {
     return new Response(
       JSON.stringify({ 
         error: errorMessage,
-        details: error.stack || "No additional details available"
+        details: error.stack || "No additional details available",
+        updates: [] 
       }),
       { 
         status: 500, 

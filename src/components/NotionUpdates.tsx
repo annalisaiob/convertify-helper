@@ -34,28 +34,36 @@ const SAMPLE_UPDATES: NotionUpdate[] = [
 export const NotionUpdates = () => {
   const [updates, setUpdates] = useState<NotionUpdate[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   const fetchUpdates = async () => {
     setLoading(true);
+    setError(false);
+    
     try {
+      console.log("Starting to fetch Notion updates...");
       const notionUpdates = await fetchNotionUpdatesViaProxy();
+      console.log("Received updates:", notionUpdates);
+      
       if (notionUpdates && notionUpdates.length > 0) {
+        console.log(`Setting ${notionUpdates.length} real updates from Notion`);
         setUpdates(notionUpdates);
       } else {
-        // Only use sample updates if we got an empty array
         console.log("No updates returned from API, using sample data");
         setUpdates(SAMPLE_UPDATES);
+        setError(true);
       }
     } catch (error) {
       console.error("Error fetching updates:", error);
-      // Silently fall back to sample updates
       setUpdates(SAMPLE_UPDATES);
+      setError(true);
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
+    console.log("NotionUpdates component mounted, fetching updates...");
     fetchUpdates();
   }, []);
 
