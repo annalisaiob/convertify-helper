@@ -26,7 +26,7 @@ const AboutPage = () => {
               <section className="bg-white/50 rounded-xl p-8 border border-border/20 space-y-4">
                 <p className="text-xl leading-relaxed">
                   Think of me as Marie Kondo meets MacGyver for your business systems - but with a slightly concerning obsession for spreadsheet formulas. 
-                  I've mapped refugee camps, built apps in 7 different countries, and get way too excited about automating things that probably didn't need automating.
+                  I've built apps, lived in 7 different countries, and get way too excited about automating things that probably didn't need automating.
                 </p>
               </section>
 
