@@ -1,33 +1,32 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, Bot, Sparkles, FileText, Loader2, Key, Database } from "lucide-react";
+import { Calendar, Newspaper, Folder, ArrowRight, Loader2, Key, Database } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { fetchNotionUpdates, NotionUpdate } from "@/utils/notionApi";
 
-// This would normally come from an API call to Notion
-// For now, we'll use sample data that you can replace later with actual Notion integration
+// Sample data structure updated to match new type
 const SAMPLE_UPDATES: NotionUpdate[] = [
   {
     id: "1",
     title: "Weekly Co-working",
-    description: "Join our \"I'm Working Late\" co-working nights - bring your projects and get help",
+    description: "Join our community co-working nights",
     type: "event",
     link: "/community",
     date: "Every Thursday"
   },
   {
     id: "2",
-    title: "AI Setup Guide",
-    description: "New guide: How to set up ChatGPT to help with your client emails and proposals",
-    type: "guide",
-    link: "/tools",
+    title: "Latest News",
+    description: "Check out what's new in our community",
+    type: "news",
+    link: "/news",
   },
   {
     id: "3",
-    title: "Free Templates",
-    description: "Just released: Client onboarding and project management templates for freelancers",
-    type: "template",
+    title: "New Project Templates",
+    description: "Fresh templates for your projects",
+    type: "project",
     link: "/tools",
   }
 ];
@@ -128,14 +127,12 @@ export const NotionUpdates = () => {
     switch (type) {
       case "event":
         return <Calendar className="w-8 h-8 mb-4 text-primary" />;
-      case "guide":
-        return <Bot className="w-8 h-8 mb-4 text-primary" />;
-      case "template":
-        return <Sparkles className="w-8 h-8 mb-4 text-primary" />;
-      case "blog":
-        return <FileText className="w-8 h-8 mb-4 text-primary" />;
+      case "news":
+        return <Newspaper className="w-8 h-8 mb-4 text-primary" />;
+      case "project":
+        return <Folder className="w-8 h-8 mb-4 text-primary" />;
       default:
-        return <Calendar className="w-8 h-8 mb-4 text-primary" />;
+        return <Newspaper className="w-8 h-8 mb-4 text-primary" />;
     }
   };
 
@@ -229,11 +226,18 @@ export const NotionUpdates = () => {
           {updates.map((update) => (
             <div key={update.id} className="bg-white/50 p-6 rounded-lg border border-border/20">
               {getIconForType(update.type)}
+              {update.imageUrl && (
+                <img 
+                  src={update.imageUrl} 
+                  alt={update.title}
+                  className="w-full h-40 object-cover rounded-lg mb-4"
+                />
+              )}
               <h3 className="font-heading text-xl mb-2">{update.title}</h3>
               {update.date && <p className="text-sm text-primary/80 mb-2">{update.date}</p>}
-              <p className="text-accent">{update.description}</p>
+              <p className="text-accent line-clamp-2">{update.description}</p>
               <Button variant="link" className="mt-4" asChild>
-                <a href={update.link}>
+                <a href={update.link} target="_blank" rel="noopener noreferrer">
                   Read More <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
               </Button>
