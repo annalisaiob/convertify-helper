@@ -1,7 +1,8 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, Users, Sparkles, Wrench, Workflow, Bot } from "lucide-react";
+import { ArrowRight, Wrench, Workflow, Bot } from "lucide-react";
 import { Link } from "react-router-dom";
+import { NotionUpdates } from "./NotionUpdates";
 
 export const Hero = () => {
   return (
@@ -44,7 +45,7 @@ export const Hero = () => {
             </div>
 
             <div className="h-full border border-border/20 p-8 rounded-lg bg-white/50 backdrop-blur-sm hover:shadow-lg transition-all">
-              <Users className="w-10 h-10 text-primary mb-4" />
+              <Bot className="w-10 h-10 text-primary mb-4" />
               <h2 className="font-heading text-2xl mb-4">Community</h2>
               <p className="text-accent mb-4">Connect with other freelancers during our co-working sessions, workshops and events</p>
               <Button variant="link" asChild className="p-0 hover:px-4 transition-all">
@@ -77,39 +78,7 @@ export const Hero = () => {
             </Button>
           </div>
 
-          <div id="latest-updates" className="w-full py-16 bg-white/30 backdrop-blur-sm rounded-xl">
-            <div className="container mx-auto px-4">
-              <h2 className="text-3xl font-heading mb-12 text-center">Latest Updates</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-white/50 p-6 rounded-lg border border-border/20">
-                  <Calendar className="w-8 h-8 mb-4 text-primary" />
-                  <h3 className="font-heading text-xl mb-2">Weekly Co-working</h3>
-                  <p className="text-accent">Join our "I'm Working Late" co-working nights - bring your projects and get help</p>
-                  <Button variant="link" className="mt-4">
-                    RSVP Now <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                </div>
-
-                <div className="bg-white/50 p-6 rounded-lg border border-border/20">
-                  <Bot className="w-8 h-8 mb-4 text-primary" />
-                  <h3 className="font-heading text-xl mb-2">AI Setup Guide</h3>
-                  <p className="text-accent">New guide: How to set up ChatGPT to help with your client emails and proposals</p>
-                  <Button variant="link" className="mt-4">
-                    Get Guide <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                </div>
-
-                <div className="bg-white/50 p-6 rounded-lg border border-border/20">
-                  <Sparkles className="w-8 h-8 mb-4 text-primary" />
-                  <h3 className="font-heading text-xl mb-2">Free Templates</h3>
-                  <p className="text-accent">Just released: Client onboarding and project management templates for freelancers</p>
-                  <Button variant="link" className="mt-4">
-                    Download <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <NotionUpdates />
         </div>
       </div>
     </section>
