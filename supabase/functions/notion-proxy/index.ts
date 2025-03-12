@@ -58,59 +58,80 @@ serve(async (req) => {
     // Initialize Notion client
     const notion = new Client({ auth: notionApiKey });
     
-    // Query the database
-    const response = await notion.databases.query({
-      database_id: databaseId,
-      sorts: [
-        {
-          property: "Date",
-          direction: "descending",
-        },
-      ],
-    });
+    try {
+      // Query the database
+      const response = await notion.databases.query({
+        database_id: databaseId,
+        sorts: [
+          {
+            property: "Date",
+            direction: "descending",
+          },
+        ],
+      });
 
-    console.log(`Received ${response.results.length} results from Notion`);
-    
-    // Process the results into our expected format
-    const updates = response.results.map((page: any) => {
-      const properties = page.properties;
+      console.log(`Received ${response.results.length} results from Notion`);
       
-      // Extract values
-      const title = properties.Title?.title?.[0]?.plain_text || "No Title";
-      const description = properties.Description?.rich_text?.[0]?.plain_text || "";
-      const type = properties.Category?.select?.name?.toLowerCase() || "news";
-      const link = properties.Link?.url || "/";
-      const imageUrl = properties.Image?.files?.[0]?.file?.url || properties.Image?.files?.[0]?.external?.url;
-      const dateProperty = properties.Date?.date?.start;
-      
-      return {
-        id: page.id,
-        title,
-        description,
-        type: type,
-        link,
-        imageUrl,
-        date: dateProperty,
-      };
-    });
+      // Process the results into our expected format
+      const updates = response.results.map((page: any) => {
+        const properties = page.properties;
+        
+        // Extract values with more cautious property access
+        const title = properties.Title?.title?.[0]?.plain_text || "No Title";
+        const description = properties.Description?.rich_text?.[0]?.plain_text || "";
+        const type = properties.Category?.select?.name?.toLowerCase() || "news";
+        const link = properties.Link?.url || "/";
+        const imageUrl = properties.Image?.files?.[0]?.file?.url || properties.Image?.files?.[0]?.external?.url;
+        const dateProperty = properties.Date?.date?.start;
+        
+        return {
+          id: page.id,
+          title,
+          description,
+          type: type,
+          link,
+          imageUrl,
+          date: dateProperty,
+        };
+      });
 
-    // Return the processed updates
-    return new Response(
-      JSON.stringify({ updates }),
-      { 
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      // Return the processed updates
+      return new Response(
+        JSON.stringify({ updates }),
+        { 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        }
+      );
+    } catch (notionError: any) {
+      console.error("Error querying Notion API:", notionError);
+      
+      // Create a user-friendly error message for Notion API errors
+      let errorMessage = "Failed to fetch updates from Notion";
+      if (notionError.code === 'unauthorized') {
+        errorMessage = "Invalid Notion API key";
+      } else if (notionError.code === 'object_not_found') {
+        errorMessage = "Database not found. Please check your database ID";
+      } else if (notionError.message) {
+        errorMessage = notionError.message;
       }
-    );
-  } catch (error) {
+      
+      return new Response(
+        JSON.stringify({ 
+          error: errorMessage,
+          details: notionError.stack || "No additional details available"
+        }),
+        { 
+          status: 500, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        }
+      );
+    }
+  } catch (error: any) {
     console.error("Error in notion-proxy function:", error);
     
     // Create a user-friendly error message
     let errorMessage = "Failed to fetch updates from Notion";
-    if (error.code === 'unauthorized') {
-      errorMessage = "Invalid Notion API key";
-    } else if (error.code === 'object_not_found') {
-      errorMessage = "Database not found. Please check your database ID";
-    } else if (error.message) {
+    if (error.message) {
       errorMessage = error.message;
     }
     

@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Loader2, AlertCircle } from "lucide-react";
+import { Loader2, AlertCircle, RefreshCw } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { NotionUpdate } from "@/utils/notionApi";
 import { fetchNotionUpdatesViaProxy } from "@/utils/supabaseNotionProxy";
@@ -49,6 +49,11 @@ export const NotionUpdates = () => {
       
       if (notionUpdates && notionUpdates.length > 0) {
         setUpdates(notionUpdates);
+        toast({
+          title: "Updates loaded",
+          description: `Loaded ${notionUpdates.length} updates from Notion`,
+          variant: "default",
+        });
       } else {
         console.warn("No updates found in Notion database");
         setFetchError("No items found in the Notion database.");
@@ -57,7 +62,7 @@ export const NotionUpdates = () => {
       }
     } catch (error: any) {
       console.error("Error fetching from Notion:", error);
-      setFetchError(`Failed to fetch updates: ${error.message || 'Unknown error'}`);
+      setFetchError(`${error.message || 'Unknown error'}`);
       setUpdates(SAMPLE_UPDATES);
       setUsingSampleData(true);
     } finally {
@@ -97,6 +102,16 @@ export const NotionUpdates = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-12">
           <h2 className="text-3xl font-heading text-center">Latest Updates</h2>
+          <Button 
+            variant="outline" 
+            size="sm" 
+            onClick={fetchUpdates}
+            disabled={loading}
+            className="flex items-center gap-2"
+          >
+            <RefreshCw className="h-4 w-4" />
+            Refresh
+          </Button>
         </div>
 
         {fetchError && (

@@ -7,7 +7,9 @@ export async function fetchNotionUpdatesViaProxy(): Promise<NotionUpdate[]> {
   try {
     console.log("Fetching from Notion via Supabase edge function");
     
-    const { data, error } = await supabase.functions.invoke('notion-proxy');
+    const { data, error, status } = await supabase.functions.invoke('notion-proxy');
+    
+    console.log("Status code from edge function:", status);
     
     if (error) {
       console.error("Edge function error:", error);
@@ -16,8 +18,14 @@ export async function fetchNotionUpdatesViaProxy(): Promise<NotionUpdate[]> {
 
     console.log("Response from edge function:", data);
     
-    if (!data.updates) {
-      throw new Error("Invalid response from proxy");
+    if (data.error) {
+      console.error("Error from notion-proxy:", data.error);
+      throw new Error(data.error);
+    }
+    
+    if (!Array.isArray(data.updates)) {
+      console.error("Invalid updates format:", data.updates);
+      throw new Error("Invalid response format from proxy");
     }
     
     return data.updates as NotionUpdate[];
