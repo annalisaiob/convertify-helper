@@ -1,4 +1,3 @@
-
 import * as React from "react"
 import * as ToastPrimitives from "@radix-ui/react-toast"
 import { cva, type VariantProps } from "class-variance-authority"
@@ -45,14 +44,11 @@ const Toast = React.forwardRef<
     VariantProps<typeof toastVariants>
 >(({ className, variant, ...props }, ref) => {
   return (
-    <>
-      <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[100] data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0" data-state={props.open ? "open" : "closed"} />
-      <ToastPrimitives.Root
-        ref={ref}
-        className={cn(toastVariants({ variant }), className, "z-[101] p-8")}
-        {...props}
-      />
-    </>
+    <ToastPrimitives.Root
+      ref={ref}
+      className={cn(toastVariants({ variant }), className, "z-[101] p-8 bg-white")}
+      {...props}
+    />
   )
 })
 Toast.displayName = ToastPrimitives.Root.displayName
@@ -79,13 +75,13 @@ const ToastClose = React.forwardRef<
   <ToastPrimitives.Close
     ref={ref}
     className={cn(
-      "absolute right-3 top-3 rounded-md p-2 text-foreground opacity-90 transition-opacity hover:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100",
+      "absolute right-4 top-4 rounded-md p-2 text-foreground/50 opacity-100 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-2",
       className
     )}
     toast-close=""
     {...props}
   >
-    <X className="h-6 w-6" />
+    <X className="h-8 w-8" />
   </ToastPrimitives.Close>
 ))
 ToastClose.displayName = ToastPrimitives.Close.displayName
