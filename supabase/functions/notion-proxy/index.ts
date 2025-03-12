@@ -64,14 +64,34 @@ serve(async (req) => {
 
     console.log(`Fetching from Notion database: ${databaseId}`);
     
-    // Initialize Notion client
+    // Initialize Notion client - IMPORTANT: This is where the error was happening
     const notion = new Client({ auth: notionApiKey });
+    
+    // First let's verify the client is working by getting a simple endpoint
+    try {
+      console.log("Testing Notion API connection...");
+      // First make a simple call to verify the client is working
+      await notion.users.me();
+      console.log("Notion API connection successful!");
+    } catch (connectionError) {
+      console.error("Failed to connect to Notion API:", connectionError);
+      return new Response(
+        JSON.stringify({ 
+          error: "Failed to connect to Notion API", 
+          details: connectionError.message,
+          updates: [] 
+        }),
+        { 
+          status: 500, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        }
+      );
+    }
     
     try {
       // Query the database
       console.log("Querying Notion database...");
       
-      // Properly type and configure the query
       const response = await notion.databases.query({
         database_id: databaseId,
         sorts: [

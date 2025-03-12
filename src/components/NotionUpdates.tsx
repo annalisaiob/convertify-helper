@@ -4,6 +4,7 @@ import { Loader2 } from "lucide-react";
 import { NotionUpdate } from "@/utils/notionApi";
 import { fetchNotionUpdatesViaProxy } from "@/utils/supabaseNotionProxy";
 import { Button } from "@/components/ui/button";
+import { toast } from "@/hooks/use-toast";
 
 // Sample updates as fallback content - only shown if API fails
 const SAMPLE_UPDATES: NotionUpdate[] = [
@@ -34,9 +35,11 @@ const SAMPLE_UPDATES: NotionUpdate[] = [
 export const NotionUpdates = () => {
   const [updates, setUpdates] = useState<NotionUpdate[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isUsingSampleData, setIsUsingSampleData] = useState(false);
 
   const fetchUpdates = async () => {
     setLoading(true);
+    setIsUsingSampleData(false);
     
     try {
       console.log("Starting to fetch Notion updates...");
@@ -49,11 +52,23 @@ export const NotionUpdates = () => {
       } else {
         console.log("No updates returned from API, using sample data");
         setUpdates(SAMPLE_UPDATES);
+        setIsUsingSampleData(true);
+        toast({
+          title: "Using sample data",
+          description: "Could not load data from Notion. Check console for details.",
+          variant: "destructive"
+        });
       }
     } catch (error) {
       console.error("Error fetching updates:", error);
       console.log("Using sample data due to fetch error");
       setUpdates(SAMPLE_UPDATES);
+      setIsUsingSampleData(true);
+      toast({
+        title: "Error loading updates",
+        description: error instanceof Error ? error.message : "Unknown error",
+        variant: "destructive"
+      });
     } finally {
       setLoading(false);
     }
@@ -90,7 +105,13 @@ export const NotionUpdates = () => {
   return (
     <div className="w-full py-16 bg-white/30 backdrop-blur-sm rounded-xl">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-heading text-center mb-12">Latest Updates</h2>
+        <h2 className="text-3xl font-heading text-center mb-12">
+          Latest Updates
+          {isUsingSampleData && (
+            <span className="text-sm text-red-500 ml-2">(Sample Data)</span>
+          )}
+        </h2>
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {updates.map((update) => (
             <div key={update.id} className="bg-white/50 p-6 rounded-lg border border-border/20">
@@ -116,6 +137,18 @@ export const NotionUpdates = () => {
             </div>
           ))}
         </div>
+
+        {isUsingSampleData && (
+          <div className="text-center mt-8">
+            <Button 
+              onClick={fetchUpdates} 
+              className="mx-auto"
+              variant="outline"
+            >
+              Retry Loading Data
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );
