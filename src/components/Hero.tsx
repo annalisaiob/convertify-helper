@@ -16,18 +16,9 @@ export const Hero = () => {
             <p className="text-lg md:text-xl text-accent max-w-2xl mx-auto mb-4">
               Save 10+ hours every week with smart tech solutions. Handle more clients and projects without the overwhelm.
             </p>
-            <p className="text-lg md:text-xl text-accent max-w-2xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-accent max-w-2xl mx-auto">
               I help freelancers and small business owners build simple systems that work for your unique needs. No one-size-fits-all solutions - just practical tools that fit your specific workflow.
             </p>
-            <Button 
-              asChild 
-              className="px-8 py-6 text-lg hover:scale-105 transition-transform duration-200"
-            >
-              <a href="https://polished-care-fbe.notion.site/1b4195d3201d8095bb2cc810ebd5c696?pvs=105" target="_blank" rel="noopener noreferrer">
-                Let's Go!
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">

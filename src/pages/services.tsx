@@ -196,7 +196,7 @@ const ServicesPage = () => {
   };
 
   const handleRequestQuote = () => {
-    window.open("https://calendly.com/anna-creailab/", "_blank");
+    window.open("https://polished-care-fbe.notion.site/1b4195d3201d8095bb2cc810ebd5c696?pvs=105", "_blank");
   };
 
   return (
@@ -213,9 +213,18 @@ const ServicesPage = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-20">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading mb-6">AI & Automation Solutions</h1>
-            <p className="text-xl text-accent max-w-2xl mx-auto">
+            <p className="text-xl text-accent max-w-2xl mx-auto mb-8">
               Save 10+ hours weekly with streamlined workflows and AI-powered tools custom-built for freelancers and small businesses.
             </p>
+            <Button 
+              asChild 
+              className="px-8 py-6 text-lg hover:scale-105 transition-transform duration-200"
+            >
+              <a href="https://polished-care-fbe.notion.site/1b4195d3201d8095bb2cc810ebd5c696?pvs=105" target="_blank" rel="noopener noreferrer">
+                Let's Go!
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
           </div>
           
           <div className="mb-24">
