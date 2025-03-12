@@ -10,13 +10,13 @@ export const Hero = () => {
         <div className="flex flex-col items-center text-center gap-16">          
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading leading-tight mb-8">
-              Automation & AI Solutions for Freelancers
+              Automation & AI Solutions for Growing Businesses
             </h1>
             <p className="text-lg md:text-xl text-accent max-w-2xl mx-auto mb-4">
-              Save 10+ hours every week by automating your admin tasks. Work with more clients without the extra headaches.
+              Save 10+ hours every week with smart tech solutions. Handle more clients and projects without the overwhelm.
             </p>
             <p className="text-lg md:text-xl text-accent max-w-2xl mx-auto">
-              I help freelancers and small businesses set up simple systems that actually work for you. No cookie-cutter solutions - just practical tools that fit your specific workflow.
+              I help freelancers and small business owners build simple systems that work for your unique needs. No one-size-fits-all solutions - just practical tools that fit your specific workflow.
             </p>
           </div>
           
