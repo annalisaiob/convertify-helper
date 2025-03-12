@@ -34,8 +34,8 @@ export const Header = () => {
         setCommunityText(prev => prev === "community" ? "events" : "community");
       };
       
-      // Start toggling every 3 seconds
-      const intervalId = setInterval(toggleText, 3000);
+      // Start toggling every 10 seconds instead of 3
+      const intervalId = setInterval(toggleText, 10000);
       
       return () => clearInterval(intervalId);
     }, 4000); // Wait for the initial button animation to finish
