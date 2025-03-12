@@ -368,7 +368,7 @@ const ServicesPage = () => {
               Request a personalized quote for any of our services. We'll analyze your needs and provide a detailed proposal within 24 hours.
             </p>
             <Button 
-              onClick={() => window.open("https://calendly.com/anna-creailab/", "_blank")}
+              onClick={() => window.open("https://polished-care-fbe.notion.site/1b4195d3201d8095bb2cc810ebd5c696?pvs=105", "_blank")}
               className="text-lg px-8 py-6 hover:scale-105"
             >
               Request Your Free Quote <ArrowRight className="ml-2" />
