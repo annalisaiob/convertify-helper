@@ -4,93 +4,55 @@ import { Loader2 } from "lucide-react";
 import { NotionUpdate } from "@/utils/notionApi";
 import { fetchNotionUpdatesViaProxy } from "@/utils/supabaseNotionProxy";
 import { Button } from "@/components/ui/button";
-import { toast } from "@/hooks/use-toast";
 
-// Sample updates as fallback content - only shown if API fails
+// Production-ready fallback content
 const SAMPLE_UPDATES: NotionUpdate[] = [
   {
     id: "1",
     title: "Weekly Co-working",
-    description: "Join our community co-working nights",
+    description: "Join our start of the week co-working at Climbing District - connect, work, and grow together with fellow entrepreneurs.",
     type: "event",
-    link: "/community",
-    date: "Every Thursday"
+    link: "https://www.meetup.com/lazy-high-achievers/events/306178249/?utm_medium=referral&utm_campaign=share-btn_savedevents_share_modal&utm_source=link",
+    date: "Every Monday"
   },
   {
     id: "2",
-    title: "Latest News",
-    description: "Check out what's new in our community",
-    type: "news",
-    link: "/news",
+    title: "Future of Freelancing Work",
+    description: "Join on 27th of March for an evening of networking and discussing AI in our work as freelancers and entrepreneurs.",
+    type: "event",
+    link: "https://www.eventbrite.fr/e/ai-freelancers-work-smarter-earn-more-stay-ahead-tickets-1258155921229",
+    date: "March 27"
   },
   {
     id: "3",
-    title: "New Project Templates",
-    description: "Fresh templates for your projects",
+    title: "DateTheApp: Find Your Tech Match",
+    description: "A platform that curates AI and digital tools for small businesses. Matching businesses to the right tech based on their workflow needs. Guiding implementation for growth without tech overwhelm.",
     type: "project",
-    link: "/tools",
+    link: "https://polished-care-fbe.notion.site/1b4195d3201d80d98ccddc22b48310a9?pvs=105"
   }
 ];
 
 export const NotionUpdates = () => {
-  const [updates, setUpdates] = useState<NotionUpdate[]>([]);
+  const [updates, setUpdates] = useState<NotionUpdate[]>(SAMPLE_UPDATES);
   const [loading, setLoading] = useState(true);
-  const [isUsingSampleData, setIsUsingSampleData] = useState(false);
 
   const fetchUpdates = async () => {
     setLoading(true);
-    setIsUsingSampleData(false);
-    
     try {
-      console.log("Starting to fetch Notion updates...");
       const notionUpdates = await fetchNotionUpdatesViaProxy();
-      console.log("Received updates:", notionUpdates);
-      
       if (notionUpdates && notionUpdates.length > 0) {
-        console.log(`Setting ${notionUpdates.length} real updates from Notion`);
         setUpdates(notionUpdates);
-      } else {
-        console.log("No updates returned from API, using sample data");
-        setUpdates(SAMPLE_UPDATES);
-        setIsUsingSampleData(true);
-        toast({
-          title: "Using sample data",
-          description: "Could not load data from Notion. Check console for details.",
-          variant: "destructive"
-        });
       }
     } catch (error) {
       console.error("Error fetching updates:", error);
-      console.log("Using sample data due to fetch error");
-      setUpdates(SAMPLE_UPDATES);
-      setIsUsingSampleData(true);
-      toast({
-        title: "Error loading updates",
-        description: error instanceof Error ? error.message : "Unknown error",
-        variant: "destructive"
-      });
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    console.log("NotionUpdates component mounted, fetching updates...");
     fetchUpdates();
   }, []);
-
-  const getIconForType = (type: NotionUpdate["type"]) => {
-    switch (type) {
-      case "event":
-        return <div className="w-8 h-8 mb-4 rounded-full bg-primary/10 flex items-center justify-center text-primary">📅</div>;
-      case "news":
-        return <div className="w-8 h-8 mb-4 rounded-full bg-primary/10 flex items-center justify-center text-primary">📰</div>;
-      case "project":
-        return <div className="w-8 h-8 mb-4 rounded-full bg-primary/10 flex items-center justify-center text-primary">📁</div>;
-      default:
-        return <div className="w-8 h-8 mb-4 rounded-full bg-primary/10 flex items-center justify-center text-primary">📰</div>;
-    }
-  };
 
   if (loading) {
     return (
@@ -107,9 +69,6 @@ export const NotionUpdates = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-heading text-center mb-12">
           Latest Updates
-          {isUsingSampleData && (
-            <span className="text-sm text-red-500 ml-2">(Sample Data)</span>
-          )}
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -131,25 +90,26 @@ export const NotionUpdates = () => {
               <p className="text-accent line-clamp-2">{update.description}</p>
               <Button variant="link" className="mt-4" asChild>
                 <a href={update.link} target="_blank" rel="noopener noreferrer">
-                  Read More
+                  {update.type === "project" ? "Join Waitlist" : "Join Event"}
                 </a>
               </Button>
             </div>
           ))}
         </div>
-
-        {isUsingSampleData && (
-          <div className="text-center mt-8">
-            <Button 
-              onClick={fetchUpdates} 
-              className="mx-auto"
-              variant="outline"
-            >
-              Retry Loading Data
-            </Button>
-          </div>
-        )}
       </div>
     </div>
   );
+};
+
+const getIconForType = (type: NotionUpdate["type"]) => {
+  switch (type) {
+    case "event":
+      return <div className="w-8 h-8 mb-4 rounded-full bg-primary/10 flex items-center justify-center text-primary">📅</div>;
+    case "news":
+      return <div className="w-8 h-8 mb-4 rounded-full bg-primary/10 flex items-center justify-center text-primary">📰</div>;
+    case "project":
+      return <div className="w-8 h-8 mb-4 rounded-full bg-primary/10 flex items-center justify-center text-primary">📁</div>;
+    default:
+      return <div className="w-8 h-8 mb-4 rounded-full bg-primary/10 flex items-center justify-center text-primary">📰</div>;
+  }
 };
